@@ -35,13 +35,24 @@
 #### Host Services:
 - Firewall - iptables
 - Intrusion Prevention - fail2ban
-- Desktop UI - [Rdesktop] (https://hub.docker.com/r/linuxserver/rdesktop)
+- Desktop UI - [Rdesktop](https://hub.docker.com/r/linuxserver/rdesktop)
 - Source Control Management - git
 
 ***
 
-_Credits:_
+### Requirements:
+1. Linux VPS with at least 2GB RAM:
+  - Digital Ocean Droplet (USD10/mo)
+  - AWS EC2 t2.small
+  - GCP Compute Engine e2-small
+  - Azure Linux Virtual Machine B1MS
+
+2. Docker and Docker Compose
+
+***
+
+_References:_
 
 - [daybreakersx](https://github.com/daybreakersx)
-- [vmagick/dockerfiles](https://github.com/vimagick/dockerfiles/tree/master/openvpn)
+- [vmagick/dockerfiles/openvpn](https://github.com/vimagick/dockerfiles/tree/master/openvpn)
 - [jeromelaliagg](https://www.youtube.com/user/Jeromelaliag)
