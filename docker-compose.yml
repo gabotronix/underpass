@@ -16,9 +16,22 @@ services:
         networks:
             - underpass
         ports:
-            - "$OPENVPN:1194/udp"
+            - "$OPENVPN_UDP:1194/udp"
         volumes: 
             - ovpn_data:/etc/openvpn
     
     stunnel:
-        image:
+        image: vimagick/stunnel
+        container_name: stunnel
+        restart: always
+        networks:
+            - underpass
+        ports:
+            - "$STUNNEL:4911"
+        links:
+            - openvpn
+        environment: 
+            - CLIENT=no
+            - SERVICES=openvpn
+            - ACCEPT=0.0.0.0:4911
+            - CONNECT=openvpn:1194
