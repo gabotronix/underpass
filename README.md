@@ -43,5 +43,5 @@
 _Credits:_
 
 - [daybreakersx](https://github.com/daybreakersx)
-- [ Xaqron/stunnel](https://github.com/Xaqron/stunnel)
+- [vmagick/dockerfiles](https://github.com/vimagick/dockerfiles/tree/master/openvpn)
 - [jeromelaliagg](https://www.youtube.com/user/Jeromelaliag)
