@@ -7,14 +7,17 @@
 ***
 
 #### Core Services:
-- VPN
+- **VPN**
   1. [OpenVPN](https://hub.docker.com/r/kylemanna/openvpn)
   2. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
-- Proxy
+
+- **Proxy**
   1. [Shadowsocks](https://hub.docker.com/r/vimagick/shadowsocks/)
   2. [Stunnel](https://hub.docker.com/r/vimagick/stunnel)
-- Secure Shell (SSH) - [Alpine SSHD (Dropbear)](https://hub.docker.com/r/sjourdan/alpine-sshd)
-- Domain Provider
+
+- **Secure Shell (SSH)** - [Alpine SSHD (Dropbear)](https://hub.docker.com/r/sjourdan/alpine-sshd)
+
+- **Domain Provider**
   1. [nip.io](https://nip.io/)
 
 #### Secondary Services:
@@ -40,4 +43,4 @@
 
 _Credits:_
 
-[daybreakersx](https://github.com/daybreakersx)
+- [daybreakersx](https://github.com/daybreakersx)
