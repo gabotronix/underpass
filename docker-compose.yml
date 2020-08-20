@@ -5,6 +5,7 @@ networks:
 
 volumes:
     ovpn_data: {}
+    wireguard_config: {}
 
 services:
     openvpn:
@@ -35,3 +36,23 @@ services:
             - SERVICES=openvpn
             - ACCEPT=0.0.0.0:4911
             - CONNECT=openvpn:1194
+    
+    wireguard:
+        image: linuxserver/wireguard
+        container_name: wireguard
+        restart: always
+        cap_add:
+            - NET_ADMIN
+            - SYS_MODULE
+        networks: 
+            - underpass
+        ports:
+            - "$WIREGUARD:51820/udp"
+        environment:
+            - TZ=$TZ
+            - wireguard_config:config
+            - /lib/modules:/lib/modules
+        sysctls:
+            - net.ipv4.conf.all.src_valid_mark=1
+    
+    shadowsocks:
