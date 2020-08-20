@@ -17,8 +17,7 @@
 
 - **Secure Shell (SSH)** - [Alpine SSHD (Dropbear)](https://hub.docker.com/r/sjourdan/alpine-sshd)
 
-- **Domain Provider**
-  1. [nip.io](https://nip.io/)
+- **Domain Provider** - [nip.io](https://nip.io/)
 
 #### Secondary Services:
 - [OpenVPN Web UI](https://github.com/adamwalach/openvpn-web-ui)
