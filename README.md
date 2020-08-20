@@ -6,7 +6,7 @@
 
 ***
 
-#### Core Services:**
+#### Core Services:
 - VPN
   1. [OpenVPN](https://hub.docker.com/r/kylemanna/openvpn)
   2. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
@@ -38,16 +38,6 @@
 
 ***
 
-
-
-***
-
 _Credits:_
 
-The configuration files in this repo are based on the articles written by:
-
-V Ng:
-https://dev.to/veevidify/docker-compose-up-your-entire-laravel-apache-mysql-development-environment-45ea
-
-Erika Heidi:
-https://www.digitalocean.com/community/tutorials/how-to-containerize-a-laravel-application-for-development-with-docker-compose-on-ubuntu-18-04
+[daybreakersx](https://github.com/daybreakersx)
