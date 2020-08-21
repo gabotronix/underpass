@@ -8,7 +8,8 @@
 
 #### Core Services:
 - **VPN**
-  1. [OpenVPN](https://github.com/kylemanna/docker-openvpn)
+  1. [OpenVPN](https://hub.docker.com/r/awalach/openvpn)
+  2. [OpenVPN GUI](https://github.com/adamwalach/openvpn-web-ui)
   2. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
 
 - **Proxy**
@@ -20,7 +21,6 @@
 - **Domain Provider** - [nip.io](https://nip.io/)
 
 #### Secondary Services:
-- [OpenVPN Web UI](https://github.com/adamwalach/openvpn-web-ui)
 - TLS/SSL Provider - [Let's Encrypt](https://letsencrypt.org/)
 - Docker Web UI - [Portainer](https://hub.docker.com/r/portainer/portainer)
 - Reverse Proxy - [Nginx Proxy Manager](https://hub.docker.com/r/jlesage/nginx-proxy-manager)

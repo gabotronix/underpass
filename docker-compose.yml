@@ -10,7 +10,7 @@ volumes:
 
 services:
     openvpn:
-        image: kylemanna/openvpn
+        image: awalach/openvpn
         container_name: openvpn
         restart: always
         cap_add:
