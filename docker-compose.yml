@@ -1,10 +1,11 @@
-version: '3'
+version: '3.3'
 
 networks:
     underpass:
 
 volumes:
-    ovpn_data: {}
+    openvpn-data: {}
+    openvpn-db: {}
     wireguard_config: {}
 
 services:
@@ -19,7 +20,21 @@ services:
         ports:
             - "$OPENVPN_UDP:1194/udp"
         volumes: 
-            - ovpn_data:/etc/openvpn
+            - openvpn-data:/etc/openvpn
+        depends_on: 
+            - "openvpn-gui"
+    
+    openvpn-gui:
+        image: awalach/openvpn-web-ui
+        container_name: openvpn-gui
+        restart: always
+        networks: 
+            - underpass
+        ports: 
+            - "$OPENVPN_GUI:8080"
+        volumes:
+            - openvpn-data:/etc/openvpn
+            - openvpn-db:/opt/openvpn-gui/db
     
     stunnel:
         image: vimagick/stunnel
@@ -29,7 +44,7 @@ services:
             - underpass
         ports:
             - "$STUNNEL:4911"
-        links:
+        depends_on:
             - openvpn
         environment: 
             - CLIENT=no
@@ -56,3 +71,25 @@ services:
             - net.ipv4.conf.all.src_valid_mark=1
     
     shadowsocks:
+        image: easypi/shadowsocks-libev
+        container_name: shadowsocks
+        restart: always
+        networks: 
+            - underpass
+        ports:
+            - "$SHADOWSOCKS:8388/tcp"
+            - "$SHADOWSOCKS:8388/udp"
+        environment: 
+            - METHOD=aes-256-cfb
+            - PASSWORD=$SHADOWSOCKS_PASSWORD
+    
+    dropbear:
+        image: sjourdan/alpine-sshd
+        container_name: dropbear
+        restart: always
+        networks: 
+            - underpass
+        ports:
+            - $SSH_PORT:22
+
+    

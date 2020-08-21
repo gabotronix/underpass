@@ -12,10 +12,10 @@
   2. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
 
 - **Proxy**
-  1. [Shadowsocks](https://hub.docker.com/r/vimagick/shadowsocks/)
+  1. [Shadowsocks](https://github.com/EasyPi/docker-shadowsocks-libev)
   2. [Stunnel](https://hub.docker.com/r/vimagick/stunnel)
 
-- **Secure Shell (SSH)** - [Alpine SSHD (Dropbear)](https://hub.docker.com/r/sjourdan/alpine-sshd)
+- **Secure Shell (SSH)** - [Dropbear](https://hub.docker.com/r/simonswine/dropbear)
 
 - **Domain Provider** - [nip.io](https://nip.io/)
 
