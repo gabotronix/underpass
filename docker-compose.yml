@@ -7,6 +7,7 @@ volumes:
     openvpn-data: {}
     openvpn-db: {}
     wireguard_config: {}
+    wireguard_ui: {}
 
 services:
     openvpn:
@@ -69,6 +70,21 @@ services:
             - /lib/modules:/lib/modules
         sysctls:
             - net.ipv4.conf.all.src_valid_mark=1
+    
+    wireguard-ui:
+        image: embarkstudios/wireguard-ui
+        container_name: wireguard-ui
+        restart: always
+        privileged: true
+        networks:
+            - underpass
+        ports:
+            - "$WIREGUARD_GUI:8080"
+            - "$WIREGUARD:5555"
+        volumes:
+            - wireguard_ui:/data
+        entrypoint:
+            - /wireguard-ui
     
     shadowsocks:
         image: easypi/shadowsocks-libev

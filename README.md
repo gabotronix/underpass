@@ -10,7 +10,8 @@
 - **VPN**
   1. [OpenVPN](https://hub.docker.com/r/awalach/openvpn)
   2. [OpenVPN GUI](https://github.com/adamwalach/openvpn-web-ui)
-  2. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
+  3. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
+  4. [Wireguard UI](https://github.com/EmbarkStudios/wg-ui)
 
 - **Proxy**
   1. [Shadowsocks](https://github.com/EasyPi/docker-shadowsocks-libev)
