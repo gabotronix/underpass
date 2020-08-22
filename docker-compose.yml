@@ -2,6 +2,10 @@ version: '3.3'
 
 networks:
     underpass:
+        external:
+            name: underpass
+    default:
+        driver: bridge
 
 volumes:
     openvpn-data: {}
