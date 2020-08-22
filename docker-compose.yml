@@ -25,6 +25,23 @@ services:
         depends_on: 
             - "openvpn-gui"
     
+    openvpn-tcp:
+        image: awalach/openvpn
+        container_name: openvpn-tcp
+        restart: always
+        cap_add:
+            - NET_ADMIN
+        networks:
+            - underpass
+        ports: 
+            - "$OPENVPN_TCP:1194/tcp"
+        volumes:
+            - openvpn-data:/etc/openvpn
+        command:
+            - ovpn_run --proto tcp
+        depends_on: 
+            - "openvpn-gui"
+    
     openvpn-gui:
         image: awalach/openvpn-web-ui
         container_name: openvpn-gui
