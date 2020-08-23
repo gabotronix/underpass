@@ -1,6 +1,5 @@
-FROM alpine
+FROM sjourdan/alpine-sshd
 
-RUN apk --no-cache add dropbear
+RUN echo "/bin/false" >> /etc/shells
 
-EXPOSE 22 23
-
+EXPOSE 22001 22002
