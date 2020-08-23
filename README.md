@@ -2,7 +2,7 @@
 
 ## A Docker-based personal tunneling solution.
 
-![laravel-docker-dev-windows](https://user-images.githubusercontent.com/9207205/82763077-731ea700-9e37-11ea-9002-7268133e21a3.png)
+![underpass_banner](https://user-images.githubusercontent.com/9207205/90979447-b0561a80-e587-11ea-951f-efcaaed63654.png)
 
 ***
 
