@@ -127,6 +127,7 @@ services:
         networks: 
             - underpass
         ports:
-            - $SSH_PORT:22
+            - $SSH_PORT1:22
+            - $SSH_PORT2:22
 
     
