@@ -11,7 +11,7 @@
 
 - **Proxy** - [Shadowsocks](https://github.com/EasyPi/docker-shadowsocks-libev)
 
-- **Secure Shell (SSH)** - [Alpine SSHD](https://hub.docker.com/r/sjourdan/alpine-sshd)
+- **Secure Shell (SSH)** - [Dropbear](https://hub.docker.com/r/sjourdan/alpine-sshd)
 
 #### Secondary Services:
 - Docker Web UI - [Portainer](https://hub.docker.com/r/portainer/portainer)
