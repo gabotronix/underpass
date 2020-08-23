@@ -7,22 +7,13 @@
 ***
 
 #### Core Services:
-- **VPN**
-  1. [OpenVPN](https://hub.docker.com/r/awalach/openvpn)
-  2. [OpenVPN GUI](https://github.com/adamwalach/openvpn-web-ui)
-  3. [Wireguard](https://hub.docker.com/r/linuxserver/wireguard)
-  4. [Wireguard UI](https://github.com/EmbarkStudios/wg-ui)
+- **VPN** - [Pritunl](https://hub.docker.com/r/jippi/pritunl)
 
-- **Proxy**
-  1. [Shadowsocks](https://github.com/EasyPi/docker-shadowsocks-libev)
-  2. [Stunnel](https://hub.docker.com/r/vimagick/stunnel)
+- **Proxy** - [Shadowsocks](https://github.com/EasyPi/docker-shadowsocks-libev)
 
-- **Secure Shell (SSH)** - [Dropbear](https://hub.docker.com/r/simonswine/dropbear)
-
-- **Domain Provider** - [nip.io](https://nip.io/)
+- **Secure Shell (SSH)** - [Alpine SSHD](https://hub.docker.com/r/sjourdan/alpine-sshd)
 
 #### Secondary Services:
-- TLS/SSL Provider - [Let's Encrypt](https://letsencrypt.org/)
 - Docker Web UI - [Portainer](https://hub.docker.com/r/portainer/portainer)
 - Reverse Proxy - [Nginx Proxy Manager](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
 - Web Portal/Organizer - [Heimdall](https://hub.docker.com/r/linuxserver/heimdall)
