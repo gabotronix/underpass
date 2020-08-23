@@ -1,6 +1,6 @@
 # Underpass
 
-## A Docker-based server that provides access to a variety of tunneling services.
+## A Docker-based personal tunneling solution.
 
 ![laravel-docker-dev-windows](https://user-images.githubusercontent.com/9207205/82763077-731ea700-9e37-11ea-9002-7268133e21a3.png)
 
