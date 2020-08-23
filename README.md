@@ -11,7 +11,7 @@
 
 - **Proxy** - [Shadowsocks](https://github.com/EasyPi/docker-shadowsocks-libev)
 
-- **Secure Shell (SSH)** - [Dropbear](https://hub.docker.com/r/sjourdan/alpine-sshd)
+- **SSH Server** - [Dropbear](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
 #### Secondary Services:
 - Docker Web UI - [Portainer](https://hub.docker.com/r/portainer/portainer)
@@ -20,15 +20,15 @@
 - Container Monitoring - [Prometheus](https://hub.docker.com/r/prom/prometheus)
 - Container Monitoring Frontend - [Grafana](https://hub.docker.com/r/grafana/grafana)
 - Server Monitoring
-  1. [Netdata](https://hub.docker.com/r/netdata/netdata)
-  2. htop
-  3. glances
+  1. htop
+  2. glances
 
 #### Host Services:
+- Server Manager - [Cockpit](https://cockpit-project.org/)
+- SSH Server - Dropbear
 - Firewall - iptables
 - Intrusion Prevention - fail2ban
-- Desktop UI - [Rdesktop](https://hub.docker.com/r/linuxserver/rdesktop)
-- Source Control Management - git
+- Source Code Management - Git
 
 ***
 
@@ -40,7 +40,6 @@
   - Azure Linux Virtual Machine B1MS
 
 2. Docker and Docker Compose
-  - How to install docker on 
 
 ***
 
