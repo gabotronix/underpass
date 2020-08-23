@@ -46,5 +46,3 @@
 _References:_
 
 - [daybreakersx](https://github.com/daybreakersx)
-- [vmagick/dockerfiles/openvpn](https://github.com/vimagick/dockerfiles/tree/master/openvpn)
-- [jeromelaliagg](https://www.youtube.com/user/Jeromelaliag)
