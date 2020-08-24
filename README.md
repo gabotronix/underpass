@@ -7,35 +7,35 @@
 ***
 
 #### Core Services:
-- **VPN** - [Pritunl (Docker)](https://hub.docker.com/r/jippi/pritunl)
+- **VPN** - Pritunl from [jippi](https://hub.docker.com/r/jippi/pritunl)
 
 - **Proxies**
-  1. [Shadowsocks (Docker)](https://github.com/EasyPi/docker-shadowsocks-libev)
-  2. [Privoxy (Docker)](https://hub.docker.com/r/splazit/privoxy-alpine)
-  2. [Squid (Docker)](https://hub.docker.com/r/b4tman/squid)
+  1. Shadowsocks from [EasyPi](https://github.com/EasyPi/docker-shadowsocks-libev)
+  2. Privoxy from [splazit](https://hub.docker.com/r/splazit/privoxy-alpine)
+  2. Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
 
-- **SSH Server** - [Dropbear (Host)](https://matt.ucc.asn.au/dropbear/dropbear.html)
+- **SSH Server** - Dropbear from [Matt Johnston](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
 #### Secondary Services:
-- Docker Web UI - [Portainer](https://hub.docker.com/r/portainer/portainer)
-- Reverse Proxy - [Nginx Proxy Manager](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
-- Web Portal/Organizer - [Heimdall](https://hub.docker.com/r/linuxserver/heimdall)
-- File Hosting - [ProjectSend](https://hub.docker.com/r/linuxserver/projectsend)
+- Docker Web UI: [Portainer](https://hub.docker.com/r/portainer/portainer)
+- Reverse Proxy: Nginx Proxy Manager from [jlesage](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
+- Web Portal/Organizer: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
+- File Hosting: ProjectSend from [linuxserver](https://hub.docker.com/r/linuxserver/projectsend)
 - Server Monitoring
   1. htop
   2. glances
 
 #### Host Services:
-- Server Manager - [Cockpit](https://cockpit-project.org/)
-- SSH Server - Dropbear
-- Firewall - iptables
-- Intrusion Prevention - fail2ban
-- Source Code Management - Git
+- Server Manager: [Cockpit](https://cockpit-project.org/)
+- SSH Server: Dropbear
+- Firewall: iptables
+- Intrusion Prevention: fail2ban
+- Source Code Management: Git
 
 ***
 
 ### Requirements:
-1. Ubuntu 18.04 x64 or CentOS 7 x64
+1. Ubuntu 18.04 LTS x64 or CentOS 7 x64
 
 2. VPS with at least 2GB RAM:
   - Digital Ocean Droplet (USD10/mo)
