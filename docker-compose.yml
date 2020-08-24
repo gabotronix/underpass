@@ -7,7 +7,7 @@ networks:
 
 services:
     pritunl:
-        image: jippi/pritunl
+        image: jippi/pritunl:latest
         container_name: pritunl
         restart: always
         privileged: true
@@ -20,7 +20,7 @@ services:
             - "$PRITUNL_TCP:1194/udp"
     
     shadowsocks:
-        image: easypi/shadowsocks-libev
+        image: easypi/shadowsocks-libev:latest
         container_name: shadowsocks
         restart: always
         networks: 
@@ -32,5 +32,16 @@ services:
             - METHOD=aes-256-cfb
             - PASSWORD=$SHADOWSOCKS_PASSWORD
     
+    squid:
+        image: b4tman/squid:latest
+        container_name: squid
+        restart: always
+        networks: 
+            - underpass
+        ports:
+            - "$SQUID_PORT:3128"
+
+    privoxy:
+        
 
     
