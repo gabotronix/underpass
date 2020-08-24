@@ -6,7 +6,7 @@
 
 ***
 
-#### Core Services:
+### Core Services:
 - **VPN** - Pritunl from [jippi](https://hub.docker.com/r/jippi/pritunl)
 
 - **Proxies**
@@ -16,7 +16,7 @@
 
 - **SSH Server** - Dropbear from [Matt Johnston](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
-#### Secondary Services:
+### Secondary Services:
 - Docker Web UI: **[Portainer](https://hub.docker.com/r/portainer/portainer)**
 - File Hosting: **ProjectSend** from [linuxserver](https://hub.docker.com/r/linuxserver/projectsend)
 - Web Portal/Organizer: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
@@ -25,7 +25,7 @@
   1. htop
   2. glances
 
-#### Host Services:
+### Host Services:
 - Server Manager: **[Cockpit](https://cockpit-project.org/)**
 - SSH Server: Dropbear
 - Firewall: iptables
