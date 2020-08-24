@@ -9,9 +9,11 @@ volumes:
     portainer_data: {}
     projectsend_data: {}
     projectsend_config: {}
+    nginx-proxy-manager: {}
 
 services:
     pritunl:
+        #access web ui via http://ip_of_server or http://domain.tld
         image: jippi/pritunl:latest
         container_name: pritunl
         restart: always
@@ -56,6 +58,7 @@ services:
             - "$PRIVOXY_PORT:8118"
     
     portainer:
+        #access web ui via http://ip_of_server:9000
         image: portainer/portainer:latest
         container_name: portainer
         restart: always
@@ -70,18 +73,32 @@ services:
             - portainer_data:/data
     
     projectsend:
+        #access web ui via http://ip_of_server:$PROJECT_SEND_PORT
         image: linuxserver/projectsend:latest
         container_name: projectsend
         restart: unless-stopped
         networks: 
             - underpass
         ports:
-            - "$PROJECTSEND:80"
+            - "$PROJECTSEND_PORT:80"
         environment: 
             - MAX_UPLOAD=$MAX_FILE_UPLOAD_SIZE
         volumes: 
             - projectsend_config:/config
             - projectsend_data:/data
+
+    nginx-proxy-manager:
+        image: jlesage/nginx-proxy-manager:latest
+        container_name: nginx-proxy-manager
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - 8181:8181
+            - 8080:8080
+            - 4443:4443
+        volumes:
+            - nginx-proxy-manager:/config
 
 
     
