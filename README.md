@@ -9,7 +9,7 @@
 #### Core Services:
 - **VPN** - [Pritunl (Docker)](https://hub.docker.com/r/jippi/pritunl)
 
-- **Proxy**
+- **Proxies**
   1. [Shadowsocks (Docker)](https://github.com/EasyPi/docker-shadowsocks-libev)
   2. [Privoxy (Docker)](https://hub.docker.com/r/splazit/privoxy-alpine)
   2. [Squid (Docker)](https://hub.docker.com/r/b4tman/squid)
