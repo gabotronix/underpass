@@ -35,13 +35,20 @@
 ***
 
 ### Requirements:
-1. Linux VPS with at least 2GB RAM:
+1. Ubuntu 18.04 x64 or CentOS 7 x64
+
+2. VPS with at least 2GB RAM:
   - Digital Ocean Droplet (USD10/mo)
   - AWS EC2 t2.small
   - GCP Compute Engine e2-small
   - Azure Linux Virtual Machine B1MS
 
-2. Docker and Docker Compose
+3. Docker and Docker Compose
+
+***
+
+### Installation:
+- Refer to [docs](https://github.com/gabotronix/underpass-docs)
 
 ***
 
