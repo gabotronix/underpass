@@ -17,16 +17,16 @@
 - **SSH Server** - Dropbear from [Matt Johnston](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
 #### Secondary Services:
-- Docker Web UI: [Portainer](https://hub.docker.com/r/portainer/portainer)
-- Reverse Proxy: Nginx Proxy Manager from [jlesage](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
-- Web Portal/Organizer: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-- File Hosting: ProjectSend from [linuxserver](https://hub.docker.com/r/linuxserver/projectsend)
+- Docker Web UI: **[Portainer](https://hub.docker.com/r/portainer/portainer)**
+- Reverse Proxy: **Nginx Proxy Manager** from [jlesage](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
+- Web Portal/Organizer: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
+- File Hosting: **ProjectSend** from [linuxserver](https://hub.docker.com/r/linuxserver/projectsend)
 - Server Monitoring
   1. htop
   2. glances
 
 #### Host Services:
-- Server Manager: [Cockpit](https://cockpit-project.org/)
+- Server Manager: **[Cockpit](https://cockpit-project.org/)**
 - SSH Server: Dropbear
 - Firewall: iptables
 - Intrusion Prevention: fail2ban
