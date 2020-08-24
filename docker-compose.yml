@@ -26,25 +26,11 @@ services:
         networks: 
             - underpass
         ports:
-            - "$SHADOWSOCKS:8388/tcp"
-            - "$SHADOWSOCKS:8388/udp"
+            - "$SHADOWSOCKS_TCP:8388/tcp"
+            - "$SHADOWSOCKS_UDP:8388/udp"
         environment: 
             - METHOD=aes-256-cfb
             - PASSWORD=$SHADOWSOCKS_PASSWORD
     
-    dropbear:
-        build:
-            context: builds/dropbear
-            dockerfile: Dockerfile
-        container_name: dropbear
-        restart: always
-        networks: 
-            - underpass
-        ports:
-            - $SSH_PORT1:22
-            - $SSH_PORT2:22
-        environment: 
-            - USER=$SSH_USER
-            - PASSWORD=$SSH_PASS
 
     
