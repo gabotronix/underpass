@@ -9,7 +9,10 @@
 #### Core Services:
 - **VPN** - [Pritunl (Docker)](https://hub.docker.com/r/jippi/pritunl)
 
-- **Proxy** - [Shadowsocks (Docker)](https://github.com/EasyPi/docker-shadowsocks-libev)
+- **Proxy**
+  1. [Shadowsocks (Docker)](https://github.com/EasyPi/docker-shadowsocks-libev)
+  2. [Privoxy (Docker)](https://hub.docker.com/r/splazit/privoxy-alpine)
+  2. [Squid (Docker)](https://hub.docker.com/r/b4tman/squid)
 
 - **SSH Server** - [Dropbear (Host)](https://matt.ucc.asn.au/dropbear/dropbear.html)
 
@@ -17,6 +20,7 @@
 - Docker Web UI - [Portainer](https://hub.docker.com/r/portainer/portainer)
 - Reverse Proxy - [Nginx Proxy Manager](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
 - Web Portal/Organizer - [Heimdall](https://hub.docker.com/r/linuxserver/heimdall)
+- File Hosting - [ProjectSend](https://hub.docker.com/r/linuxserver/projectsend)
 - Server Monitoring
   1. htop
   2. glances
