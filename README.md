@@ -18,9 +18,9 @@
 
 #### Secondary Services:
 - Docker Web UI: **[Portainer](https://hub.docker.com/r/portainer/portainer)**
-- Reverse Proxy: **Nginx Proxy Manager** from [jlesage](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
-- Web Portal/Organizer: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
 - File Hosting: **ProjectSend** from [linuxserver](https://hub.docker.com/r/linuxserver/projectsend)
+- Web Portal/Organizer: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
+- Reverse Proxy: **Nginx Proxy Manager** from [jlesage](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
 - Server Monitoring
   1. htop
   2. glances
