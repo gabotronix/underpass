@@ -1,6 +1,6 @@
 # Underpass
 
-## A Docker-based personal tunneling solution.
+## A collection of Docker-based tunneling services for personal use.
 
 ![underpass_banner](https://user-images.githubusercontent.com/9207205/90979447-b0561a80-e587-11ea-951f-efcaaed63654.png)
 
