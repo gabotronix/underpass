@@ -42,6 +42,14 @@ services:
             - "$SQUID_PORT:3128"
 
     privoxy:
-        
+        image: splazit/privoxy-alpine:latest
+        container_name: privoxy
+        restart: always
+        networks: 
+            - underpass
+        ports:
+            - "$PRIVOXY_PORT:8118"
+    
+    
 
     
