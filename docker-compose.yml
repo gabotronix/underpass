@@ -4,6 +4,11 @@ networks:
     underpass:
     default:
         driver: bridge
+    
+volumes: 
+    portainer_data: {}
+    projectsend_data: {}
+    projectsend_config: {}
 
 services:
     pritunl:
@@ -50,6 +55,33 @@ services:
         ports:
             - "$PRIVOXY_PORT:8118"
     
+    portainer:
+        image: portainer/portainer:latest
+        container_name: portainer
+        restart: always
+        command: -H unix:///var/run/docker.sock
+        networks:
+            - underpass
+        ports:
+            - 9000:9000
+            - 8000:8000
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - portainer_data:/data
     
+    projectsend:
+        image: linuxserver/projectsend:latest
+        container_name: projectsend
+        restart: unless-stopped
+        networks: 
+            - underpass
+        ports:
+            - "$PROJECTSEND:80"
+        environment: 
+            - MAX_UPLOAD=$MAX_FILE_UPLOAD_SIZE
+        volumes: 
+            - projectsend_config:/config
+            - projectsend_data:/data
+
 
     
