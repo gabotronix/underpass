@@ -28,6 +28,10 @@ echo "OPTIONS=\"-p 109 -p 110 -p 442\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 systemctl start dropbear
 systemctl enable dropbear
+firewall-cmd --zone=public --add-port=109/tcp --permanent
+firewall-cmd --zone=public --add-port=110/tcp --permanent
+firewall-cmd --zone=public --add-port=442/tcp --permanent
+firewall-cmd --reload
 
 # install cockpit
 yum -y install cockpit cockpit-dashboard
@@ -48,5 +52,7 @@ curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wir
 chmod +x wireguard-install.sh
 ./wireguard-install.sh
 
-# add wireguard to path
+# wireguard post install
+firewall-cmd --zone=public --add-port=5555/udp --permanent
+firewall-cmd --reload
 rsync -a /usr/local/src/underpass/wireguard-install.sh /usr/local/bin/
