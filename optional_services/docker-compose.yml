@@ -8,20 +8,6 @@ volumes:
     nginx-proxy-manager: {}
 
 services:
-    projectsend:
-        image: linuxserver/projectsend:latest
-        container_name: projectsend
-        restart: unless-stopped
-        networks: 
-            - underpass
-        ports:
-            - "$PROJECTSEND_PORT:80"
-        environment: 
-            - MAX_UPLOAD=$MAX_FILE_UPLOAD_SIZE
-        volumes: 
-            - projectsend_config:/config
-            - projectsend_data:/data
-
     mariadb:
         image: linuxserver/mariadb:latest
         container_name: mariadb
