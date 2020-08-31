@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# set working directory
-mkdir /usr/local/src/underpass && cd /usr/local/src/underpass
-
 # update system
 yum -y update && yum -y upgrade
 
@@ -67,11 +64,8 @@ chmod +x wireguard-install.sh
 # wireguard post install
 firewall-cmd --zone=public --add-port=5555/udp --permanent
 firewall-cmd --reload
-rsync -a /usr/local/src/underpass/wireguard-install.sh /usr/local/bin/
+mv wireguard-install.sh /usr/local/bin/
 
 # install Underpass apps
-git clone -b stage https://github.com/gabotronix/underpass.git /home/underpass
 cd /home/underpass
 docker-compose up -d
-
-
