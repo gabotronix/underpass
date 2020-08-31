@@ -15,7 +15,7 @@ sed -i 's|enabled=1|enabled=0|' /etc/yum.repos.d/wandisco-git.repo
 yum --enablerepo=WANdisco-git -y install git
 
 # install system tools
-yum -y install screen nano wget curl ntp net-tools rsync glances htop ncdu
+yum -y install screen nano wget ntp net-tools rsync glances htop ncdu
 
 # environment settings
 echo "include \"/usr/share/nano/sh.nanorc\"" > ~/.nanorc
