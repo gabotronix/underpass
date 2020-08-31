@@ -12,7 +12,7 @@ yum -y install epel-release
 # install git
 yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
 sed -i 's|enabled=1|enabled=0|' /etc/yum.repos.d/wandisco-git.repo
-yum -y --enablerepo=WANdisco-git install git
+yum -y --enablerepo=WANdisco-git update git
 
 # install system tools
 yum -y install screen nano wget ntp net-tools rsync glances htop ncdu
@@ -68,3 +68,10 @@ chmod +x wireguard-install.sh
 firewall-cmd --zone=public --add-port=5555/udp --permanent
 firewall-cmd --reload
 rsync -a /usr/local/src/underpass/wireguard-install.sh /usr/local/bin/
+
+# install Underpass apps
+git clone -b stage https://github.com/gabotronix/underpass.git /home/underpass
+cd /home/underpass
+docker-compose up -d
+
+
