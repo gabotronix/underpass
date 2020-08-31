@@ -7,6 +7,8 @@ networks:
 
 volumes: 
     portainer_data: {}
+    droppy_config: {}
+    droppy_files: {}
     heimdall_config: {}
 
 services:
@@ -67,6 +69,18 @@ services:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - portainer_data:/data
+        
+    droppy:
+        image: silverwind/droppy
+        container_name: droppy
+        restart: unless-stopped
+        networks: 
+            - underpass
+        ports:
+            - "$DROPPY_PORT:8989"
+        volumes:
+            - droppy_config:/config
+            - droppy_files:/files
     
     heimdall:
         image: linuxserver/heimdall:latest
