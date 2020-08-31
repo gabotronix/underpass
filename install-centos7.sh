@@ -31,6 +31,8 @@ systemctl enable dropbear
 
 # install cockpit
 yum -y install cockpit cockpit-dashboard
+systemctl start cockpit.socket
+systemctl enable cockpit.socket
 
 # install fail2ban
 yum -y install fail2ban
