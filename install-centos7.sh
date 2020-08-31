@@ -47,3 +47,6 @@ systemctl enable fail2ban
 curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
 chmod +x wireguard-install.sh
 ./wireguard-install.sh
+
+# add wireguard to path
+rsync -a /usr/local/src/underpass/wireguard-install.sh /usr/local/bin/
