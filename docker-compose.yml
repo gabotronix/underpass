@@ -9,6 +9,8 @@ volumes:
     portainer_data: {}
     projectsend_data: {}
     projectsend_config: {}
+    mariadb: {}
+    phpmyadmin: {}
     nginx-proxy-manager: {}
     heimdall_config: {}
 
@@ -84,6 +86,32 @@ services:
         volumes: 
             - projectsend_config:/config
             - projectsend_data:/data
+
+    mariadb:
+        image: linuxserver/mariadb:latest
+        container_name: mariadb
+        restart: unless-stopped
+        networks: 
+            - underpass
+        environment:
+            - MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+            - TZ=$TZ
+        volumes: 
+            - mariadb:/config
+        
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin
+        container_name: phpmyadmin
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - "$PHPMYADMIN_PORT:80"
+        environment:
+            - PMA_ARBITRARY=0
+            - PMA_HOST=mariadb
+        volumes:
+            - phpmyadmin:/sessions
 
     nginx-proxy-manager:
         image: jlesage/nginx-proxy-manager:latest
