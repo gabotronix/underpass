@@ -12,7 +12,7 @@ yum -y install epel-release
 # install git
 yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
 sed -i 's|enabled=1|enabled=0|' /etc/yum.repos.d/wandisco-git.repo
-yum --enablerepo=WANdisco-git -y install git
+yum --enablerepo=WANdisco-git install git -y
 
 # install system tools
 yum -y install screen nano wget ntp net-tools rsync glances htop ncdu
