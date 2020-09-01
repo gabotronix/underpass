@@ -17,17 +17,19 @@ yum -y --enablerepo=WANdisco-git update git
 yum -y install screen nano wget ntp net-tools rsync glances htop ncdu
 
 # environment settings
-echo "include \"/usr/share/nano/sh.nanorc\"" > ~/.nanorc
+sed -i -e '$ainclude "/usr/share/nano/sh.nanorc"' ~/.nanorc
 sed -i -e '$aexport VISUAL=nano' ~/.bashrc
 source ~/.bashrc
 
 # enable ip forwarding
-sed -i -e '$aexport net.ipv4.ip_forward = 1' /etc/sysctl.d/99-sysctl.conf
+sed -i -e '$anet.ipv4.ip_forward = 1' /etc/sysctl.conf
+sed -i -e '$anet.ipv6.conf.all.forwarding=1' /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf
 
-# install dropbear - https://github.com/daybreakersx/premscript
+# install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 109 -p 110 -p 442\"" > /etc/sysconfig/dropbear
-echo "/bin/false" >> /etc/shells
+sed -i -e '$aOPTIONS=\"-p 109 -p 110 -p 442"' /etc/sysconfig/dropbear
+sed -i -e '$a/bin/false' /etc/shells
 systemctl start dropbear
 systemctl enable dropbear
 firewall-cmd --zone=public --add-port=109/tcp --permanent
