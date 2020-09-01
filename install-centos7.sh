@@ -39,7 +39,7 @@ systemctl enable cockpit.socket
 firewall-cmd --zone=public --add-port=9090/tcp --permanent
 firewall-cmd --reload
 
-# install Docker and Docker Compose
+# install Docker
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum -y install docker-ce docker-ce-cli containerd.io
 systemctl start docker
