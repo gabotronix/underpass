@@ -1,8 +1,6 @@
 version: '3.3'
 
 volumes: 
-    projectsend_data: {}
-    projectsend_config: {}
     mariadb: {}
     phpmyadmin: {}
     nginx-proxy-manager: {}
