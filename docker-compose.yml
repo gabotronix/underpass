@@ -6,6 +6,7 @@ networks:
         driver: bridge
 
 volumes:
+    pritunl-data: {}
     wireguard_ui: {}
     portainer_data: {}
     droppy_config: {}
@@ -21,10 +22,12 @@ services:
         networks: 
             - underpass
         ports:
-            - 80:80
-            - 443:443
+            - 8181:80
+            - 4433:443
             - "$PRITUNL_TCP:1194/tcp"
             - "$PRITUNL_TCP:1194/udp"
+        volumes: 
+            - pritunl-data:/var/lib/pritunl
 
     wireguard-ui:
         image: embarkstudios/wireguard-ui:latest
