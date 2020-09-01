@@ -58,6 +58,10 @@ curl -o /etc/fail2ban/jail.d/dropbear.conf https://raw.githubusercontent.com/gab
 systemctl start fail2ban
 systemctl enable fail2ban
 
+# install Underpass apps
+cd /home/underpass
+docker-compose up -d
+
 # install wireguard - https://github.com/angristan/wireguard-install
 curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
 chmod +x wireguard-install.sh
@@ -67,7 +71,3 @@ chmod +x wireguard-install.sh
 firewall-cmd --zone=public --add-port=5555/udp --permanent
 firewall-cmd --reload
 mv wireguard-install.sh /usr/local/bin/
-
-# install Underpass apps
-cd /home/underpass
-docker-compose up -d
