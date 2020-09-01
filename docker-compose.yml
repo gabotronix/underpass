@@ -59,7 +59,6 @@ services:
             - "$WIREGUARD_PORT:5555/udp"
             - "$WIREGUARD_UI_PORT:8888"
         environment: 
-            - HOST: "0.0.0.0"
             - ADMIN_USERNAME:$WIREGUARD_UI_ADMIN_USERNAME
             - ADMIN_PASSWORD:$WIREGUARD_UI_ADMIN_PASSWORD
             - WEB_CONCURRENCY: 1
