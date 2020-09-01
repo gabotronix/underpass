@@ -23,7 +23,7 @@ services:
             - underpass
         ports:
             - "$PRITUNL_PORT:80"
-            - 4433:443
+            - 433:443
             - "$PRITUNL_TCP:1194/tcp"
             - "$PRITUNL_TCP:1194/udp"
         volumes: 
