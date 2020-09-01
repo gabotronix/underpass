@@ -7,7 +7,7 @@ networks:
 
 volumes:
     mongodb: {}
-    wireguard_ui_db: {}
+    wireguard_ui: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -48,21 +48,23 @@ services:
             - /etc/localtime:/etc/localtime:ro
 
     wireguard-ui:
-        image: ngoduykhanh/wireguard-ui:latest
+        image: perara/wg-manager:latest
         container_name: wireguard-ui
         restart: unless-stopped
-        privileged: true
+        cap_add:
+            - NET_ADMIN
         networks:
             - underpass
         ports:
-            - "$WIREGUARD_UI_PORT:5000"
-        logging:
-            driver: json-file
-            options:
-                max-size: 50m
+            - "$WIREGUARD_PORT:5555/udp"
+            - "$WIREGUARD_UI_PORT:8888"
+        environment: 
+            - HOST: 0.0.0.0
+            - ADMIN_USERNAME:$WIREGUARD_UI_ADMIN_USERNAME
+            - ADMIN_PASSWORD:$WIREGUARD_UI_ADMIN_PASSWORD
+            - WEB_CONCURRENCY: 1
         volumes:
-            - wireguard_ui_db:/app/db
-            - /etc/wireguard:/etc/wireguard
+            - wireguard_ui:/config
     
     shadowsocks:
         image: easypi/shadowsocks-libev:latest
