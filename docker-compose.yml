@@ -52,8 +52,6 @@ services:
         container_name: wireguard-ui
         restart: unless-stopped
         privileged: true
-        entrypoint: 
-            - /wireguard-ui
         networks:
             - underpass
         ports:
