@@ -42,6 +42,8 @@ services:
             - "$PRITUNL_TCP:1194/tcp"
             - "$PRITUNL_TCP:1194/udp"
             - "$PRITUNL_WIREGUARD:1195/udp"
+        environment: 
+            - MONGODB_URI=mongodb://mongodb:27017/pritunl
         volumes: 
             - /etc/localtime:/etc/localtime:ro
 
