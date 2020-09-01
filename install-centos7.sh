@@ -76,3 +76,7 @@ chmod +x wireguard-install.sh
 firewall-cmd --zone=public --add-port=5555/udp --permanent
 firewall-cmd --reload
 mv wireguard-install.sh /usr/local/bin/
+
+# configure wireguard-ui
+systemctl enable wgui.{path,service}
+systemctl start wgui.{path,service}
