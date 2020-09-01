@@ -21,11 +21,6 @@ sed -i -e '$ainclude "/usr/share/nano/sh.nanorc"' ~/.nanorc
 sed -i -e '$aexport VISUAL=nano' ~/.bashrc
 source ~/.bashrc
 
-# enable ip forwarding
-sed -i -e '$anet.ipv4.ip_forward = 1' /etc/sysctl.conf
-sed -i -e '$anet.ipv6.conf.all.forwarding=1' /etc/sysctl.conf
-sysctl -p /etc/sysctl.conf
-
 # install dropbear
 yum -y install dropbear
 sed -i -e '$aOPTIONS=\"-p 109 -p 110 -p 442"' /etc/sysconfig/dropbear
