@@ -61,7 +61,6 @@ services:
         environment: 
             - ADMIN_USERNAME:$WIREGUARD_UI_ADMIN_USERNAME
             - ADMIN_PASSWORD:$WIREGUARD_UI_ADMIN_PASSWORD
-            - WEB_CONCURRENCY: 1
         volumes:
             - wireguard_ui:/config
     
