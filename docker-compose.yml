@@ -56,7 +56,7 @@ services:
         networks:
             - underpass
         ports:
-            - "51800-51900:51800-51900/udp"
+            - 51800-51900:51800-51900/udp
             - "$WIREGUARD_UI_PORT:8888"
         environment: 
             - ADMIN_USERNAME:$WIREGUARD_UI_ADMIN_USERNAME
