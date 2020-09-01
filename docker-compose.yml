@@ -7,7 +7,7 @@ networks:
 
 volumes:
     mongodb: {}
-    wireguard_ui: {}
+    wireguard_ui_db: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -43,24 +43,28 @@ services:
             - "$PRITUNL_TCP:1194/udp"
             - "$PRITUNL_WIREGUARD:1195/udp"
         environment: 
-            - MONGODB_URI=mongodb://mongodb:27017/pritunl
+            - MONGODB_URI=mongodb://mongo:27017/pritunl
         volumes: 
             - /etc/localtime:/etc/localtime:ro
 
     wireguard-ui:
-        image: embarkstudios/wireguard-ui:latest
+        image: ngoduykhanh/wireguard-ui:latest
         container_name: wireguard-ui
-        restart: always
+        restart: unless-stopped
         privileged: true
         entrypoint: 
             - /wireguard-ui
         networks:
             - underpass
         ports:
-            - "$WIREGUARD_PORT:5555"
-            - "$WIREGUARD_UI_PORT:8080"
+            - "$WIREGUARD_UI_PORT:5000"
+        logging:
+            driver: json-file
+            options:
+                max-size: 50m
         volumes:
-            - wireguard_ui:/data
+            - wireguard_ui_db:/app/db
+            - /etc/wireguard:/etc/wireguard
     
     shadowsocks:
         image: easypi/shadowsocks-libev:latest
