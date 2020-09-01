@@ -77,8 +77,3 @@ firewall-cmd --zone=public --add-port=5555/udp --permanent
 firewall-cmd --reload
 mv wireguard-install.sh /usr/local/bin/
 
-# configure wireguard-ui
-curl -o /etc/systemd/system/wgui.service https://raw.githubusercontent.com/gabotronix/underpass/stage/config/wireguard-ui/wgui.service
-curl -o /etc/systemd/system/wgui.path https://raw.githubusercontent.com/gabotronix/underpass/stage/config/wireguard-ui/wgui.path
-systemctl start wgui.{path,service}
-systemctl enable wgui.{path,service}
