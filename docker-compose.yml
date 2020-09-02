@@ -8,6 +8,7 @@ networks:
 volumes:
     mongodb: {}
     wireguard_config: {}
+    dante_socks: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -101,6 +102,17 @@ services:
             - underpass
         ports:
             - "$PRIVOXY_PORT:8118"
+        
+    dante:
+        image: vimagick/dante
+        container_name: dante
+        restart: always
+        networks:
+            - underpass
+        ports:
+            - "$SOCKS5_PORT:1080"
+        volumes:
+            - dante_socks:/etc/sockd.conf
     
     portainer:
         image: portainer/portainer:latest
