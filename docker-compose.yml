@@ -57,6 +57,8 @@ services:
             - "$PRITUNL_TCP:1194/tcp"
             - "$PRITUNL_TCP:1194/udp"
             - "$PRITUNL_WIREGUARD:1195/udp"
+        expose:
+            - 9700
         environment: 
             - MONGODB_URI=mongodb://mongo:27017/pritunl
             - REVERSE_PROXY=true
