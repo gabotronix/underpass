@@ -12,6 +12,7 @@ volumes:
     droppy_config: {}
     droppy_files: {}
     heimdall_config: {}
+    nginx-proxy-manager: {}
 
 services:
     mongodb:
@@ -151,4 +152,15 @@ services:
         volumes:
             - heimdall_config:/config
 
-    
+    nginx-proxy-manager:
+        image: jlesage/nginx-proxy-manager:latest
+        container_name: nginx-proxy-manager
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - "$NGINX_PROXY_UI_PORT:8181"
+            - 8080:8080
+            - 4443:4443
+        volumes:
+            - nginx-proxy-manager:/config 
