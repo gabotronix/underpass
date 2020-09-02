@@ -1,9 +1,0 @@
-# /etc/systemd/system/wg-gen-web.path
-[Unit]
-Description=Watch /etc/wireguard for changes
-
-[Path]
-PathModified=/etc/wireguard
-
-[Install]
-WantedBy=multi-user.target
