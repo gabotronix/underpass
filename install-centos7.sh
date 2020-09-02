@@ -24,17 +24,6 @@ sed -i -e '$ainclude "/usr/share/nano/sh.nanorc"' ~/.nanorc
 sed -i -e '$aexport VISUAL=nano' ~/.bashrc
 source ~/.bashrc
 
-# install dropbear
-yum -y install dropbear
-sed -i -e '$aOPTIONS=\"-p 109 -p 110 -p 442"' /etc/sysconfig/dropbear
-sed -i -e '$a/bin/false' /etc/shells
-systemctl start dropbear
-systemctl enable dropbear
-firewall-cmd --zone=public --add-port=109/tcp --permanent
-firewall-cmd --zone=public --add-port=110/tcp --permanent
-firewall-cmd --zone=public --add-port=442/tcp --permanent
-firewall-cmd --reload
-
 # install cockpit
 yum -y install cockpit cockpit-dashboard
 systemctl start cockpit.socket
