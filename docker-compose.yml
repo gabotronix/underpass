@@ -71,17 +71,6 @@ services:
             - wireguard_config:/config
             - /lib/modules:/lib/modules
     
-    dropbear:
-        image: quay.io/danielkza/dropbear-static:latest
-        container_name: dropbear
-        restart: unless-stopped
-        networks:
-            - underpass
-        ports:
-            - "$DROPBEAR_PORT1:3333"
-            - "$DROPBEAR_PORT2:3334"
-            - "$DROPBEAR_PORT3:3335"
-    
     shadowsocks:
         image: easypi/shadowsocks-libev:latest
         container_name: shadowsocks
