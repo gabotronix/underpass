@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.6'
 
 networks:
     underpass:
@@ -7,7 +7,6 @@ networks:
 
 volumes:
     mongodb: {}
-    wireguard_ui: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -48,7 +47,7 @@ services:
             - /etc/localtime:/etc/localtime:ro
 
     wireguard-ui:
-        image: perara/wg-manager:latest
+        image: vx3r/wg-gen-web:latest
         container_name: wireguard-ui
         restart: unless-stopped
         cap_add:
@@ -56,13 +55,12 @@ services:
         networks:
             - underpass
         ports:
-            - 51800-51900:51800-51900/udp
-            - "$WIREGUARD_UI_PORT:8888"
+            - "$WIREGUARD_UI_PORT:8080"
         environment: 
-            - ADMIN_USERNAME:$WIREGUARD_UI_ADMIN_USERNAME
-            - ADMIN_PASSWORD:$WIREGUARD_UI_ADMIN_PASSWORD
+            - WG_CONF_DIR=/data
+            - WG_INTERFACE_NAME=wg0.conf
         volumes:
-            - wireguard_ui:/config
+            - /etc/wireguard:/data
     
     shadowsocks:
         image: easypi/shadowsocks-libev:latest
