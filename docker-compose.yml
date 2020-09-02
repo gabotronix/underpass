@@ -156,10 +156,11 @@ services:
         image: jlesage/nginx-proxy-manager:latest
         container_name: nginx-proxy-manager
         restart: unless-stopped
-        network_mode: host
+        networks: 
+            - underpass
         ports:
             - "$NGINX_PROXY_UI_PORT:8181"
             - 80:8080
             - 443:4443
         volumes:
-            - nginx-proxy-manager:/config 
+            - nginx-proxy-manager:/config
