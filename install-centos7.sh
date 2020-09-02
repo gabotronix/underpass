@@ -5,16 +5,19 @@
 # update system
 yum -y update && yum -y upgrade
 
-# install EPEL repo
-yum -y install epel-release
+# install EPEL repo and ELrepo
+yum -y install epel-release elrepo-release
 
 # install git
 yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
 sed -i 's|enabled=1|enabled=0|' /etc/yum.repos.d/wandisco-git.repo
 yum -y --enablerepo=WANdisco-git update git
 
-# install system tools
-yum -y install screen nano wget ntp net-tools rsync glances htop ncdu
+# install system tools and kernel headers
+yum -y install yum-utils screen nano wget ntp net-tools rsync glances htop ncdu
+
+# install wireguard kernel modules
+yum -y install yum-plugin-elrepo kmod-wireguard wireguard-tools
 
 # environment settings
 sed -i -e '$ainclude "/usr/share/nano/sh.nanorc"' ~/.nanorc
@@ -61,14 +64,3 @@ systemctl enable fail2ban
 # install Underpass apps
 cd /home/underpass
 docker-compose up -d
-
-# install wireguard - https://github.com/angristan/wireguard-install
-curl -O https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
-chmod +x wireguard-install.sh
-./wireguard-install.sh
-
-# wireguard post install
-firewall-cmd --zone=public --add-port=5555/udp --permanent
-firewall-cmd --reload
-mv wireguard-install.sh /usr/local/bin/
-
