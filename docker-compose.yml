@@ -7,6 +7,7 @@ networks:
 
 volumes:
     mongodb: {}
+    wireguard_config: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -46,21 +47,29 @@ services:
         volumes: 
             - /etc/localtime:/etc/localtime:ro
 
-    wireguard-ui:
-        image: vx3r/wg-gen-web:latest
-        container_name: wireguard-ui
-        restart: unless-stopped
+    wireguard:
+        image: linuxserver/wireguard:latest
+        container_name: wireguard
+        restart: always
         cap_add:
             - NET_ADMIN
+            - SYS_MODULE
+        sysctls:
+            - net.ipv4.conf.all.src_valid_mark=1
         networks:
             - underpass
         ports:
-            - "$WIREGUARD_UI_PORT:8080"
-        environment: 
-            - WG_CONF_DIR=/data
-            - WG_INTERFACE_NAME=wg0.conf
+            - "$WIREGUARD_PORT:51820/udp"
+        environment:
+            - TZ=$TZ
+            - SERVERURL=auto
+            - SERVERPORT=$WIREGUARD_PORT
+            - PEERS=$WIREGUARD_PEERS
+            - PEERDNS=$WIREGUARD_DNS
+            - INTERNAL_SUBNET=$WIREGUARD_INTERNAL_IP
         volumes:
-            - /etc/wireguard:/data
+            - wireguard_config:/config
+            - /lib/modules:/lib/modules
     
     shadowsocks:
         image: easypi/shadowsocks-libev:latest
