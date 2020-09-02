@@ -5,7 +5,7 @@
 # update system
 yum -y update && yum -y upgrade
 
-# install EPEL repo and ELrepo
+# install EPEL repo and ELRepo
 yum -y install epel-release elrepo-release
 
 # install git
@@ -13,7 +13,7 @@ yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-rele
 sed -i 's|enabled=1|enabled=0|' /etc/yum.repos.d/wandisco-git.repo
 yum -y --enablerepo=WANdisco-git update git
 
-# install system tools and kernel headers
+# install system tools
 yum -y install yum-utils screen nano wget ntp net-tools rsync glances htop ncdu
 
 # install wireguard kernel modules
