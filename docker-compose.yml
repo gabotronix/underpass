@@ -12,7 +12,6 @@ volumes:
     droppy_config: {}
     droppy_files: {}
     heimdall_config: {}
-    nginx-proxy-manager: {}
 
 services:
     mongodb:
@@ -52,18 +51,13 @@ services:
         networks: 
             - underpass
         ports:
-            #- "$PRITUNL_PORT:80"
-            #- "$PRITUNL_PORT_HTTPS:443"
+            - "$PRITUNL_PORT:80"
+            - "$PRITUNL_PORT_HTTPS:443"
             - "$PRITUNL_TCP:1194/tcp"
             - "$PRITUNL_TCP:1194/udp"
             - "$PRITUNL_WIREGUARD:1195/udp"
-        expose:
-            - 80
-            - 443
         environment: 
             - MONGODB_URI=mongodb://mongodb:27017/pritunl
-            - REVERSE_PROXY=true
-            - WIREGUARD=true
         volumes: 
             - /etc/localtime:/etc/localtime:ro
 
@@ -165,21 +159,9 @@ services:
         restart: always
         networks:
             - underpass
-        #ports:
-        #    - "$HEIMDALL_PORT:80"
-        #    - "$HEIMDALL_PORT_HTTPS:443"
+        ports:
+            - "$HEIMDALL_PORT:80"
+            - "$HEIMDALL_PORT_HTTPS:443"
         volumes:
             - heimdall_config:/config
 
-    nginx-proxy-manager:
-        image: jlesage/nginx-proxy-manager:latest
-        container_name: nginx-proxy-manager
-        restart: unless-stopped
-        networks: 
-            - underpass
-        ports:
-            - "$NGINX_PROXY_UI_PORT:8181"
-            - 80:8080
-            - 443:4443
-        volumes:
-            - nginx-proxy-manager:/config
