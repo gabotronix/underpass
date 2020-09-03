@@ -30,9 +30,9 @@ services:
         networks:
             - underpass
         ports:
-            - "$SOFTETHER_UDP_PORT1:500/udp"
-            - "$SOFTETHER_UDP_PORT2:4500/udp"
-            - "$SOFTETHER_UDP_PORT3:1701"
+            - "$SOFTETHER_IPSEC_PORT1:500/udp"
+            - "$SOFTETHER_IPSEC_PORT2:4500/udp"
+            - "$SOFTETHER_IPSEC_PORT3:1701"
             - "$SOFTETHER_PORT1:1443"
             - "$SOFTETHER_PORT2:992"
             - "$SOFTETHER_PORT3:5555"
