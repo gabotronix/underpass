@@ -165,7 +165,7 @@ services:
         restart: always
         networks:
             - underpass
-        ports:
+        #ports:
         #    - "$HEIMDALL_PORT:80"
         #    - "$HEIMDALL_PORT_HTTPS:443"
         volumes:
