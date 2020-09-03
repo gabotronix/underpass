@@ -166,8 +166,8 @@ services:
         networks:
             - underpass
         ports:
-            - "$HEIMDALL_PORT:80"
-            - "$HEIMDALL_PORT_HTTPS:443"
+        #    - "$HEIMDALL_PORT:80"
+        #    - "$HEIMDALL_PORT_HTTPS:443"
         volumes:
             - heimdall_config:/config
 
