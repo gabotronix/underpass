@@ -49,7 +49,7 @@ curl -o /etc/fail2ban/jail.local https://raw.githubusercontent.com/gabotronix/un
 systemctl start fail2ban
 systemctl enable fail2ban
 
-# install Underpass apps
+# install Underpass Docker apps
 docker network create underpass
 cd /home/underpass
 docker-compose up -d
