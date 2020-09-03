@@ -28,7 +28,7 @@ source ~/.bashrc
 yum -y install cockpit cockpit-dashboard
 systemctl start cockpit.socket
 systemctl enable cockpit.socket
-firewall-cmd --zone=public --add-port=9090/tcp --permanent
+firewall-cmd --zone=public --add-service=cockpit --permanent
 firewall-cmd --reload
 
 # install Docker
