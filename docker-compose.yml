@@ -2,9 +2,8 @@ version: '3.6'
 
 networks:
     underpass:
-    default:
-        driver: bridge
-
+        external: true
+    
 volumes:
     mongodb: {}
     wireguard_config: {}

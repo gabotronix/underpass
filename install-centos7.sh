@@ -51,5 +51,6 @@ systemctl start fail2ban
 systemctl enable fail2ban
 
 # install Underpass apps
+docker network create underpass
 cd /home/underpass
 docker-compose up -d
