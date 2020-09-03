@@ -1,5 +1,9 @@
 version: '3.3'
 
+networks:
+    underpass:
+        external: true
+
 services:
     rdesktop:
         image: linuxserver/rdesktop
