@@ -31,16 +31,15 @@ services:
             - PMA_HOST=mariadb
         volumes:
             - phpmyadmin:/sessions
-
-    nginx-proxy-manager:
-        image: jlesage/nginx-proxy-manager:latest
-        container_name: nginx-proxy-manager
+    
+    rdesktop:
+        image: linuxserver/rdesktop
+        container_name: rdesktop
         restart: unless-stopped
+        privileged: true
         networks:
             - underpass
         ports:
-            - 8181:8181
-            - 8080:8080
-            - 4443:4443
-        volumes:
-            - nginx-proxy-manager:/config
+            - "$RDESKTOP_PORT:3389"
+        shm_size: "1gb"
+        
