@@ -132,7 +132,7 @@ services:
             - ./config/dante-socks/sockd.conf:/etc/sockd.conf
     
     portainer:
-        image: portainer/portainer:latest
+        image: portainer/portainer-ce:latest
         container_name: portainer
         restart: always
         command: -H unix:///var/run/docker.sock
