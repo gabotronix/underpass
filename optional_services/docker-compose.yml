@@ -3,6 +3,12 @@ version: '3.3'
 networks:
     underpass:
         external: true
+    
+volumes:
+    softether_config: {}
+    softether_packetlog: {}
+    softether_securitylog: {}
+    softether_serverlog: {}
 
 services:
     rdesktop:
@@ -15,4 +21,31 @@ services:
         ports:
             - "$RDESKTOP_PORT:3389"
         shm_size: "1gb"
+
+    softether:
+        image: cenk1cenk2/softether-vpnsrv
+        container_name: softether
+        restart: unless-stopped
+        privileged: true
+        networks:
+            - underpass
+        ports:
+            - "$SOFTETHER_UDP_PORT1:500/udp"
+            - "$SOFTETHER_UDP_PORT2:4500/udp"
+            - "$SOFTETHER_UDP_PORT3:1701"
+            - "$SOFTETHER_PORT1:1443"
+            - "$SOFTETHER_PORT2:992"
+            - "$SOFTETHER_PORT3:5555"
+        environment:
+            - TZ=$TZ
+            - SRVIPSUBNET=$SRVIPSUBNET
+            - SLEEPTIME=$SOFETHER_KEEP_ALIVE
+            - KEEP_SERVER_LOG=$KEEP_SERVER_LOG
+            - KEEP_PACKET_LOG=$KEEP_PACKET_LOG
+            - KEEP_SECURITY_LOG=$KEEP_SECURITY_LOG
+        volumes:
+            - softether_config:/cfg
+            - softether_packetlog:/etc/vpnserver/packet_log
+            - softether_securitylog:/etc/vpnserver/security_log
+            - softether_serverlog:/etc/vpnserver/server_log
         
