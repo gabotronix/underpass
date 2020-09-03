@@ -46,7 +46,6 @@ curl -L https://raw.githubusercontent.com/docker/compose/${COMPOSE_VERSION}/cont
 # install fail2ban
 yum -y install fail2ban
 curl -o /etc/fail2ban/jail.local https://raw.githubusercontent.com/gabotronix/underpass/stage/config/fail2ban/jail-centos7.local
-curl -o /etc/fail2ban/jail.d/dropbear.conf https://raw.githubusercontent.com/gabotronix/underpass/stage/config/fail2ban/dropbear.conf
 systemctl start fail2ban
 systemctl enable fail2ban
 
