@@ -61,7 +61,7 @@ services:
             - 9700
         environment: 
             - MONGODB_URI=mongodb://mongo:27017/pritunl
-            - REVERSE_PROXY=true
+            - REVERSE_PROXY=false
         volumes: 
             - /etc/localtime:/etc/localtime:ro
 
