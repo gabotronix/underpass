@@ -156,5 +156,20 @@ services:
         volumes:
             - heimdall_config:/config
 
-
-
+    netdata:
+        image: netdata/netdata
+        container_name: netdata
+        restart: unless-stopped
+        cap_add:
+            - SYS_PTRACE
+        security_opt:
+            - apparmor:unconfined
+        networks:
+            - underpass
+        ports:
+            - "$NETDATA_PORT:19999"
+        volumes:
+            - /proc:/host/proc:ro
+            - /sys:/host/sys:ro
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+        
