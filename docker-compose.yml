@@ -159,7 +159,7 @@ services:
             - heimdall_config:/config
 
     netdata:
-        image: netdata/netdata
+        image: netdata/netdata:latest
         container_name: netdata
         restart: unless-stopped
         cap_add:
