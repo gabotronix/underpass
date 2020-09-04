@@ -173,5 +173,5 @@ services:
             - '--storage.tsdb.retention.time=200h'
             - '--web.enable-lifecycle'
         volumes:
-            - ./prometheus:/etc/prometheus
+            - ./config/prometheus:/etc/prometheus
             - prometheus_data:/prometheus
