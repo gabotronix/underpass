@@ -183,8 +183,8 @@ services:
         restart: unless-stopped
         networks:
             - underpass
-        expose:
-            - 9093
+        ports:
+            - "$ALERTMANAGER_PORT:9093"
         labels:
             org.label-schema.group: "monitoring"
         volumes:
@@ -251,8 +251,8 @@ services:
         restart: unless-stopped
         networks:
             - underpass
-        ports:
-            - "PUSHGATEWAY_PORT:9091"
+        expose:
+            - 9091
         labels:
             org.label-schema.group: "monitoring"
 
