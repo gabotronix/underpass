@@ -6,44 +6,45 @@
 
 ***
 
-### Core Services:
-- **VPN** - Pritunl from [jippi](https://hub.docker.com/r/jippi/pritunl)
+### Docker Apps:
+- **VPN**
+  - Pritunl with Wireguard from [goofball222](https://hub.docker.com/r/goofball222/pritunl)
+  - Wireguard from [linuxserver](https://hub.docker.com/r/linuxserver/wireguard)
 
 - **Proxies**
   1. Shadowsocks from [EasyPi](https://github.com/EasyPi/docker-shadowsocks-libev)
   2. Privoxy from [splazit](https://hub.docker.com/r/splazit/privoxy-alpine)
-  2. Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
+  3. Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
+  4. Dante SOCKS from [vimagick](https://hub.docker.com/r/vimagick/dante)
 
-- **SSH Server** - Dropbear from [Matt Johnston](https://matt.ucc.asn.au/dropbear/dropbear.html)
+### Other Docker Apps:
+  - Container UI: **[Portainer-CE](https://hub.docker.com/r/portainer/portainer)**
+  - App Dashboard: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
+  - File Hosting: **Droppy** from [silverwind](https://github.com/silverwind/droppy)
+  - Monitoring System: **[Netdata](https://hub.docker.com/r/netdata/netdata)**
+  - Pritunl Data Store: **[MongoDB](https://hub.docker.com/_/mongo)**
 
-### Secondary Services:
-- Docker Web UI: **[Portainer](https://hub.docker.com/r/portainer/portainer)**
-- File Hosting: **ProjectSend** from [linuxserver](https://hub.docker.com/r/linuxserver/projectsend)
-- Web Portal/Organizer: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-- Reverse Proxy: **Nginx Proxy Manager** from [jlesage](https://hub.docker.com/r/jlesage/nginx-proxy-manager)
-- Server Monitoring
-  1. htop
-  2. glances
-
-### Host Services:
-- Server Manager: **[Cockpit](https://cockpit-project.org/)**
-- SSH Server: Dropbear
-- Firewall: iptables
-- Intrusion Prevention: fail2ban
-- Source Code Management: Git
+### Optional Docker Apps:
+  - MongoDB UI: **[mongo-express](https://hub.docker.com/_/mongo-express)**
+  - Desktop UI: **[rdesktop]** from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
+  - IPSec/L2TP VPN: **[SoftEther]** from [cenk1cenk2](https://hub.docker.com/r/cenk1cenk2/softether-vpnsrv)
 
 ***
 
 ### Requirements:
-1. Ubuntu 18.04 LTS x64 or CentOS 7 x64
+1. Ubuntu 20.04 LTS x64 or CentOS 7 x64
 
-2. VPS with at least 2GB RAM:
-  - Digital Ocean Droplet (USD10/mo)
+2. Docker v19.03+ and Docker Compose v1.26+
+
+3. VPS with at least 2GB RAM:
+  - Hetzner Cloud CX11 (EUR 2.49/mo)
+  - OVH Public Cloud Sandbox s1-2 (USD 3.50/mo)
+  - Digital Ocean Droplet (USD 10/mo)
   - AWS EC2 t2.small
   - GCP Compute Engine e2-small
   - Azure Linux Virtual Machine B1MS
 
-3. Docker and Docker Compose
+4. [Wireguard Kernel Modules](https://www.wireguard.com/install/)
 
 ***
 
@@ -56,3 +57,4 @@ _References:_
 
 - [daybreakersx](https://github.com/daybreakersx)
 - [HTTP Proxy Injector](https://sourceforge.net/projects/httpproxyinjector/)
+- docker-compose installation: [wdullaer](https://gist.githubusercontent.com/wdullaer/f1af16bd7e970389bad3/raw/4a5a72aece57e1deca926894e5919f90350c706d/install.sh)
