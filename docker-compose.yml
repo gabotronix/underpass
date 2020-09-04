@@ -47,6 +47,8 @@ services:
             - MONGODB_URI=mongodb://mongodb:27017/pritunl
         volumes: 
             - /etc/localtime:/etc/localtime:ro
+        labels:
+            org.label-schema.group: "vpn"
 
     wireguard:
         image: linuxserver/wireguard:latest
@@ -71,6 +73,8 @@ services:
         volumes:
             - wireguard_config:/config
             - /lib/modules:/lib/modules
+        labels:
+            org.label-schema.group: "vpn"
     
     shadowsocks:
         image: easypi/shadowsocks-libev:latest
