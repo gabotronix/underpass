@@ -12,6 +12,7 @@ volumes:
     droppy_files: {}
     heimdall_config: {}
     prometheus_data: {}
+    grafana_data: {}
 
 services:
     mongodb:
@@ -208,4 +209,41 @@ services:
             - /proc:/host/proc:ro
             - /sys:/host/sys:ro
             - /:/rootfs:ro
+        
+    cadvisor:
+        image: gcr.io/cadvisor/cadvisor:v0.37.0
+        container_name: cadvisor
+        restart: unless-stopped
+        networks:
+            - underpass
+        expose:
+            - 8080
+        labels:
+            org.label-schema.group: "monitoring"
+        volumes:
+            - /:/rootfs:ro
+            - /var/run:/var/run:rw
+            - /sys:/sys:ro
+            - /var/lib/docker:/var/lib/docker:ro
+
+    grafana:
+        image: grafana/grafana:7.1.5
+        container_name: grafana
+        restart:
+            - unless-stoppped
+        networks:
+            - underpass
+        ports:
+            - "$GRAFANA_PORT:3000"
+        labels:
+            org.label-schema.group: "monitoring"
+        environment:
+            - GF_SECURITY_ADMIN_USER=$GRAFANA_ADMIN_USER
+            - GF_SECURITY_ADMIN_PASSWORD=$GRAFANA_ADMIN_PASS
+            - GF_USERS_ALLOW_SIGN_UP=false
+        volumes:
+            - grafana_data:/var/lib/grafana
+            - ./config/grafana/provisioning:/etc/grafana/provisioning
+
+        
         
