@@ -175,3 +175,37 @@ services:
         volumes:
             - ./config/prometheus:/etc/prometheus
             - prometheus_data:/prometheus
+
+    alertmanager:
+        image: prom/alertmanager:v0.21.0
+        container_name: alertmanager
+        restart: unless-stopped
+        networks:
+            - underpass
+        expose:
+            - 9093
+        labels:
+            org.label-schema.group: "monitoring"
+        volumes:
+            - ./config/alertmanager:/etc/alertmanager
+
+    nodeexporter:
+        image: prom/node-exporter:v1.0.1
+        container_name: nodeexporter
+        restart: unless-stopped
+        networks:
+            - underpass
+        expose:
+            - 9100
+        labels:
+            org.label-schema.group: "monitoring"
+        command:
+            - '--path.procfs=/host/proc'
+            - '--path.rootfs=/rootfs'
+            - '--path.sysfs=/host/sys'
+            - '--collector.filesystem.ignored-mount-points=^/(sys|proc|dev|host|etc)($$|/)'
+        volumes:
+            - /proc:/host/proc:ro
+            - /sys:/host/sys:ro
+            - /:/rootfs:ro
+        
