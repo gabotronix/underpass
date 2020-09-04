@@ -11,6 +11,7 @@ volumes:
     droppy_config: {}
     droppy_files: {}
     heimdall_config: {}
+    prometheus_data: {}
 
 services:
     mongodb:
@@ -168,3 +169,23 @@ services:
         volumes:
             - heimdall_config:/config
 
+    prometheus:
+        image: prom/prometheus:v2.20.1
+        container_name: prometheus
+        restart: unless-stopped
+        networks:
+            - underpass
+        expose:
+            - 9090
+        labels:
+            org.label-schema.group: "monitoring"
+        command:
+            - '--config.file=/etc/prometheus/prometheus.yml'
+            - '--storage.tsdb.path=/prometheus'
+            - '--web.console.libraries=/etc/prometheus/console_libraries'
+            - '--web.console.templates=/etc/prometheus/consoles'
+            - '--storage.tsdb.retention.time=200h'
+            - '--web.enable-lifecycle'
+        volumes:
+            - ./prometheus:/etc/prometheus
+            - prometheus_data:/prometheus
