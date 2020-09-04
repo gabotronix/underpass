@@ -24,13 +24,6 @@ sed -i -e '$ainclude "/usr/share/nano/sh.nanorc"' ~/.nanorc
 sed -i -e '$aexport VISUAL=nano' ~/.bashrc
 source ~/.bashrc
 
-# install cockpit
-yum -y install cockpit cockpit-dashboard
-systemctl start cockpit.socket
-systemctl enable cockpit.socket
-firewall-cmd --zone=public --add-service=cockpit --permanent
-firewall-cmd --reload
-
 # install Docker
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 yum -y install docker-ce docker-ce-cli containerd.io
