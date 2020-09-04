@@ -11,8 +11,6 @@ volumes:
     droppy_config: {}
     droppy_files: {}
     heimdall_config: {}
-    prometheus_data: {}
-    grafana_data: {}
 
 services:
     mongodb:
