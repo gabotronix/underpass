@@ -18,16 +18,16 @@
   4. Dante SOCKS from [vimagick](https://hub.docker.com/r/vimagick/dante)
 
 ### Other Docker Apps:
-  - Container UI: **[Portainer-CE](https://hub.docker.com/r/portainer/portainer)**
-  - App Dashboard: **Heimdall** from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-  - File Hosting: **Droppy** from [silverwind](https://github.com/silverwind/droppy)
-  - Monitoring System: **[Netdata](https://hub.docker.com/r/netdata/netdata)**
-  - Pritunl Data Store: **[MongoDB](https://hub.docker.com/_/mongo)**
+  - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
+  - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
+  - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
+  - Monitoring System: [Netdata](https://hub.docker.com/r/netdata/netdata)
+  - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
 ### Optional Docker Apps:
-  - MongoDB UI: **[mongo-express](https://hub.docker.com/_/mongo-express)**
-  - Desktop UI: **[rdesktop]** from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
-  - IPSec/L2TP VPN: **[SoftEther]** from [cenk1cenk2](https://hub.docker.com/r/cenk1cenk2/softether-vpnsrv)
+  - MongoDB UI: [mongo-express](https://hub.docker.com/_/mongo-express)
+  - Desktop UI: rdesktop from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
+  - IPSec/L2TP VPN: SoftEther from [cenk1cenk2](https://hub.docker.com/r/cenk1cenk2/softether-vpnsrv)
 
 ***
 
@@ -44,7 +44,7 @@
   - GCP Compute Engine e2-small
   - Azure Linux Virtual Machine B1MS
 
-4. [Wireguard Kernel Modules](https://www.wireguard.com/install/)
+4. Wireguard Kernel Modules: [CentOS 7](https://www.wireguard.com/install/#centos-7-module-plus-module-kmod-module-dkms-tools), Ubuntu 20.04 (built-in)
 
 ***
 
