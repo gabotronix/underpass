@@ -245,5 +245,14 @@ services:
             - grafana_data:/var/lib/grafana
             - ./config/grafana/provisioning:/etc/grafana/provisioning
 
-        
-        
+    pushgateway:
+        image: prom/pushgateway:v1.2.0
+        container_name: pushgateway
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - "PUSHGATEWAY_PORT:9091"
+        labels:
+            org.label-schema.group: "monitoring"
+
