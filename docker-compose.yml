@@ -82,6 +82,18 @@ services:
         environment: 
             - METHOD=aes-256-gcm
             - PASSWORD=$SHADOWSOCKS_PASSWORD
+        
+    shadowsocks-v2ray:
+        image: gists/v2ray-plugin
+        container_name: shadowsocks-v2ray
+        depends_on:
+            - shadowsocks
+        restart: always
+        command: v2ray-plugin -server -localAddr 0.0.0.0 -localPort 443 -remoteAddr shadowsocks -remotePort 8388 -mode websocket -mux=1 -tls -host=ss.underpass.com
+        networks:
+            - underpass
+        ports:
+            - "$SHADOWSOCKS_V2RAY:443"
     
     squid:
         image: b4tman/squid:latest
