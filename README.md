@@ -37,9 +37,9 @@
 2. Docker v19.03+ and Docker Compose v1.26+
 
 3. VPS with at least 2GB RAM:
-  - Hetzner Cloud CX11 (EUR 2.49/mo)
+  - Hetzner Cloud CX11 (EUR 2.49/mo) - _tested_
   - OVH Public Cloud Sandbox s1-2 (USD 3.50/mo)
-  - Digital Ocean Droplet (USD 10/mo)
+  - Digital Ocean Droplet (USD 10/mo) - _tested_
   - AWS EC2 t2.small
   - GCP Compute Engine e2-small
   - Azure Linux Virtual Machine B1MS
