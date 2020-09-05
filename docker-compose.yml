@@ -84,7 +84,7 @@ services:
             - PASSWORD=$SHADOWSOCKS_PASSWORD
         
     shadowsocks-v2ray:
-        image: gists/v2ray-plugin
+        image: gists/v2ray-plugin:latest
         container_name: shadowsocks-v2ray
         depends_on:
             - shadowsocks
