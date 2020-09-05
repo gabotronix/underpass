@@ -71,7 +71,7 @@ services:
             - /lib/modules:/lib/modules
     
     shadowsocks:
-        image: easypi/shadowsocks-libev:latest
+        image: gists/shadowsocks-libev:latest
         container_name: shadowsocks
         restart: always
         networks: 
