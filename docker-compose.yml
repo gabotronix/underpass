@@ -118,17 +118,6 @@ services:
         ports:
             - "$PRIVOXY_PORT:8118"
         
-    dante:
-        image: vimagick/dante
-        container_name: dante
-        restart: always
-        networks:
-            - underpass
-        ports:
-            - "$SOCKS5_PORT:1080"
-        volumes:
-            - ./config/dante-socks/sockd.conf:/etc/sockd.conf
-    
     portainer:
         image: portainer/portainer-ce:latest
         container_name: portainer
