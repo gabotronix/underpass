@@ -7,6 +7,7 @@ networks:
 volumes:
     mongodb: {}
     wireguard_config: {}
+    ssh_config: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -95,6 +96,17 @@ services:
             - SQUID_CONFIG_FILE:/etc/squid/my-squid.conf
         volumes:
             - ./config/squid/squid.conf:/etc/squid/my-squid.conf
+        
+    ssh:
+        image: linuxserver/openssh-server
+        container_name: ssh
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - 2222:2222
+        volumes:
+            - ssh_config:/config
 
     privoxy:
         image: splazit/privoxy-alpine:latest
