@@ -97,6 +97,15 @@ services:
         volumes:
             - ./config/squid/squid.conf:/etc/squid/my-squid.conf
         
+    privoxy:
+        image: splazit/privoxy-alpine:latest
+        container_name: privoxy
+        restart: always
+        networks: 
+            - underpass
+        ports:
+            - "$PRIVOXY_PORT:8118"
+        
     ssh:
         image: yuriyvlasov/openssh-server:latest
         container_name: ssh
@@ -109,15 +118,6 @@ services:
             - ssh_config:/etc/sshd
             - ./config/openssh/config.yml:/config.yml
 
-    privoxy:
-        image: splazit/privoxy-alpine:latest
-        container_name: privoxy
-        restart: always
-        networks: 
-            - underpass
-        ports:
-            - "$PRIVOXY_PORT:8118"
-        
     portainer:
         image: portainer/portainer-ce:latest
         container_name: portainer
