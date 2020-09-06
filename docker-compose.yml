@@ -84,7 +84,7 @@ services:
             - PASSWORD=$SHADOWSOCKS_PASSWORD
         
     squid:
-        image: n1kn4x/squid-for-scrape:latest
+        image: b4tman/squid:latest
         container_name: squid
         restart: unless-stopped
         networks: 
@@ -92,8 +92,9 @@ services:
         ports:
             - "$SQUID_PORT:3128"
         environment:
-            - SQUID_USERNAME=$SQUID_USERNAME
-            - SQUID_PASSWORD=$SQUID_PASSWORD
+            - SQUID_CONFIG_FILE:/etc/squid/my-squid.conf
+        volumes:
+            - ./config/squid/squid.conf:/etc/squid/my-squid.conf
 
     privoxy:
         image: splazit/privoxy-alpine:latest
