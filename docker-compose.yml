@@ -91,10 +91,10 @@ services:
             - underpass
         ports:
             - "$SQUID_PORT:3128"
-        #environment:
-        #    - SQUID_CONFIG_FILE:/etc/squid/my-squid.conf
-        #volumes:
-        #    - ./config/squid/squid.conf:/etc/squid/my-squid.conf
+        environment:
+            - SQUID_CONFIG_FILE:/etc/squid/my-squid.conf
+        volumes:
+            - ./config/squid/squid.conf:/etc/squid/my-squid.conf
 
     privoxy:
         image: splazit/privoxy-alpine:latest
