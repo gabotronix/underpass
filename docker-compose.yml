@@ -107,7 +107,7 @@ services:
             - "$PRIVOXY_PORT:8118"
         
     ssh:
-        image: yuriyvlasov/openssh-server:latest
+        image: yuriyvlasov/openssh-server
         container_name: ssh
         restart: unless-stopped
         networks:
