@@ -84,7 +84,7 @@ services:
             - PASSWORD=$SHADOWSOCKS_PASSWORD
         
     squid:
-        image: cbolt/squid
+        image: n1kn4x/squid-for-scrape:latest
         container_name: squid
         restart: unless-stopped
         networks: 
@@ -92,8 +92,8 @@ services:
         ports:
             - "$SQUID_PORT:3128"
         environment:
-            - CACHE_SIZE_MEM=128
-            - CACHE_SIZE_DISK=10240
+            - SQUID_USERNAME=$SQUID_USERNAME
+            - SQUID_PASSWORD=$SQUID_PASSWORD
 
     privoxy:
         image: splazit/privoxy-alpine:latest
