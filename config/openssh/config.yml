@@ -1,6 +1,8 @@
 sudo_nopasswd: no
 
 # users description  
+# SSH password can be generated online: https://www.mkpasswd.net/?type=crypt-sha512
+# or via command line: mkpasswd -m sha-512 'my_password'
 users:  
   underpass: #default user
     password: '$6$PCHTU4lEg/AuAXXi$gcNIABobANSTN9V6IWTFwrVNE7FACwIh5MFl7W4Af/FlsZNZbMP6vgO264f.yFzm1J4rgjVV6NulZQFlyL5l31'
