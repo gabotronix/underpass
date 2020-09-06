@@ -113,7 +113,7 @@ services:
         networks:
             - underpass
         ports:
-            - "2222:22"
+            - "$SSH_PORT:22"
         volumes:
             - ssh_config:/etc/sshd
             - ./config/openssh/config.yml:/config.yml
