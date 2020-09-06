@@ -98,7 +98,7 @@ services:
             - ./config/squid/squid.conf:/etc/squid/my-squid.conf
         
     ssh:
-        image: yuriyvlasov/openssh-serverd:latest
+        image: yuriyvlasov/openssh-server:latest
         container_name: ssh
         restart: unless-stopped
         networks:
