@@ -7,7 +7,6 @@ networks:
 volumes:
     mongodb: {}
     wireguard_config: {}
-    squid_cache: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -85,15 +84,16 @@ services:
             - PASSWORD=$SHADOWSOCKS_PASSWORD
         
     squid:
-        image: datadog/squid:latest
+        image: cbolt/squid
         container_name: squid
         restart: unless-stopped
         networks: 
             - underpass
         ports:
             - "$SQUID_PORT:3128"
-        volumes:
-            - squid_cache:/var/spool/squid
+        environment:
+            - CACHE_SIZE_MEM=128
+            - CACHE_SIZE_DISK=10240
 
     privoxy:
         image: splazit/privoxy-alpine:latest
