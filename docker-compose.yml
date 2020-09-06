@@ -98,15 +98,16 @@ services:
             - ./config/squid/squid.conf:/etc/squid/my-squid.conf
         
     ssh:
-        image: linuxserver/openssh-server
+        image: yuriyvlasov/openssh-serverd:latest
         container_name: ssh
         restart: unless-stopped
         networks:
             - underpass
         ports:
-            - 2222:2222
+            - 2222:22
         volumes:
-            - ssh_config:/config
+            - ssh_config:/etc/sshd
+            - ./config/openssh/config.yml:/config.yml
 
     privoxy:
         image: splazit/privoxy-alpine:latest
