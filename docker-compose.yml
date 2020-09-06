@@ -7,6 +7,7 @@ networks:
 volumes:
     mongodb: {}
     wireguard_config: {}
+    squid_cache: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -84,17 +85,15 @@ services:
             - PASSWORD=$SHADOWSOCKS_PASSWORD
         
     squid:
-        image: b4tman/squid:latest
+        image: datadog/squid:latest
         container_name: squid
-        restart: always
+        restart: unless-stopped
         networks: 
             - underpass
         ports:
             - "$SQUID_PORT:3128"
-        environment:
-            - SQUID_CONFIG_FILE:/etc/squid/my-squid.conf
         volumes:
-            - ./config/squid/squid.conf:/etc/squid/my-squid.conf
+            - squid_cache:/var/spool/squid
 
     privoxy:
         image: splazit/privoxy-alpine:latest
