@@ -104,7 +104,7 @@ services:
         networks:
             - underpass
         ports:
-            - 2222:22
+            - "2222:22"
         volumes:
             - ssh_config:/etc/sshd
             - ./config/openssh/config.yml:/config.yml
