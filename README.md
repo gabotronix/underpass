@@ -12,9 +12,9 @@
   - Wireguard from [linuxserver](https://hub.docker.com/r/linuxserver/wireguard)
 
 - **Proxies**
-  1. Shadowsocks from [gists](https://hub.docker.com/r/gists/shadowsocks-libev)
-  2. Privoxy from [splazit](https://hub.docker.com/r/splazit/privoxy-alpine)
-  3. Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
+  - Shadowsocks from [gists](https://hub.docker.com/r/gists/shadowsocks-libev)
+  - Privoxy from [splazit](https://hub.docker.com/r/splazit/privoxy-alpine)
+  - Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
 
 - **Domain Name System** - DNSCrypt from [gists](https://hub.docker.com/r/gists/dnscrypt-proxy) (prevents [DNS leak](https://www.dnsleaktest.com))
 
