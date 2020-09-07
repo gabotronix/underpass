@@ -11,6 +11,10 @@
   - Pritunl with IPv6 support from [goofball222](https://hub.docker.com/r/goofball222/pritunl)
   - Wireguard from [linuxserver](https://hub.docker.com/r/linuxserver/wireguard)
 
+- **Domain Name System**
+  - DNSCrypt from [gists](https://hub.docker.com/r/gists/dnscrypt-proxy)
+    - prevents [DNS leak](https://www.dnsleaktest.com)
+
 - **Proxies**
   1. Shadowsocks from [gists](https://hub.docker.com/r/gists/shadowsocks-libev)
   2. Privoxy from [splazit](https://hub.docker.com/r/splazit/privoxy-alpine)
