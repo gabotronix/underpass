@@ -17,6 +17,8 @@
   3. Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
   4. Dante SOCKS from [vimagick](https://hub.docker.com/r/vimagick/dante)
 
+- **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
+
 ### Other Docker Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
