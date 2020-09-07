@@ -17,7 +17,7 @@ services:
     mongodb:
         image: mongo:latest
         container_name: mongodb
-        restart: always
+        restart: unless-stopped
         networks: 
             - underpass
         volumes: 
@@ -30,7 +30,7 @@ services:
             - mongodb
         links:
             - mongodb
-        restart: always
+        restart: unless-stopped
         privileged: true
         sysctls:
             - net.ipv6.conf.all.disable_ipv6=0
@@ -50,7 +50,7 @@ services:
     wireguard:
         image: linuxserver/wireguard:latest
         container_name: wireguard
-        restart: always
+        restart: unless-stopped
         cap_add:
             - NET_ADMIN
             - SYS_MODULE
@@ -74,7 +74,7 @@ services:
     shadowsocks:
         image: gists/shadowsocks-libev:latest
         container_name: shadowsocks
-        restart: always
+        restart: unless-stopped
         networks: 
             - underpass
         ports:
@@ -100,7 +100,7 @@ services:
     privoxy:
         image: splazit/privoxy-alpine:latest
         container_name: privoxy
-        restart: always
+        restart: unless-stopped
         networks: 
             - underpass
         ports:
@@ -121,7 +121,7 @@ services:
     portainer:
         image: portainer/portainer-ce:latest
         container_name: portainer
-        restart: always
+        restart: unless-stopped
         command: -H unix:///var/run/docker.sock
         networks:
             - underpass
@@ -147,7 +147,7 @@ services:
     heimdall:
         image: linuxserver/heimdall:latest
         container_name: heimdall
-        restart: always
+        restart: unless-stopped
         networks:
             - underpass
         ports:
