@@ -184,4 +184,4 @@ services:
         ports:
             - "$SOCKS5_PORT:1080"
         volumes:
-            - ./config/dante-socks/sockd.conf:/etc/sockd.conf
+            - ./config/dante/sockd.conf:/etc/sockd.conf
