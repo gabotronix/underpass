@@ -8,7 +8,7 @@
 
 ### Docker Apps:
 - **VPN**
-  - Pritunl with Wireguard from [goofball222](https://hub.docker.com/r/goofball222/pritunl)
+  - Pritunl with Wireguard and IPv6 Support from [goofball222](https://hub.docker.com/r/goofball222/pritunl)
   - Wireguard from [linuxserver](https://hub.docker.com/r/linuxserver/wireguard)
 
 - **Proxies**
