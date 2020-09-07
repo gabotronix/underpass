@@ -59,5 +59,5 @@
 _References:_
 
 - [daybreakersx](https://github.com/daybreakersx)
-- [HTTP Proxy Injector](https://sourceforge.net/projects/httpproxyinjector/)
+- [HTTP Proxy Injector](https://github.com/a-dev1412/a-dev1412.github.io)
 - docker-compose installation: [wdullaer](https://gist.githubusercontent.com/wdullaer/f1af16bd7e970389bad3/raw/4a5a72aece57e1deca926894e5919f90350c706d/install.sh)
