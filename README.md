@@ -15,7 +15,6 @@
   1. Shadowsocks from [gists](https://hub.docker.com/r/gists/shadowsocks-libev)
   2. Privoxy from [splazit](https://hub.docker.com/r/splazit/privoxy-alpine)
   3. Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
-  4. Dante SOCKS from [vimagick](https://hub.docker.com/r/vimagick/dante)
 
 - **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
 
