@@ -44,6 +44,7 @@ services:
             - "$PRITUNL_WIREGUARD:1195/udp"
         environment: 
             - MONGODB_URI=mongodb://mongodb:27017/pritunl
+            - WIREGUARD=true
         volumes: 
             - /etc/localtime:/etc/localtime:ro
 
