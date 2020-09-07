@@ -22,7 +22,7 @@
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
   - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
-  - Monitoring System: [Netdata](https://hub.docker.com/r/netdata/netdata)
+  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
 ### Optional Docker Apps:
