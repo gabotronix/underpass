@@ -78,8 +78,8 @@ services:
         networks:
             - underpass
         ports:
-            - "5353:5353"
-            - "5353:5353/udp"
+            - "5353:53"
+            - "5353:53/udp"
     
     shadowsocks:
         image: gists/shadowsocks-libev:latest
