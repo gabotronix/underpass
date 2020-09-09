@@ -76,7 +76,8 @@ services:
         container_name: dnscrypt
         restart: unless-stopped
         networks:
-            - underpass
+            - underpass:
+                ipv4_address: 172.20.0.3
         ports:
             - "5353:53"
             - "5353:53/udp"
