@@ -106,6 +106,7 @@ services:
             - SQUID_CONFIG_FILE:/etc/squid/squid.conf
         volumes:
             - ./config/squid/squid.conf:/etc/squid/squid.conf
+            - ./config/squid/users:/etc/squid/users
         
     privoxy:
         image: splazit/privoxy-alpine:latest
