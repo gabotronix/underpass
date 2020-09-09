@@ -184,13 +184,3 @@ services:
             - /sys:/host/sys:ro
             - /var/run/docker.sock:/var/run/docker.sock:ro
         
-    dante:
-        image: vimagick/dante
-        container_name: dante
-        restart: always
-        networks:
-            - underpass
-        ports:
-            - "$SOCKS5_PORT:1080"
-        volumes:
-            - ./config/dante/sockd.conf:/etc/sockd.conf
