@@ -1,3 +1,4 @@
 # https://hostingcanada.org/htpasswd-generator/
+# Mode: Apache specific salted MD5
 
-anon:$2y$10$6rFIVr4xA2qJCIF/iOtpzuI/LPNj6NP/NRHDzxW6JL.lZMmlYCUUq
+anon:$apr1$bvfeuiko$LLySN6Vhgu507MKD6PYKy/
