@@ -103,9 +103,9 @@ services:
         ports:
             - "$SQUID_PORT:3128"
         environment:
-            - SQUID_CONFIG_FILE:/etc/squid/my-squid.conf
+            - SQUID_CONFIG_FILE:/etc/squid/squid.conf
         volumes:
-            - ./config/squid/squid.conf:/etc/squid/my-squid.conf
+            - ./config/squid/squid.conf:/etc/squid/squid.conf
         
     privoxy:
         image: splazit/privoxy-alpine:latest
