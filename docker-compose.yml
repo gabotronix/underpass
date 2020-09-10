@@ -119,6 +119,9 @@ services:
             - underpass
         ports:
             - "$PRIVOXY_PORT:8118"
+        volumes:
+            - ./config/privoxy/user.action:/etc/privoxy/user.action
+            - ./config/privoxyuser.filter:/etc/privoxyuser.filter
         
     ssh:
         image: yuriyvlasov/openssh-server
