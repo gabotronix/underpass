@@ -81,6 +81,8 @@ services:
         ports:
             - "5353:53"
             - "5353:53/udp"
+        volumes:
+            - ./config/dnscrypt/dnscrypt.toml:/etc/dnscrypt-proxy/dnscrypt-proxy.toml
     
     shadowsocks:
         image: gists/shadowsocks-libev:latest
