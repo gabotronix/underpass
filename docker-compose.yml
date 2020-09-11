@@ -94,7 +94,7 @@ services:
             - "$SHADOWSOCKS_TCP:8388/tcp"
             - "$SHADOWSOCKS_UDP:8388/udp"
         environment: 
-            - METHOD=aes-256-gcm
+            - METHOD=$SHADOWSOCKS_METHOD
             - PASSWORD=$SHADOWSOCKS_PASSWORD
         
     squid:
