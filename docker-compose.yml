@@ -122,6 +122,17 @@ services:
         volumes:
             - ./config/privoxy/user.action:/etc/privoxy/user.action
             - ./config/privoxy/user.filter:/etc/privoxy/user.filter
+
+    dante:
+        image: vimagick/dante
+        container_name: dante
+        restart: always
+        networks:
+            - underpass
+        ports:
+            - "$SOCKS5_PORT:1080"
+        volumes:
+            - ./config/dante-socks/sockd.conf:/etc/sockd.conf
         
     ssh:
         image: yuriyvlasov/openssh-server
