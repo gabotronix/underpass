@@ -16,13 +16,13 @@ volumes:
 
 services:
     mongodb:
-        image: mongo:latest
+        image: bitnami/mongodb:latest
         container_name: mongodb
         restart: unless-stopped
         networks: 
             - underpass
         volumes: 
-            - mongodb:/data/db
+            - mongodb:/bitnami/mongodb
 
     pritunl:
         image: goofball222/pritunl:latest
@@ -73,7 +73,7 @@ services:
             - /lib/modules:/lib/modules
 
     dnscrypt:
-        image: gists/dnscrypt-proxy
+        image: gists/dnscrypt-proxy:latest
         container_name: dnscrypt
         restart: unless-stopped
         networks:
@@ -113,7 +113,7 @@ services:
             - ./config/squid/users:/etc/squid/users
         
     dante:
-        image: wernight/dante
+        image: wernight/dante:latest
         container_name: dante
         restart: unless-stopped
         networks:
@@ -151,7 +151,7 @@ services:
             - portainer_data:/data
         
     droppy:
-        image: silverwind/droppy
+        image: silverwind/droppy:latest
         container_name: droppy
         restart: unless-stopped
         networks: 
