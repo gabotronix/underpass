@@ -133,7 +133,7 @@ services:
             - "$SOCKS5_PORT:1080"
         volumes:
             - ./config/dante-socks/sockd.conf:/etc/sockd.conf
-            - ./config/dante-socks/passwd:/etc/passwd
+            #- ./config/dante-socks/passwd:/etc/passwd
         
     ssh:
         image: yuriyvlasov/openssh-server
