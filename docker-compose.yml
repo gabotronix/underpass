@@ -112,18 +112,6 @@ services:
             - ./config/squid/squid.conf:/etc/squid/squid.conf
             - ./config/squid/users:/etc/squid/users
         
-    privoxy:
-        image: splazit/privoxy-alpine:latest
-        container_name: privoxy
-        restart: unless-stopped
-        networks: 
-            - underpass
-        ports:
-            - "$PRIVOXY_PORT:8118"
-        volumes:
-            - ./config/privoxy/user.action:/etc/privoxy/user.action
-            - ./config/privoxy/user.filter:/etc/privoxy/user.filter
-
     dante:
         image: vimagick/dante
         container_name: dante
