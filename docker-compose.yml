@@ -134,6 +134,7 @@ services:
             - "$SOCKS5_PORT:1080"
         volumes:
             - dante_config:/etc
+            - ./config/dante/sockd.conf:/etc/sockd.conf
         
     ssh:
         image: yuriyvlasov/openssh-server
