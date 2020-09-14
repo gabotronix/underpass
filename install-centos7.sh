@@ -46,3 +46,7 @@ systemctl enable fail2ban
 docker network create --subnet=172.20.0.0/24 underpass
 cd /home/underpass
 docker-compose up -d
+
+# create non-root user for Docker
+groupadd -g 1001 dockeru && useradd -u 1001 -g dockeru -G wheel,docker dockeru
+sed -i -e '$a\%dockeru ALL=(ALL) ALL' /etc/sudoers
