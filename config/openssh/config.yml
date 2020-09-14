@@ -6,7 +6,7 @@ sudo_nopasswd: no
 users:  
   underpass: #default user
     password: '$6$PCHTU4lEg/AuAXXi$gcNIABobANSTN9V6IWTFwrVNE7FACwIh5MFl7W4Af/FlsZNZbMP6vgO264f.yFzm1J4rgjVV6NulZQFlyL5l31'
-    shell: /bin/sh
+    shell: /bin/false
   underpass2:
     password: '$6$KaosNQg.tjbbWTVf$6pwFYsKUNRGKbjvbkytqTlqrR.d6Fnh7s7cXNq2eEYyjOGcDctMHFaLyV3iXPvi1j.MxgZSajy73ebVKxr27W/'
     shell: /bin/false
