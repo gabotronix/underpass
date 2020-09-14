@@ -8,6 +8,7 @@ volumes:
     mongodb: {}
     wireguard_config: {}
     ssh_config: {}
+    dante_config: {}
     portainer_data: {}
     droppy_config: {}
     droppy_files: {}
@@ -132,7 +133,7 @@ services:
         ports:
             - "$SOCKS5_PORT:1080"
         volumes:
-            - ./config/dante/sockd.conf:/etc/sockd.conf
+            - dante_config:/etc
         
     ssh:
         image: yuriyvlasov/openssh-server
