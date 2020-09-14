@@ -113,9 +113,9 @@ services:
             - ./config/squid/users:/etc/squid/users
         
     dante:
-        image: vimagick/dante
+        image: wernight/dante
         container_name: dante
-        restart: always
+        restart: unless-stopped
         networks:
             - underpass
         ports:
