@@ -13,7 +13,7 @@
 
 - **Proxies**
   - Shadowsocks from [gists](https://hub.docker.com/r/gists/shadowsocks-libev)
-  - Dante SOCKS from [vimagick](https://hub.docker.com/r/vimagick/dante)
+  - Dante SOCKS from [wernight](https://hub.docker.com/r/wernight/dante)
   - Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
 
 - **Domain Name System** - DNSCrypt from [gists](https://hub.docker.com/r/gists/dnscrypt-proxy) and configuration from [klutchell](https://github.com/klutchell/dnscrypt-proxy)
