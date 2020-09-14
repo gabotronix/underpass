@@ -1,6 +1,60 @@
 #!/bin/bash
 
 # The commands in this script are meant to be ran by root.
+# This script is based on or copied from https://github.com/angristan/wireguard-install
+# https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh
+
+function isRoot() {
+	if [ "${EUID}" -ne 0 ]; then
+		echo "You need to run this script as root"
+		exit 1
+	fi
+}
+
+function checkOS() {
+	# Check OS version
+	if [[ -e /etc/issue ]]; then
+		source /etc/os-release
+		OS="${ID}" # ubuntu
+		if [[ -e /etc/issue ]]; then
+			if [[ ${ID} == "ubuntu" ]]; then
+				if [[ ${VERSION_ID} -ne 18 || ${VERSION_ID} -ne 20 ]]; then
+					echo "Your version of Ubuntu (${VERSION_ID}) is not supported. Please use Ubuntu 18.04 LTS or 20.04 LTS."
+					exit 1
+				fi
+			fi
+		fi
+	elif [[ -e /etc/redhat-release ]]; then
+        source /etc/os-release
+        OS="${ID}" # centos
+        if [[ -e /etc/redhat-release ]]; then
+            if [[ ${ID} == "centos" ]]; then
+                if [[ ${VERSION_ID} -ne 7 ]]; then
+                    echo "Your version of CentOS (${VERSION_ID}) is not supported. Please use CentOS 7."
+                fi
+            fi
+        fi
+	else
+		echo "Looks like you aren't running this installer on an Ubuntu or CentOS system"
+		exit 1
+	fi
+}
+
+function initialCheck() {
+	isRoot
+	checkOS
+}
+
+function installUnderpass() {
+	if [[ ${OS} == 'ubuntu' ]]; then
+		apt-get update
+		apt-get install -y wireguard iptables resolvconf qrencode
+	elif [[ ${OS} == 'centos' ]]; then
+		curl -Lo /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
+		yum -y install epel-release kernel kernel-devel kernel-headers
+		yum -y install wireguard-dkms wireguard-tools iptables qrencode
+	fi
+}
 
 # update system
 yum -y update && yum -y upgrade
