@@ -16,13 +16,13 @@ volumes:
 
 services:
     mongodb:
-        image: bitnami/mongodb:latest
+        image: mongo:latest
         container_name: mongodb
         restart: unless-stopped
         networks: 
             - underpass
         volumes: 
-            - mongodb:/bitnami/mongodb
+            - mongodb:/data/db
 
     pritunl:
         image: goofball222/pritunl:latest
