@@ -73,7 +73,7 @@ services:
             - /lib/modules:/lib/modules
 
     dnscrypt:
-        image: gists/dnscrypt-proxy:latest
+        image: gists/dnscrypt-proxy
         container_name: dnscrypt
         restart: unless-stopped
         networks:
