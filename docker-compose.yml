@@ -36,8 +36,6 @@ services:
         privileged: true
         sysctls:
             - net.ipv6.conf.all.disable_ipv6=0
-        networks: 
-            - underpass
         ports:
             - "$PRITUNL_PORT:80"
             - "$PRITUNL_PORT_HTTPS:443"
