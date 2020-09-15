@@ -15,19 +15,6 @@ volumes:
     heimdall_config: {}
 
 services:
-    dnscrypt:
-        image: gists/dnscrypt-proxy:latest
-        container_name: dnscrypt
-        restart: unless-stopped
-        networks:
-            underpass:
-                ipv4_address: 172.20.0.6
-        ports:
-            - "5353:53"
-            - "5353:53/udp"
-        volumes:
-            - ./config/dnscrypt/dnscrypt.toml:/etc/dnscrypt-proxy/dnscrypt-proxy.toml
-            
     mongodb:
         image: mongo:latest
         container_name: mongodb

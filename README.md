@@ -16,8 +16,6 @@
   - Dante SOCKS from [wernight](https://hub.docker.com/r/wernight/dante)
   - Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
 
-- **Domain Name System** - DNSCrypt from [gists](https://hub.docker.com/r/gists/dnscrypt-proxy) and configuration from [klutchell](https://github.com/klutchell/dnscrypt-proxy)
-
 - **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
 
 ### Other Docker Apps:
