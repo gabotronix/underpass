@@ -27,6 +27,7 @@ services:
     pritunl:
         image: goofball222/pritunl:latest
         container_name: pritunl
+        network_mode: host
         depends_on: 
             - mongodb
         links:
