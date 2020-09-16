@@ -90,10 +90,6 @@ services:
         container_name: squid
         restart: unless-stopped
         network_mode: host
-        #networks: 
-        #    - underpass
-        #ports:
-        #    - "$SQUID_PORT:3128"
         environment:
             - SQUID_CONFIG_FILE:/etc/squid/squid.conf
         volumes:
@@ -105,10 +101,6 @@ services:
         container_name: dante
         restart: unless-stopped
         network_mode: host
-        #networks:
-        #    - underpass
-        #ports:
-        #    - "$SOCKS5_PORT:1080"
         volumes:
             - dante_config:/etc
             - ./config/dante/sockd.conf:/etc/sockd.conf
