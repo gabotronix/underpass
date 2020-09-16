@@ -77,6 +77,11 @@ function installUnderpass() {
 		yum -y install docker-ce docker-ce-cli containerd.io
 		systemctl start docker
 		systemctl enable docker
+
+		# open host mode container ports in firewall
+		firewall-cmd --zone=public --add-service=squid --permanent
+		firewall-cmd --zone=public --add-port=1080/tcp --permanent
+		firewall-cmd --reload
 	fi
 
 		# install Docker Compose
