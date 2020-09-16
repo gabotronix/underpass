@@ -5,6 +5,8 @@ networks:
         external: true
     
 volumes:
+    droppy_config: {}
+    droppy_files: {}
     softether_config: {}
     softether_packetlog: {}
     softether_securitylog: {}
@@ -24,6 +26,18 @@ services:
             - ME_CONFIG_MONGODB_SERVER=mongodb
             - ME_CONFIG_BASICAUTH_USERNAME=$MONGO_EXPRESS_USER
             - ME_CONFIG_BASICAUTH_PASSWORD=$MONGO_EXPRESS_PASSWORD
+
+    droppy:
+        image: silverwind/droppy:latest
+        container_name: droppy
+        restart: unless-stopped
+        networks: 
+            - underpass
+        ports:
+            - "$DROPPY_PORT:8989"
+        volumes:
+            - droppy_config:/config
+            - droppy_files:/files
 
     rdesktop:
         image: linuxserver/rdesktop
