@@ -71,13 +71,13 @@ function installUnderpass() {
 		curl -o /etc/fail2ban/jail.local https://raw.githubusercontent.com/gabotronix/underpass/stage/config/fail2ban/jail-centos7.local
 		systemctl start fail2ban
 		systemctl enable fail2ban
-	fi
 
 		# install Docker
 		yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 		yum -y install docker-ce docker-ce-cli containerd.io
 		systemctl start docker
 		systemctl enable docker
+	fi
 
 		# install Docker Compose - https://gist.githubusercontent.com/wdullaer/f1af16bd7e970389bad3/raw/4a5a72aece57e1deca926894e5919f90350c706d/install.sh
 		COMPOSE_VERSION=`git ls-remote https://github.com/docker/compose | grep refs/tags | grep -oE "[0-9]+\.[0-9][0-9]+\.[0-9]+$" | sort --version-sort | tail -n 1`
