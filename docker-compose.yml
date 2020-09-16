@@ -89,10 +89,11 @@ services:
         image: b4tman/squid:latest
         container_name: squid
         restart: unless-stopped
-        networks: 
-            - underpass
-        ports:
-            - "$SQUID_PORT:3128"
+        network_mode: host
+        #networks: 
+        #    - underpass
+        #ports:
+        #    - "$SQUID_PORT:3128"
         environment:
             - SQUID_CONFIG_FILE:/etc/squid/squid.conf
         volumes:
