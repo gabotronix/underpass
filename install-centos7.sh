@@ -13,29 +13,24 @@ function isRoot() {
 
 function checkOS() {
 	# Check OS version
-	if [[ -e /etc/issue ]]; then
+	if [[ -e /etc/debian_version ]]; then
 		source /etc/os-release
-		OS="${ID}" # ubuntu
-		if [[ -e /etc/issue ]]; then
-			if [[ ${ID} == "ubuntu" ]]; then
-				if [[ ${VERSION_ID} -ne 18 || ${VERSION_ID} -ne 20 ]]; then
-					echo "Your version of Ubuntu (${VERSION_ID}) is not supported. Please use Ubuntu 18.04 LTS or 20.04 LTS."
+		OS="${ID}" # debian or ubuntu
+		if [[ -e /etc/debian_version ]]; then
+			if [[ ${ID} == "debian" || ${ID} == "raspbian" ]]; then
+				if [[ ${VERSION_ID} -ne 10 ]]; then
+					echo "Your version of Debian (${VERSION_ID}) is not supported. Please use Debian 10 Buster"
 					exit 1
 				fi
 			fi
 		fi
-	elif [[ -e /etc/redhat-release ]]; then
-        source /etc/os-release
-        OS="${ID}" # centos
-        if [[ -e /etc/redhat-release ]]; then
-            if [[ ${ID} == "centos" ]]; then
-                if [[ ${VERSION_ID} -ne 7 ]]; then
-                    echo "Your version of CentOS (${VERSION_ID}) is not supported. Please use CentOS 7."
-                fi
-            fi
-        fi
+	elif [[ -e /etc/fedora-release ]]; then
+		source /etc/os-release
+		OS="${ID}"
+	elif [[ -e /etc/centos-release ]]; then
+		OS=centos
 	else
-		echo "Looks like you aren't running this installer on an Ubuntu or CentOS system"
+		echo "Looks like you aren't running this installer on a Debian, Ubuntu, Fedora, or CentOS system"
 		exit 1
 	fi
 }
@@ -47,8 +42,9 @@ function initialCheck() {
 
 function installUnderpass() {
 	if [[ ${OS} == 'ubuntu' ]]; then
-		apt-get update
-		apt-get install -y wireguard iptables resolvconf qrencode
+		echo "Wireguard kernel modules are already installed."
+		#apt update
+		#apt install -y wireguard iptables resolvconf qrencode
 	elif [[ ${OS} == 'centos' ]]; then
 		curl -Lo /etc/yum.repos.d/wireguard.repo https://copr.fedorainfracloud.org/coprs/jdoss/wireguard/repo/epel-7/jdoss-wireguard-epel-7.repo
 		yum -y install epel-release kernel kernel-devel kernel-headers
@@ -104,3 +100,6 @@ docker-compose up -d
 # create non-root user for Docker
 groupadd -g 1001 dockeru && useradd -u 1001 -g dockeru -G wheel,docker dockeru
 sed -i -e '$a\%dockeru ALL=(ALL) ALL' /etc/sudoers
+
+# Check for root, OS...
+initialCheck
