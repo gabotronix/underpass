@@ -21,11 +21,11 @@
 ### Other Docker Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-  - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
-  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
+    - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
 ### Optional Docker Apps:
+  - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
   - MongoDB UI: [mongo-express](https://hub.docker.com/_/mongo-express)
   - Desktop UI: rdesktop from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
   - IPSec/L2TP VPN: SoftEther from [cenk1cenk2](https://hub.docker.com/r/cenk1cenk2/softether-vpnsrv)
