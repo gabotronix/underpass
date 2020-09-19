@@ -1,6 +1,6 @@
 ---
-- hosts: control
-  become: true
-  gather_facts: false
-  tasks:
-    - name: aaa
+- include_tasks: ./ansible/playbooks/setup-centos.yml
+  when: ansible_distribution == 'CentOS'
+
+- include_tasks: ./ansible/playbooks/setup-ubuntu.yml
+  when: ansible_distribution == 'Ubuntu'

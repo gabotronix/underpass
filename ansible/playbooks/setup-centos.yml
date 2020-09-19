@@ -1,0 +1,73 @@
+---
+- hosts: control
+  become: true
+  tasks:
+    - name: Update System
+      yum:
+        name=*
+        state=latest
+    
+    - name: Install ELRepo
+      yum:
+        name=elrepo-release
+        state=present
+
+    - name: Install Wireguard Kernel Modules
+      yum:
+        name={{item}}
+        state=present
+      with_items:
+        - kmod-wireguard
+        - wireguard-tools
+        - yum-plugin-elrepo
+
+    - name: Install System Tools
+      yum:
+        name={{item}}
+        state=present
+      with_items:
+        - glances
+        - htop
+        - nano
+        - ncdu
+        - net-tools
+        - ntp
+        - rsync
+        - screen
+        - wget
+        - yum-utils
+
+    - name: Set Nano Environment
+      lineinfile:
+        path: ~/.nanorc
+        line: /usr/share/nano/sh.nanorc
+        create: yes
+
+    - name: Add to Bash Profile
+      lineinfile:
+        path: ~/.bashrc
+        insertafter: 'EOF'
+        line: export VISUAL=nano
+
+    - name: Install and Configure Fail2Ban
+      yum:
+        name=fail2ban
+        state=present
+      copy:
+        src: /opt/underpass/config/fail2ban/jail-centos.local
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        group: root
+        mode: '644'
+      service:
+        name: fail2ban
+        state: started
+        enabled: yes
+
+
+
+
+  roles:
+    - role: geerlingguy.docker
+  vars_files:
+    - ../vars/docker.yaml
