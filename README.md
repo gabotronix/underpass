@@ -66,11 +66,12 @@ _Note_:
 
 _If the installation fails, or if you see red texts, simply re-run the command above._
 
-_Sample Error_
+_Sample Error:_
 ```
-PLAY RECAP ******************************************************************************************
-control    : ok=25   changed=19   unreachable=0    **failed=1**    skipped=5    rescued=0    ignored=0
+PLAY RECAP *******************************************************************************************
+control    : ok=25   changed=19   unreachable=0    failed=1    skipped=5    rescued=0    ignored=0
 ```
+`failed=1` means that the installation was not successful.
 
 ***
 
