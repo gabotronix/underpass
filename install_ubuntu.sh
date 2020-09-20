@@ -24,11 +24,12 @@ docker network create underpass --subnet 172.20.0.0/24
 docker-compose up -d
 
 # Enumerate Services and Ports
-MYIP=$(curl -4 icanhazip.com)
-echo " "
-echo "UNDERPASS INSTALLATION COMPLETE!"
-echo " "
-echo "Configure Portainer @ http://$MYIP:9000"
-echo "Configure Pritunl VPN Web UI @ https://$MYIP:4433"
-echo "Configure Heimdall @ http://$MYIP:85"
-echo "View Server Load @ http://$MYIP:19999"
+MYIP=$(curl -4 ifconfig.co 2>/dev/null)
+echo -e "===================================================="
+echo -e "The Underpass tunnel has been built!"
+echo -e "===================================================="
+echo -e "\nConfigure Portainer @ http://$MYIP:9000\n"
+echo -e "Configure Pritunl VPN @ https://$MYIP:4433\n"
+echo -e "Configure Heimdall @ http://$MYIP:85/users\n"
+echo -e "View Server Load @ http://$MYIP:19999\n"
+echo -e "----------------------------------------------------"
