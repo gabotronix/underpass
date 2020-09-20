@@ -62,6 +62,8 @@ bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ub
 
 That's it! Next, proceed to the Initial Configuration section.
 
+***
+
 _Note_:
 
 _If the installation fails, or if you see red texts, simply re-run the command above._
