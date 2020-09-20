@@ -109,14 +109,14 @@ Once logged in, you will be asked to set a new admin username and password.
 
 **Change Shadowsocks Password**
 
-The Shadowsocks password is defined in `/opt/underpass/.env`.
+The Shadowsocks password is defined in `/opt/underpass/.env`
 
-Please change the Shadowsocks password immediately in order to avoid unauthorized access. You can do so by editing `.env` using your preferred text editor and changing the value of `SHADOWSOCKS_PASSWORD=`.
+Please change the Shadowsocks password immediately in order to avoid unauthorized access. You can do so by editing `.env` using your preferred text editor and changing the value of `SHADOWSOCKS_PASSWORD=_your_password_`
 
 Once done, restart the container:
 ```
 cd /opt/underpass
-docker-compose up -d --force-recreate shadowsocks
+docker-compose restart shadowsocks
 ```
 
 ***
@@ -127,7 +127,7 @@ The **Squid configuration** files are located at `/opt/underpass/config/squid/`
 
 In the _squid_ folder, edit the `users` file using with your preferred text editor and use a [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) to create your own user-password combination. Refer to the `users` file for more info.
 
-Any changes to the squid configuration will require you to recreate the container. From SSH:
+Any changes to the squid configuration will require you to recreate the container. Issue the commands below from SSH in order to do that:
 ```
 cd /opt/underpass/
 docker-compose up -d --force-recreate squid
@@ -150,7 +150,7 @@ To create a SOCKS5 user, issue the command below from SSH:
 ```
 docker exec -it dante adduser -s /sbin/nologin username
 ```
-Where: `username` is the name of the user that you want to add. You will then be asked to input the password: `New password:`
+Where: `username` is the name of the user that you want to add. You will then be asked to input a password.
 
 User creation can also be done from Portainer:
 
@@ -162,9 +162,40 @@ User records will persist even if the container is destroyed/deleted/removed.
 
 **Create Users for OpenSSH:**
 
-Users for OpenSSH are created via a YAML file. The file is located at `/opt/underpass/config/openssh/config.yml`.
+Users for OpenSSH are created via a YAML file. The file is located at `/opt/underpass/config/openssh/config.yml`
 
-Instructions on how to create a user and generate a password are already in `config.yml`.
+Instructions on how to create a user and generate a password are already in `config.yml`
+
+***
+
+**Default Port Assignments**
+
+Port assignments are defined in `/opt/underpass/.env`
+
+You can change the ports for each service by editing the `.env` file. Restart the container afterwards.
+
+For example, if you changed `SSH_PORT` in `.env` to 2223 from 2222, you'll have to restart the container:
+```
+cd /opt/underpass
+docker-compose restart ssh
+```
+
+***
+
+**Identifying Container Names and Published Ports**
+
+Container names are used to stop, restart, or remove containers. You can view the names, as well as their assigned ports in Portainer:
+
+![portainer_container_list](https://user-images.githubusercontent.com/9207205/93723394-cda2f680-fbd0-11ea-9fbb-2c927366f9ba.png)
+
+You can also issue the command below from SSH:
+```
+docker ps
+```
+
+Published ports have the format, `2222:22`
+
+The number before the _colon (:)_ represents the port that will be exposed to the public. That is the port that you need to use in your SSH, VPN, or Proxy clients. The number after the _colon_ is used by Docker internally.
 
 ***
 
