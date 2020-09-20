@@ -18,13 +18,13 @@
 
 - **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
 
-### Companion Docker Apps:
+### Companion Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
   - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
-### Optional Docker Apps:
+### Optional Apps:
   - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
   - MongoDB UI: [mongo-express](https://hub.docker.com/_/mongo-express)
   - Desktop UI: rdesktop from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
