@@ -58,6 +58,7 @@
     - name: Install Docker SDK for Python
       pip:
         name:
+          - configparser<5
           - docker-compose
           - docker
           - zipp<2
