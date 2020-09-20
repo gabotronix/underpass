@@ -51,7 +51,8 @@
 Log in to SSH as root:
 
 1. On CentOS 7: `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
-   On Ubuntu 18.04: `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+
+1a. On Ubuntu 18.04: `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
 
 2. Set Web Access Credentials:
   - Portainer: http://ip_of_server:9000
