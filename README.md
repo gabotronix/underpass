@@ -86,6 +86,8 @@ Portainer: _http://ip_of_server:9000_
 
 Set an admin password (please set an extremely strong [password](https://www.lastpass.com/password-generator))
 
+-----
+
 Pritunl: _https://ip_of_server:4433_
 
 ![pritunl_initial_setup](https://user-images.githubusercontent.com/9207205/93722506-e065fd00-fbc9-11ea-9e2f-8c249533c0d7.png)
