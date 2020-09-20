@@ -89,13 +89,16 @@ _Ports to Open from the Docker host:_
 
 2. Set Heimdall _admin_ Password: _http://ip_of_server:85/users_
 
-2. Create Users for Squid, Dante SOCKS, and OpenSSH:
-  - The **Squid configuration** is located at `/opt/underpass/config/squid/`
-  - In the _squid_ folder, edit the `users` file with your preferred text editor and use the [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) link to create your own user-password combination.
-  - Any changes in the squid folder will require you to recreate the container in SSH, like so:
-  - ```cd /opt/underpass/
-       docker-compose up -d --force-recreate squid
-    ```
+3. Create Users for Squid, Dante SOCKS, and OpenSSH:
+The **Squid configuration** is located at `/opt/underpass/config/squid/`
+
+In the _squid_ folder, edit the `users` file using with your preferred text editor and use the [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) link to create your own user-password combination.
+
+Any changes to the squid configuration will require you to recreate the container. From SSH:
+```
+cd /opt/underpass/
+docker-compose up -d --force-recreate squid
+```
 
   - The **Dante SOCKS configuration** is located at `/opt/underpass/config/dante/sockd.conf`
   - By default, it requires authentication to connect.
