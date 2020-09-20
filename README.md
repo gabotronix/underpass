@@ -71,7 +71,7 @@ _Sample Error:_
 PLAY RECAP *******************************************************************************************
 control    : ok=25   changed=19   unreachable=0    failed=1    skipped=5    rescued=0    ignored=0
 ```
-`failed=1` means that the installation was not successful.
+`failed=1` means that the installation was unsuccessful.
 
 ***
 
