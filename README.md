@@ -78,17 +78,15 @@ _Ports to Open from the Docker host:_
 
 ### Initial Configuration
 
-**Set Web Access Credentials:**
-
-Portainer: _http://ip_of_server:9000_
+**Portainer:** _http://ip_of_server:9000_
 
 ![portainer_initial_setup](https://user-images.githubusercontent.com/9207205/93722499-d47a3b00-fbc9-11ea-8754-ddc698e6dd48.png)
 
 Set an admin password (please set an extremely strong [password](https://www.lastpass.com/password-generator))
 
------
+***
 
-Pritunl: _https://ip_of_server:4433_
+**Pritunl:** _https://ip_of_server:4433_
 
 ![pritunl_initial_setup](https://user-images.githubusercontent.com/9207205/93722506-e065fd00-fbc9-11ea-9e2f-8c249533c0d7.png)
 
@@ -99,15 +97,17 @@ Pritunl will ask you to issue a command from SSH in order to retrieve the admin 
 docker exec pritunl pritunl default-password
 ```
 
-![pritunl_default_password](https://user-images.githubusercontent.com/9207205/93722511-f1167300-fbc9-11ea-9c0f-843f4f8f5ffc.png)
-
 Once inside, you will be asked to set a new admin username and password.
 
+***
 
-2. **Set Heimdall _admin_ Password:** _http://ip_of_server:85/users_
+**Set Heimdall _admin_ Password:** _http://ip_of_server:85/users_
 
+![heimdall_admin](https://user-images.githubusercontent.com/9207205/93722629-d7c1f680-fbca-11ea-90ed-dddcbfd4cc3f.jpg)
 
-3. **Create Users for Squid:**
+***
+
+**Create Users for Squid:**
 
 The **Squid configuration** is located at `/opt/underpass/config/squid/`
 
@@ -119,7 +119,9 @@ cd /opt/underpass/
 docker-compose up -d --force-recreate squid
 ```
 
-4. **Create Users for Dante SOCKS:**
+***
+
+**Create Users for Dante SOCKS:**
 
 The **Dante SOCKS configuration** is located at `/opt/underpass/config/dante/sockd.conf`
 
@@ -129,14 +131,26 @@ If you want to risk opening your server to the public, comment out the line in `
 ```
 #socksmethod: username
 ```
-To create a SOCKS5 users, you will have to create an SSH user from inside the container. For instance:
+
+To create a SOCKS5 user, issue the command below from SSH:
 ```
 docker exec -it dante adduser -s /sbin/nologin username
 ```
 Where: `username` is the name of the user that you want to add. You will then be asked to input the password: `New password:`
 
+User creation can also be done from Portainer:
 
-5. ** Create Users for OpenSSH:**
+![dante_portainer_console](https://user-images.githubusercontent.com/9207205/93722750-9b42ca80-fbcb-11ea-8743-198959cbc53f.png)
+
+User records will persist even if the container is destroyed/deleted/removed.
+
+***
+
+**Create Users for OpenSSH:**
+
+Users for OpenSSH are created via a YAML file. The file is located at `/opt/underpass/config/openssh/config.yml`.
+
+Instructions on how to create a user and generate a password are already in `config.yml`.
 
 ***
 
