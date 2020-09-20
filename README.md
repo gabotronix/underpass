@@ -11,17 +11,17 @@
   - Pritunl with IPv6 support from [goofball222](https://hub.docker.com/r/goofball222/pritunl)
   - Wireguard from [linuxserver](https://hub.docker.com/r/linuxserver/wireguard)
 
-- **Proxies**
+- **Proxy**
   - Shadowsocks from [gists](https://hub.docker.com/r/gists/shadowsocks-libev)
   - Dante SOCKS from [wernight](https://hub.docker.com/r/wernight/dante)
   - Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
 
 - **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
 
-### Other Docker Apps:
+### Companion Docker Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-    - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
+  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
 ### Optional Docker Apps:
@@ -38,12 +38,12 @@
 2. Docker and Docker Compose (versions starting v19.03 and v1.26 respectively)
 
 3. VPS with at least 2GB RAM:
-  - Hetzner Cloud CX11 (EUR 2.49/mo) - _tested_
-  - OVH Public Cloud Sandbox s1-2 (USD 3.50/mo)
-  - Digital Ocean Droplet (USD 10/mo) - _tested_
-  - AWS EC2 t2.small
-  - GCP Compute Engine e2-small
-  - Azure Linux Virtual Machine B1MS
+    - Hetzner Cloud CX11 (EUR 2.49/mo) - _tested_
+    - OVH Public Cloud Sandbox s1-2 (USD 3.50/mo)
+    - Digital Ocean Droplet (USD 10/mo) - _tested_
+    - AWS EC2 t2.small
+    - GCP Compute Engine e2-small
+    - Azure Linux Virtual Machine B1MS
 
 ***
 
