@@ -1,7 +1,7 @@
 ---
     - name: Update System
       yum:
-        name: *
+        name: '*'
         state: latest
     
     - name: Install ELRepo
