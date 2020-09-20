@@ -22,7 +22,7 @@
         line: "/usr/share/nano/sh.nanorc"
         create: yes
 
-    - name: Add to Bash Profile
+    - name: Add Nano to Bash Profile
       lineinfile:
         path: ~/.bashrc
         insertafter: 'EOF'
@@ -40,14 +40,15 @@
         state: started
         enabled: yes
 
+    - name: Add Squid and Dante SOCKS Default Ports to Firewall
+      command: "{{ item }}"
+      with_items:
+        - "iptables -F"
+        - "firewall-cmd --zone=public --add-service=squid --permanent"
+        - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
+        - "firewall-cmd --reload"
+
     - name: Ensure Docker Daemon is Restarted
       service:
         name: docker
         state: restarted
-
-    - name: Add Squid and Dante SOCKS Default Ports to Firewall
-      command: "{{ item }}"
-      with_items:
-        - "firewall-cmd --zone=public --add-service=squid --permanent"
-        - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
-        - "firewall-cmd --reload"
