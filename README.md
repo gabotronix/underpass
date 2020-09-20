@@ -33,28 +33,34 @@
 ***
 
 ### Requirements:
-1. Ubuntu 18.04, CentOS 7 - 64-bit
+1. Ubuntu 18.04 or CentOS 7 - 64-bit
 
-2. Docker and Docker Compose (versions starting v19.03 and v1.26 respectively)
+2. Docker and Docker Compose (beginning at versions v19.03 and v1.26 respectively)
 
-3. VPS with at least 2GB RAM:
-    - Hetzner Cloud CX11 (EUR 2.49/mo) - _tested_
-    - OVH Public Cloud Sandbox s1-2 (USD 3.50/mo)
-    - Digital Ocean Droplet (USD 10/mo) - _tested_
-    - AWS EC2 t2.small
-    - GCP Compute Engine e2-small
-    - Azure Linux Virtual Machine B1MS
+3. VPS with at least 1GB RAM, clean install
 
 ***
 
 ### Installation
-Log in to SSH as root:
+Log in to SSH as root and issue the command below:
 
 **Install on CentOS 7:**
   - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
 
 **Install on Ubuntu 18.04:**
   - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+
+_Installing on an existing system is not recommended because some containers require opening some ports from the Docker host. They may also cause port assignment conflicts._
+
+_If you still want to install these apps on your existing system, you may do so by installing Docker and Docker Compose. Refer to the [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) docs for more info._
+
+_Once you have Docker and Docker Compose installed, clone this repository, cd into it, and run docker-compose. For example:
+```
+git clone https://github.com/gabotronix/underpass.git /opt/underpass
+cd /opt/underpass
+docker network create underpass --subnet 172.20.0.0/24
+docker-compose up -d
+```
 
 ***
 
