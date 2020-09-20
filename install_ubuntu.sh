@@ -13,7 +13,7 @@ apt install -y ansible git
 git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
 # Install Ansible Roles
-ansible-galaxy install -r /opt/underpass/requirements.yml
+ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
 
 # Run Ansible Playbook
 cd /opt/underpass
