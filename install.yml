@@ -45,17 +45,9 @@
         name: docker
         state: restarted
 
-    - name: Add Squid Default Port to Firewall
-      firewalld:
-        zone: public
-        service: squid
-        permanent: yes
-        state: enabled
-
-    - name: Add Dante SOCKS Default Port to Firewall
-      firewalld:
-        zone: public
-        port: 1080/tcp
-        permanent: yes
-        state: enabled
-
+    - name: Add Squid and Dante SOCKS Default Ports to Firewall
+      command: "{{ item }}"
+      with_items:
+        - "firewall-cmd --zone=public --add-service=squid --permanent"
+        - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
+        - "firewall-cmd --reload"
