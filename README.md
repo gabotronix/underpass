@@ -47,16 +47,20 @@
 
 ***
 
-### Installation and Initial Configuration:
+### Installation
 Log in to SSH as root:
 
-1. **Install on CentOS 7 or Ubuntu 18.04**
-  - On CentOS 7:
-    - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
-  - On Ubuntu 18.04:
-    - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+**Install on CentOS 7**
+`bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
 
-2. **Set Web Access Credentials:**
+**Install on Ubuntu 18.04**
+`bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+
+***
+
+### Initial Configuration
+
+1. **Set Web Access Credentials:**
   - Portainer: _http://ip_of_server:9000_
     - set an admin password (please set a strong password)
   - Pritunl: _https://ip_of_server:4433_
@@ -65,9 +69,9 @@ Log in to SSH as root:
     - `docker exec pritunl pritunl default-password`
     - Once inside, you will be asked to set a new admin username and password.
 
-3. Set Heimdall _admin_ Password: _http://ip_of_server:85/users_
+2. Set Heimdall _admin_ Password: _http://ip_of_server:85/users_
 
-4. Create Users for Squid, Dante SOCKS, and OpenSSH:
+2. Create Users for Squid, Dante SOCKS, and OpenSSH:
   - The **Squid configuration** is located at `/opt/underpass/config/squid/`
   - In the _squid_ folder, edit the `users` file with your preferred text editor and use the [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) link to create your own user-password combination.
   - Any changes in the squid folder will require you to recreate the container in SSH, like so:
