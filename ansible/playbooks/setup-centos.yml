@@ -1,43 +1,28 @@
 ---
     - name: Update System
       yum:
-        name=*
-        state=latest
+        name: *
+        state: latest
     
     - name: Install ELRepo
       yum:
-        name=elrepo-release
-        state=present
+        name: elrepo-release
+        state: present
 
     - name: Install Wireguard Kernel Modules
       yum:
-        name={{item}}
-        state=present
-      with_items:
-        - kmod-wireguard
-        - wireguard-tools
-        - yum-plugin-elrepo
+        name: ['kmod-wireguard', 'wireguard-tools', 'yum-plugin-elrepo']
+        state: present
 
     - name: Install System Tools
       yum:
-        name={{item}}
-        state=present
-      with_items:
-        - glances
-        - htop
-        - nano
-        - ncdu
-        - net-tools
-        - ntp
-        - rsync
-        - screen
-        - wget
-        - yum-utils
+        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'screen', 'wget', 'yum-utils']
+        state: present
 
     - name: Install Fail2Ban
       yum:
-        name=fail2ban
-        state=present
+        name: fail2ban
+        state: present
 
     - name: Configure Fail2Ban
       copy:
