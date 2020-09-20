@@ -71,8 +71,8 @@ docker network create underpass --subnet 172.20.0.0/24
 docker-compose up -d
 ```
 _Ports to Open from the Docker host:_
-  _- 3128/tcp for the Squid default port_
-  _- 1080/tcp for Dante SOCKS default port_
+  - _3128/tcp for the Squid default port_
+  - _1080/tcp for Dante SOCKS default port_
 
 ***
 
