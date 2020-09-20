@@ -1,4 +1,2 @@
 ---
-- src: geerlingguy.pip
-- src: geerlingguy.docker
 - src: haxorof.docker_ce

@@ -7,8 +7,6 @@
     - "./ansible/vars/docker.yml"
 
   roles:
-    - geerlingguy.pip
-    - geerlingguy.docker
     - haxorof.docker_ce
 
   tasks:

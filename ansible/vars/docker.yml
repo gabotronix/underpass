@@ -1,9 +1,4 @@
 ---
-# Get latest release version from https://github.com/docker/compose/releases
-docker_compose_version: "1.27.3"
-pip_install_packages:
-    - name: docker
-
-# Python Docker SDK fix for CentOS 7
+# Python Docker SDK from haxorof.docker_ce
 docker_sdk: true
 docker_compose: true
