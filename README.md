@@ -50,15 +50,15 @@
 ### Installation and Initial Configuration:
 Log in to SSH as root:
 
-1. Install on CentOS 7 or Ubuntu 18.04
+1. **Install on CentOS 7 or Ubuntu 18.04**
   - On CentOS 7:
     - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
   - On Ubuntu 18.04:
     - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
 
-2. Set Web Access Credentials:
-  - Portainer: http://ip_of_server:9000
-    - set an admin password (at least 8 characters)
+2. **Set Web Access Credentials:**
+  - Portainer: _http://ip_of_server:9000_
+    - set an admin password (please set a strong password)
   - Pritunl: https://ip_of_server:4433
     - The page will show some kind of a Privacy Reminder due to Pritunl using a self-signed certificate. Proceed anyway.
     - Pritunl will ask you to issue a command from SSH in order to retrieve the admin password. Issue the commmand below:
