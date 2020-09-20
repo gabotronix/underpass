@@ -18,11 +18,15 @@
 
 - **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
 
+***
+
 ### Companion Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
   - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
+
+***
 
 ### Optional Apps:
   - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
@@ -59,7 +63,7 @@ That's it! Next, proceed to the Initial Configuration section.
 ***
 
 #### Note
-_Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. The containers may also cause port assignment conflicts._
+_Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. Other containers may also cause port assignment conflicts._
 
 _If you still want to install these apps on your existing system, you may do so at your own risk by installing Docker and Docker Compose. Refer to the [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) docs for more info._
 
