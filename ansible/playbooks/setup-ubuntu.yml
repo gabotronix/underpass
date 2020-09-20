@@ -1,6 +1,28 @@
 ---
 #  tasks: (continuation)
-    - name: Install System Tools
+    - name: Install Wireguard and System Tools
       apt:
-        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'wget']
-    
+        name: ['glances', 'htop', 'ncdu', 'ntp', 'telnet']
+        state: present
+        update_cache: yes
+
+    - name: Enable Wireguard Kernel Module
+      command: "modprobe wireguard"
+
+    - name: Install Fail2Ban
+      apt:
+        name: fail2ban
+        state: present
+        update_cache: yes
+
+    - name: Configure Fail2Ban
+      copy:
+        src: /opt/underpass/config/fail2ban/jail-ubuntu.local
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        group: root
+        mode: '644'
+    - name: Retart Fail2Ban
+      service:
+        name: fail2ban
+        state: restarted
