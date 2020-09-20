@@ -17,11 +17,7 @@ ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
 
 # Run Ansible Playbook
 cd /opt/underpass
-ansible-playbook -v install.yml
-
-# Install Underpass
-docker network create underpass --subnet 172.20.0.0/24
-docker-compose up -d
+ansible-playbook install.yml
 
 # Enumerate Web UI's and Ports
 PublicIP=$(curl -4 ifconfig.co 2>/dev/null)

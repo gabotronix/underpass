@@ -16,7 +16,7 @@ ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
 
 # Run Ansible Playbook
 cd /opt/underpass
-ansible-playbook -v install.yml
+ansible-playbook install.yml
 
 # Enumerate Web UI's and Ports
 PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
