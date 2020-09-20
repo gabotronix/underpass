@@ -1,5 +1,4 @@
 # https://hostingcanada.org/htpasswd-generator/
 # Mode: Apache specific salted MD5
-# Default User/Pass: underpass / 777196
 
 underpass:$apr1$4mqlkary$SbIsAoP0zvpIqRtupE/.m/

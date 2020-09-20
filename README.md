@@ -92,12 +92,12 @@ Set an admin password (please set an extremely strong [password](https://www.las
 
 The page will show some kind of a Privacy error due to Pritunl using a self-signed certificate. Proceed anyway.
 
-Pritunl will ask you to issue a command from SSH in order to retrieve the admin password. Issue the commmand below:
+Pritunl will then ask you to issue a command from SSH in order to retrieve the admin password. Issue the command below:
 ```
 docker exec pritunl pritunl default-password
 ```
 
-Once inside, you will be asked to set a new admin username and password.
+Once logged in, you will be asked to set a new admin username and password.
 
 ***
 
@@ -107,11 +107,25 @@ Once inside, you will be asked to set a new admin username and password.
 
 ***
 
+**Change Shadowsocks Password**
+
+The Shadowsocks password is defined in `/opt/underpass/.env`.
+
+Please change the Shadowsocks password immediately in order to avoid unauthorized access. You can do so by editing `.env` using your preferred text editor and changing the value of `SHADOWSOCKS_PASSWORD=`.
+
+Once done, restart the container:
+```
+cd /opt/underpass
+docker-compose up -d --force-recreate shadowsocks
+```
+
+***
+
 **Create Users for Squid:**
 
-The **Squid configuration** is located at `/opt/underpass/config/squid/`
+The **Squid configuration** files are located at `/opt/underpass/config/squid/`
 
-In the _squid_ folder, edit the `users` file using with your preferred text editor and use the [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) link to create your own user-password combination.
+In the _squid_ folder, edit the `users` file using with your preferred text editor and use a [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) to create your own user-password combination. Refer to the `users` file for more info.
 
 Any changes to the squid configuration will require you to recreate the container. From SSH:
 ```
