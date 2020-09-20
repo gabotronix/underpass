@@ -87,9 +87,10 @@ _Ports to Open from the Docker host:_
     - `docker exec pritunl pritunl default-password`
     - Once inside, you will be asked to set a new admin username and password.
 
-2. Set Heimdall _admin_ Password: _http://ip_of_server:85/users_
+2. **Set Heimdall _admin_ Password:** _http://ip_of_server:85/users_
 
-3. Create Users for Squid, Dante SOCKS, and OpenSSH:
+3. **Create Users for Squid:**
+
 The **Squid configuration** is located at `/opt/underpass/config/squid/`
 
 In the _squid_ folder, edit the `users` file using with your preferred text editor and use the [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) link to create your own user-password combination.
@@ -100,10 +101,24 @@ cd /opt/underpass/
 docker-compose up -d --force-recreate squid
 ```
 
-  - The **Dante SOCKS configuration** is located at `/opt/underpass/config/dante/sockd.conf`
-  - By default, it requires authentication to connect.
-  - If you want to open your server to the public, comment out the line in sockd.conf that's inside the `socks pass {}` directive, like so:
-  - `#socksmethod: username`
+4. **Create Users for Dante SOCKS:**
+
+The **Dante SOCKS configuration** is located at `/opt/underpass/config/dante/sockd.conf`
+
+By default, it requires authentication to be able to successfully connect.
+
+If you want to risk opening your server to the public, comment out the line in `sockd.conf` that's inside the `socks pass {}` directive: 
+```
+#socksmethod: username
+```
+To create a SOCKS5 users, you will have to create an SSH user from inside the container. For instance:
+```
+docker exec -it dante adduser -s /sbin/nologin username
+```
+Where: `username` is the name of the user that you want to add. You will then be asked to input the password: `New password:`
+
+
+5. ** Create Users for OpenSSH:**
 
 ***
 
