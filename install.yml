@@ -3,6 +3,13 @@
 
   become: true
 
+  vars_files:
+    - "./ansible/vars/docker.yml"
+
+  roles:
+    - geerlingguy.pip
+    - geerlingguy.docker
+
   tasks:
     - include_tasks: ./ansible/playbooks/setup-centos.yml
       when: ansible_distribution == 'CentOS'
@@ -51,14 +58,3 @@
     - name: Install Underpass
       docker_compose:
         project_src: ./
-
-  vars_files:
-    - "./ansible/vars/docker.yml"
-
-  vars:
-    pip_install_packages:
-      - name: docker
-
-  roles:
-    - geerlingguy.pip
-    - geerlingguy.docker

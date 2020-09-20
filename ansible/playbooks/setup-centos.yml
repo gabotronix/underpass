@@ -34,7 +34,6 @@
         - ncdu
         - net-tools
         - ntp
-        - python3
         - rsync
         - screen
         - wget
