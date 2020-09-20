@@ -28,7 +28,7 @@ clear
 echo " "
 echo "UNDERPASS INSTALLATION COMPLETE!"
 echo " "
-echo "Configure Pritunl VPN Web UI @ https://$MYIP:4433"
 echo "Configure Portainer @ http://$MYIP:9000"
+echo "Configure Pritunl VPN Web UI @ https://$MYIP:4433"
 echo "Configure Heimdall @ http://$MYIP:85"
 echo "View Server Load @ http://$MYIP:19999"
