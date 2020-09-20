@@ -33,7 +33,7 @@
 ***
 
 ### Requirements:
-1. Ubuntu 20.04 LTS x64 or CentOS 7 x64
+1. Ubuntu 18.04, CentOS 7, Debian 9 (Stretch), or Debian 10 (Buster), x64
 
 2. Docker v19.03+ and Docker Compose v1.26+
 
