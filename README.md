@@ -79,10 +79,13 @@ _Ports to Open from the Docker host:_
 ### Initial Configuration
 
 1. **Set Web Access Credentials:**
+
 Portainer: _http://ip_of_server:9000_
+
 Set an admin password (please set an extremely strong [password](https://www.lastpass.com/password-generator))
 
 Pritunl: _https://ip_of_server:4433_
+
 The page will show some kind of a Privacy error due to Pritunl using a self-signed certificate. Proceed anyway.
 
 Pritunl will ask you to issue a command from SSH in order to retrieve the admin password. Issue the commmand below:
