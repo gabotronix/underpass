@@ -4,26 +4,31 @@
       yum:
         name: '*'
         state: latest
+        update_cache: yes
     
     - name: Install ELRepo
       yum:
         name: elrepo-release
         state: present
+        update_cache: yes
 
     - name: Install Wireguard Kernel Modules
       yum:
         name: ['kmod-wireguard', 'wireguard-tools', 'yum-plugin-elrepo']
         state: present
+        update_cache: yes
 
     - name: Install System Tools
       yum:
-        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'python-pip' , 'rsync', 'screen', 'wget', 'yum-utils']
+        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'screen', 'wget', 'yum-utils']
         state: present
+        update_cache: yes
 
     - name: Install Fail2Ban
       yum:
         name: fail2ban
         state: present
+        update_cache: yes
 
     - name: Configure Fail2Ban
       copy:

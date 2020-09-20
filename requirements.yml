@@ -1,3 +1,3 @@
 ---
-# https://github.com/haxorof/ansible-role-docker-ce
-- src: haxorof.docker_ce
+# https://github.com/geerlingguy/ansible-role-docker
+- src: geerlingguy.docker

@@ -7,7 +7,7 @@
     - "./ansible/vars/vars.yml"
 
   roles:
-    - haxorof.docker_ce
+    - geerlingguy.docker
 
   tasks:
     - include_tasks: ./ansible/playbooks/setup-centos.yml
@@ -54,6 +54,3 @@
         permanent: yes
         state: enabled
 
-    - name: Install Underpass
-      docker_compose:
-        project_src: ./
