@@ -65,7 +65,7 @@ That's it! Next, proceed to the Initial Configuration section.
 ***
 
 #### Note
-_Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. Other containers may also cause port assignment conflicts._
+_Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. Other containers may also cause port conflicts._
 
 _If you still want to install these apps on your existing system, you may do so at your own risk by installing Docker and Docker Compose. Refer to the [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) docs for more info._
 
