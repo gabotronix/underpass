@@ -4,7 +4,7 @@
   become: true
 
   vars_files:
-    - "./ansible/vars/docker.yaml"
+    - "ansible/vars/docker.yaml"
 
   roles:
     - geerlingguy.pip
