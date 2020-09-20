@@ -50,11 +50,11 @@
 ### Installation
 Log in to SSH as root:
 
-**Install on CentOS 7**
-`bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
+**Install on CentOS 7:**
+  - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
 
-**Install on Ubuntu 18.04**
-`bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+**Install on Ubuntu 18.04:**
+  - `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
 
 ***
 
