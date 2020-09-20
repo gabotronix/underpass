@@ -18,10 +18,10 @@
         regexp: '^acl SSH dst'
         line: "acl SSH dst {{ ansible_eth0.ipv4.address }}-{{ ansible_eth0.ipv4.address }}/32"
 
-    - name: Ensure Firewalld is Started
+    - name: Restart Firewalld
       service:
         name: firewalld
-        state: started
+        state: restarted
         enabled: yes
 
     - name: Add Squid and Dante SOCKS Default Ports to Firewall
