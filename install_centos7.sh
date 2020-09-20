@@ -16,7 +16,7 @@ ansible-galaxy install -r /opt/underpass/requirements.yml
 
 # Run Ansible Playbook
 cd /opt/underpass
-ansible-playbook install.yml
+ansible-playbook -v install.yml
 
 # Install Underpass
 docker network create underpass --subnet 172.20.0.0/24
