@@ -1,8 +1,4 @@
 ---
-- hosts: control
-
-  become: true
-  
   tasks:
     - name: Update System
       yum:
