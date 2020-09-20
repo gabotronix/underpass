@@ -2,8 +2,7 @@
 
 # The commands in this script are meant to be ran by root.
 
-# Update System and Install EPEL Repo
-yum -y update
+# Install EPEL Repo
 yum -y install epel-release
 
 # Install Ansible and Git
