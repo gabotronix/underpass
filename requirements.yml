@@ -1,2 +1,3 @@
 ---
+- src: geerlingguy.pip
 - src: geerlingguy.docker

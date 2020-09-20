@@ -1,1 +1,6 @@
 ---
+# Get latest release version from https://github.com/docker/compose/releases
+docker_compose_version: "1.27.3"
+
+pip_install_packages:
+    - name: docker

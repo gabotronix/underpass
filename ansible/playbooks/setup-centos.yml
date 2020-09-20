@@ -37,18 +37,6 @@
         - wget
         - yum-utils
 
-    - name: Set Nano Environment
-      lineinfile:
-        path: ~/.nanorc
-        line: /usr/share/nano/sh.nanorc
-        create: yes
-
-    - name: Add to Bash Profile
-      lineinfile:
-        path: ~/.bashrc
-        insertafter: 'EOF'
-        line: export VISUAL=nano
-
     - name: Install and Configure Fail2Ban
       yum:
         name=fail2ban
@@ -64,10 +52,3 @@
         state: started
         enabled: yes
 
-
-
-
-  roles:
-    - role: geerlingguy.docker
-  vars_files:
-    - ../vars/docker.yaml
