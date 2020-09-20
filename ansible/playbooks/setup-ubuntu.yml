@@ -4,6 +4,7 @@
       apt:
         name: ['glances', 'htop', 'ncdu', 'ntp', 'telnet']
         state: present
+        upgrade: yes
         update_cache: yes
 
     - name: Enable Wireguard Kernel Module
