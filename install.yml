@@ -9,6 +9,7 @@
   roles:
     - geerlingguy.pip
     - geerlingguy.docker
+    - haxorof.docker_ce
 
   tasks:
     - include_tasks: ./ansible/playbooks/setup-centos.yml
@@ -54,15 +55,6 @@
         port: 1080/tcp
         permanent: yes
         state: enabled
-
-    - name: Install Docker SDK for Python
-      pip:
-        name:
-          - configparser<5
-          - docker-compose
-          - docker
-          - zipp<2
-        state: present
 
     - name: Install Underpass
       docker_compose:
