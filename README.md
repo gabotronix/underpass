@@ -54,7 +54,7 @@ bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ce
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
 ```
 
-That's it!
+That's it! Next, proceed to the Initial Configuration section.
 
 ***
 
