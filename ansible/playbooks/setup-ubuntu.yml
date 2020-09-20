@@ -1,5 +1,6 @@
 ---
 #  tasks: (continuation)
-    - name: Update System
-      apt: 
+    - name: Install System Tools
+      apt:
+        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'wget']
     

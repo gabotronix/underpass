@@ -40,6 +40,11 @@
         state: started
         enabled: yes
 
+    - name: Ensure Docker Daemon is Restarted
+      service:
+        name: docker
+        state: restarted
+
     - name: Add Squid Default Port to Firewall
       firewalld:
         zone: public
