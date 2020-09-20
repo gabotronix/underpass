@@ -16,7 +16,7 @@
 
     - name: Install System Tools
       yum:
-        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'screen', 'wget', 'yum-utils']
+        name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'python-pip' , 'rsync', 'screen', 'wget', 'yum-utils']
         state: present
 
     - name: Install Fail2Ban
