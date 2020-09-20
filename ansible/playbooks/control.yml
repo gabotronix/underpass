@@ -27,7 +27,7 @@
     - name: Add Squid and Dante SOCKS Default Ports to Firewall
       command: "{{ item }}"
       with_items:
-        - "iptables -F"
+        - "iptables -Fw"
         - "firewall-cmd --zone=public --add-service=squid --permanent"
         - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
         - "firewall-cmd --reload"
