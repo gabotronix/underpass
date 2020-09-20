@@ -33,9 +33,9 @@
 ***
 
 ### Requirements:
-1. Ubuntu 18.04, CentOS 7, Debian 9 (Stretch), or Debian 10 (Buster), x64
+1. Ubuntu 18.04, CentOS 7 - 64-bit
 
-2. Docker v19.03+ and Docker Compose v1.26+
+2. Docker and Docker Compose (versions starting v19.03 and v1.26 respectively)
 
 3. VPS with at least 2GB RAM:
   - Hetzner Cloud CX11 (EUR 2.49/mo) - _tested_
@@ -45,12 +45,26 @@
   - GCP Compute Engine e2-small
   - Azure Linux Virtual Machine B1MS
 
-4. Wireguard Kernel Modules: [CentOS 7](https://www.wireguard.com/install/#centos-7-module-plus-module-kmod-module-dkms-tools), Ubuntu 20.04 (built-in)
-
 ***
 
-### Installation:
-- Refer to [docs](https://github.com/gabotronix/underpass-docs)
+### Installation and Initial Configuration:
+Log in to SSH as root:
+
+1. On CentOS 7: `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)`
+   On Ubuntu 18.04: `bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+
+2. Set Web Access Credentials:
+  - Portainer: http://ip_of_server:9000
+    - set an admin password (at least 8 characters)
+  - Pritunl: https://ip_of_server:4433
+    - The page will show some kind of a Privacy Reminder due to Pritunl using a self-signed certificate. Proceed anyway.
+    - Pritunl will ask you to issue a command from SSH in order to retrieve the admin password. Issue the commmand below:
+    - `docker exec pritunl pritunl default-password`
+
+3. Set Heimdall _admin_ Password:
+  - Heimdall: http://ip_of_server:85
+
+4. Create Users for Squid, Dante SOCKS, and OpenSSH:
 
 ***
 

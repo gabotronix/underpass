@@ -14,7 +14,7 @@
       when: ansible_distribution == 'CentOS'
     
     - include_tasks: ./ansible/playbooks/setup-ubuntu.yml
-      when: ansible_os_family == 'Debian'
+      when: ansible_distribution == 'Ubuntu'
 
     - name: Set Nano Environment
       lineinfile:
