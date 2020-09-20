@@ -24,6 +24,10 @@
         state: restarted
         enabled: yes
 
+    - name: Sleep for a while
+      wait_for:
+        timeout: 10
+
     - name: Add Squid and Dante SOCKS Default Ports to Firewall
       command: "{{ item }}"
       with_items:
