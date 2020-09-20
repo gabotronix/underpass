@@ -1,4 +1,5 @@
 ---
+#  tasks: (continuation)
     - name: Update System
       yum:
         name: '*'
