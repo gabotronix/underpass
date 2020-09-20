@@ -35,7 +35,7 @@
 ### Requirements:
 1. Ubuntu 18.04 or CentOS 7 - 64-bit
 
-2. Docker and Docker Compose (beginning at versions v19.03 and v1.26 respectively)
+2. Docker and Docker Compose (tested on versions v19.03 and v1.26 respectively)
 
 3. VPS with at least 1GB RAM, clean install
 
