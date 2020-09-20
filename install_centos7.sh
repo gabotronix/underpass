@@ -24,7 +24,6 @@ docker-compose up -d
 
 # Enumerate Services and Ports
 MYIP=$(curl -4 icanhazip.com)
-clear
 echo " "
 echo "UNDERPASS INSTALLATION COMPLETE!"
 echo " "
