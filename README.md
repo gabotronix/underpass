@@ -52,11 +52,13 @@ Log in to SSH as root and issue the command below:
 
 That's it!
 
+***
+
 _Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. The containers may also cause port assignment conflicts._
 
-_If you still want to install these apps on your existing system, you may do so by installing Docker and Docker Compose. Refer to the [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) docs for more info._
+_If you still want to install these apps on your existing system, you may do so at your own risk by installing Docker and Docker Compose. Refer to the [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) docs for more info._
 
-_Once you have Docker and Docker Compose installed, clone this repository, cd into it, and run docker-compose. For example:_
+_Once you have Docker and Docker Compose installed, clone this repository and run docker-compose. For example:_
 ```
 git clone https://github.com/gabotronix/underpass.git /opt/underpass
 cd /opt/underpass
