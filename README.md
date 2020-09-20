@@ -78,13 +78,17 @@ _Ports to Open from the Docker host:_
 
 ### Initial Configuration
 
-1. **Set Web Access Credentials:**
+**Set Web Access Credentials:**
 
 Portainer: _http://ip_of_server:9000_
+
+![portainer_initial_setup](https://user-images.githubusercontent.com/9207205/93722499-d47a3b00-fbc9-11ea-8754-ddc698e6dd48.png)
 
 Set an admin password (please set an extremely strong [password](https://www.lastpass.com/password-generator))
 
 Pritunl: _https://ip_of_server:4433_
+
+![pritunl_initial_setup](https://user-images.githubusercontent.com/9207205/93722506-e065fd00-fbc9-11ea-9e2f-8c249533c0d7.png)
 
 The page will show some kind of a Privacy error due to Pritunl using a self-signed certificate. Proceed anyway.
 
@@ -92,6 +96,8 @@ Pritunl will ask you to issue a command from SSH in order to retrieve the admin 
 ```
 docker exec pritunl pritunl default-password
 ```
+
+![pritunl_default_password](https://user-images.githubusercontent.com/9207205/93722511-f1167300-fbc9-11ea-9c0f-843f4f8f5ffc.png)
 
 Once inside, you will be asked to set a new admin username and password.
 
