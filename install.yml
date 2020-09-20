@@ -57,7 +57,7 @@
 
     - name: Install Docker SDK for Python
       pip:
-        name: ['docker', 'docker-compose']
+        name: docker-compose
         executable: pip
         state: present
 
