@@ -1,8 +1,8 @@
 ---
 #  tasks: (continuation)
-    - name: Install Wireguard and System Tools
+    - name: Install System Tools
       apt:
-        name: ['glances', 'htop', 'ncdu', 'ntp', 'telnet']
+        name: ['firewalld', 'glances', 'htop', 'ncdu', 'ntp', 'telnet']
         state: present
         upgrade: yes
         update_cache: yes
