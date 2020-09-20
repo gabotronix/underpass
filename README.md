@@ -79,15 +79,22 @@ _Ports to Open from the Docker host:_
 ### Initial Configuration
 
 1. **Set Web Access Credentials:**
-  - Portainer: _http://ip_of_server:9000_
-    - set an admin password (please set a strong password)
-  - Pritunl: _https://ip_of_server:4433_
-    - The page will show some kind of a Privacy error due to Pritunl using a self-signed certificate. Proceed anyway.
-    - Pritunl will ask you to issue a command from SSH in order to retrieve the admin password. Issue the commmand below:
-    - `docker exec pritunl pritunl default-password`
-    - Once inside, you will be asked to set a new admin username and password.
+Portainer: _http://ip_of_server:9000_
+Set an admin password (please set an extremely strong [password](https://www.lastpass.com/password-generator))
+
+Pritunl: _https://ip_of_server:4433_
+The page will show some kind of a Privacy error due to Pritunl using a self-signed certificate. Proceed anyway.
+
+Pritunl will ask you to issue a command from SSH in order to retrieve the admin password. Issue the commmand below:
+```
+docker exec pritunl pritunl default-password
+```
+
+Once inside, you will be asked to set a new admin username and password.
+
 
 2. **Set Heimdall _admin_ Password:** _http://ip_of_server:85/users_
+
 
 3. **Create Users for Squid:**
 
