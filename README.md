@@ -180,6 +180,21 @@ cd /opt/underpass
 docker-compose restart ssh
 ```
 
+**Default Ports**
+```
+PRITUNL_TCP=1194
+PRITUNL_UDP=1194
+
+WIREGUARD_PORT=51820
+
+SHADOWSOCKS_TCP=8388
+SHADOWSOCKS_UDP=8388
+
+SSH_PORT=2222
+
+NETDATA_PORT=19999
+```
+
 ***
 
 **Identifying Container Names and Published Ports**
@@ -196,6 +211,56 @@ docker ps
 Published ports have the format, `2222:22`
 
 The number before the _colon (:)_ represents the port that will be exposed to the public. That is the port that you need to use in your SSH, VPN, or Proxy clients. The number after the _colon_ is used by Docker internally.
+
+***
+
+**Installing Optional Services**
+
+There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with at least 2GB RAM is recommended.
+
+_List of Additional Services_
+  - mongo-express
+  - droppy
+  - rdesktop
+  - softether
+
+To install these services, go to the `optional_services` folder and issue the docker-compose command with the service name:
+```
+cd /opt/underpass/optional_services
+docker-compose up -d softether
+```
+
+The `optional_services` folder also comes with its own `.env` file. You can change ports as desired, but make sure to restart the container afterwards:
+```
+cd /opt/underpass/optional_services
+docker-compose restart softether
+```
+
+***Optional Services Default Ports**
+
+MONGO_EXPRESS_PORT=8081
+RDESKTOP_PORT=3389
+DROPPY_PORT=8989
+SOFTETHER_PORT1=1443
+SOFTETHER_PORT2=992
+SOFTETHER_PORT3=5555
+SOFTETHER_OPENVPN_UDP=1196
+SOFTETHER_OPENVPN_TCP=1196
+SOFTETHER_IPSEC_PORT1=500
+SOFTETHER_IPSEC_PORT2=4500
+SOFTETHER_IPSEC_PORT3=1701
+
+If you wish to install `mongo-express`, please change the username and password in `/opt/underpass/optional_services/.env` beforehand.
+```
+MONGO_EXPRESS_USER=xxxxxxx
+MONGO_EXPRESS_PASSWORD=xxxxxxxxxx
+```
+
+Then, install `mongo-express`
+```
+cd /opt/underpass/optional_services
+docker-compose up -d mongo-express
+```
 
 ***
 
