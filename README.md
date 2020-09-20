@@ -41,7 +41,9 @@
 
 2. Docker and Docker Compose (tested on versions v19.03 and v1.26 respectively)
 
-3. VPS with at least 1GB RAM, clean install
+3. Ansible (tested on version 2.9.10)
+
+4. VPS with at least 1GB RAM, clean install
 
 ***
 
