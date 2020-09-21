@@ -24,7 +24,7 @@
         state: restarted
         enabled: yes
 
-    - name: Sleep for a while
+    - name: Sleep For a While
       wait_for:
         delay: 10
 
