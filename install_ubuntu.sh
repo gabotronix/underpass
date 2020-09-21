@@ -35,7 +35,7 @@ fi
 # Enumerate Web UI's and Ports
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
-DockerPS=`sudo docker ps | grep -c dante`
+DockerPS=`sudo docker ps | grep -c mongodb`
 function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-timer-in-bash-shell-script-running-on-linuxunix/
         local OLD_IFS="${IFS}"
         IFS=":"

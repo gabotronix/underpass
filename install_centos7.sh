@@ -34,7 +34,7 @@ fi
 # Enumerate Web UI's and Ports
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
-DockerPS=`sudo docker ps | grep -c dante`
+DockerPS=`sudo docker ps | grep -c mongodb`
 function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-timer-in-bash-shell-script-running-on-linuxunix/
         local OLD_IFS="${IFS}"
         IFS=":"
@@ -68,7 +68,7 @@ elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again as root."
     exit 1
 else
-    echo -e "\n\nInitializing containers..."
+    echo -e "\n\nInitializing Containers..."
     countdown "00:01:00"
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
