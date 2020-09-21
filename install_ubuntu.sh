@@ -36,6 +36,29 @@ fi
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
 DockerPS=`sudo docker ps | grep -c dante`
+function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-timer-in-bash-shell-script-running-on-linuxunix/
+        local OLD_IFS="${IFS}"
+        IFS=":"
+        local ARR=( $1 )
+        local SECONDS=$((  (ARR[0] * 60 * 60) + (ARR[1] * 60) + ARR[2]  ))
+        local START=$(date +%s)
+        local END=$((START + SECONDS))
+        local CUR=$START
+
+        while [[ $CUR -lt $END ]]
+        do
+                CUR=$(date +%s)
+                LEFT=$((END-CUR))
+
+                printf "\r%02d:%02d:%02d" \
+                        $((LEFT/3600)) $(( (LEFT/60)%60)) $((LEFT%60))
+
+                sleep 1
+        done
+        IFS="${OLD_IFS}"
+        echo "        "
+}
+
 if [ $UnderpassDir != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
@@ -47,7 +70,7 @@ elif [ $DockerPS != 1 ]; then
     exit 1
 else
     echo -e "\n\nInitializing Containers..."
-    sleep 40
+    countdown "00:01:00"
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
     echo -e "Configure Your Underpass Web Panels:"

@@ -68,7 +68,7 @@ elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again as root."
     exit 1
 else
-    echo -e "Initializing containers..."
+    echo -e "\n\nInitializing containers..."
     countdown "00:01:00"
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
