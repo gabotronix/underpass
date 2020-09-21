@@ -64,19 +64,6 @@ That's it! Next, proceed to the Initial Configuration section.
 
 ***
 
-_Installation Error_:
-
-If the installation fails, or if you see red texts, simply re-run the command above.
-
-_Sample Error:_
-```
-PLAY RECAP *******************************************************************************************
-control    : ok=25   changed=19   unreachable=0    failed=1    skipped=5    rescued=0    ignored=0
-```
-`failed=1` means that the installation was unsuccessful.
-
-***
-
 #### Note
 _Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. Other containers may also cause port conflicts._
 
