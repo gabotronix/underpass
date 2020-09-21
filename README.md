@@ -289,9 +289,9 @@ You can also issue the command below from SSH:
 docker ps
 ```
 
-Published ports have the format, `2222:22`
+Docker ports have the format, `2222:22`
 
-The number before the _colon (:)_ represents the port that will be exposed to the public. That is the port that you need to use in your SSH, VPN, or Proxy clients. The number after the _colon_ is used by Docker internally.
+The number before the _colon (:)_ represents the port that will be exposed to the public. That is the port to use in your SSH, VPN, or Proxy clients. The number after the _colon_ is used by Docker internally.
 
 ***
 
