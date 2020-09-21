@@ -22,7 +22,7 @@
       service:
         name: firewalld
         state: restarted
-        enabled: yes
+      tags: [ 'restart-firewall' ]
 
     - name: Sleep For a While
       wait_for:
@@ -35,9 +35,11 @@
         - "firewall-cmd --zone=public --add-service=squid --permanent"
         - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
         - "firewall-cmd --reload"
+      tags: [ 'restart-firewall' ]
 
     - name: Ensure Docker Daemon is Restarted
       service:
         name: docker
         state: restarted
+      tags: [ 'restart-docker' ]
 

@@ -5,6 +5,7 @@
         name: '*'
         state: latest
         update_cache: yes
+      tags: [ 'yum-upgrade' ]
     
     - name: Install ELRepo
       yum:
@@ -29,6 +30,7 @@
         name: fail2ban
         state: present
         update_cache: yes
+      tags: [ 'fail2ban' ]
 
     - name: Configure Fail2Ban
       copy:
@@ -37,10 +39,12 @@
         owner: root
         group: root
         mode: '644'
+      tags: [ 'fail2ban' ]
 
     - name: Start Fail2Ban
       service:
         name: fail2ban
         state: started
         enabled: yes
+      tags: [ 'fail2ban' ]
 

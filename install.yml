@@ -8,7 +8,7 @@
 
   roles:
     - role: geerlingguy.docker
-      tags: [ 'docker-install' ]
+      tags: [ 'install-docker' ]
 
   tasks:
     - include_tasks: ./ansible/playbooks/setup-centos.yml
