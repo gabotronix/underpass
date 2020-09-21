@@ -67,7 +67,7 @@ That's it! Next, proceed to the Initial Configuration section.
 **Installation Issues**
 
 _Digital Ocean - Ubuntu 18.04:_
-_If you get a pop-up message about a new version of /boot/grub/menu.lst, simply accept the default and continue with the installation._
+_If you get a pop-up message about a new version of /boot/grub/menu.lst, simply accept the default selection and continue with the installation._
 `keep the local version currently installed`
 
 ***
@@ -111,7 +111,32 @@ Pritunl will then ask you to issue a command from SSH in order to retrieve the a
 docker exec pritunl pritunl default-password
 ```
 
-Once logged in, you will be asked to set a new admin username and password.
+***
+
+**Pritunl Settings:**
+
+Once logged in to Pritunl, you will be asked to set a new admin username and password.
+
+The very first thing to do in the Pritunl web panel is to add an `Organization` in `Users > Add Organization`. An `Organization` is simply a name that you want for your group.
+
+_Group_ refers to the VPN servers that you will be creating later on. Pritunl allows you to create multiple TCP or UDP OpenVPN servers. You are only limited by your server resources.
+
+Before you can start a VPN server, you'll be required to attach an `Organization` to it.
+
+![pritunl_organization](https://user-images.githubusercontent.com/9207205/93812435-30a19580-fc84-11ea-9fa9-d9f59ac27aea.png)
+
+**Adding an OpenVPN Server**
+
+Add an OpenVPN server from `Servers > Add Server`. You'll then need to fill up the server settings. A tooltip will appear when you hover your mouse over an option.
+
+![pritunl_server_settings](https://user-images.githubusercontent.com/9207205/93813071-1ddb9080-fc85-11ea-9cb1-2d6f8d574fe7.png)
+
+_Note:_
+
+`Port`: refers to the port that was defined from `PRITUNL_TCP` and `PRITUNL_UDP` in `/opt/underpass/.env`. It's `1194` by default.
+
+_Please also note that `Enable WireGuard` is not supported by Underpass_
+  
 
 ***
 
