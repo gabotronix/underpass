@@ -64,6 +64,14 @@ That's it! Next, proceed to the Initial Configuration section.
 
 ***
 
+**Installation Issues**
+
+_Digital Ocean - Ubuntu 18.04:_
+_If you get a pop-up message about a new version of /boot/grub/menu.lst, simply accept the default and continue with the installation._
+`keep the local version currently installed`
+
+***
+
 #### Note
 _Installing on an existing system is not recommended because some containers require opening ports from the Docker host via firewalld. Other containers may also cause port conflicts._
 
