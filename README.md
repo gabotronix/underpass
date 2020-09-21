@@ -317,7 +317,7 @@ cd /opt/underpass/optional_services
 docker-compose restart softether
 ```
 
-***Optional Services Default Ports**
+**Optional Services Default Ports**
 
 MONGO_EXPRESS_PORT=8081
 RDESKTOP_PORT=3389
