@@ -25,7 +25,7 @@ echo -e "===================================================="
 cd /opt/underpass
 DockerNetwork=`sudo docker network ls | grep -c underpass`
 if [ $DockerNetwork != 1 ]; then
-    sudo docker network create underpass --subnet 172.20.0.0/24
+    sudo docker network create underpass --subnet 172.20.0.0/16
     sudo docker-compose up -d
 else
     sudo docker-compose up -d
