@@ -20,6 +20,7 @@ cd /opt/underpass
 sudo ansible-playbook install.yml
 
 # Install Underpass
+echo -e "Installing Underpass\n"
 cd /opt/underpass
 sudo docker network create underpass --subnet 172.20.0.0/24
 sudo docker-compose up -d

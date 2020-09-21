@@ -109,7 +109,7 @@ Set an admin password (please set an extremely strong [password](https://www.las
 
 ![pritunl_initial_setup](https://user-images.githubusercontent.com/9207205/93722506-e065fd00-fbc9-11ea-9e2f-8c249533c0d7.png)
 
-The page will show some kind of a Privacy error due to Pritunl using a self-signed certificate. Proceed anyway.
+The page will show a notification like (_Your connection is not private_). This is due to Pritunl using a self-signed certificate. Proceed anyway.
 
 Pritunl will then ask you to issue a command from SSH in order to retrieve the admin password. Issue the command below:
 ```
