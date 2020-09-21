@@ -212,6 +212,43 @@ Instructions on how to create a user and generate a password are already in `con
 
 ***
 
+**Wireguard Usage:**
+
+By default, Wireguard is configured to have 1 peer that can be used by multiple users and devices at the same time. If you wish to configure more than one peer, edit `/opt/under/.env` under `WIREGUARD_PEERS=1` and change the number to the one you want. Restart the container afterwards:
+```
+cd /opt/underpass
+docker-compose restart wireguard
+```
+
+To retrieve the peer configuration, issue this command from SSH:
+```
+docker exec wireguard cat /config/peer1/peer1.conf
+```
+
+`peer1` corresponds to the first peer that was set up by Wireguard. If you changed `WIREGUARD_PEERS` to more than 1, then you'll also be able to retrieve the configuration for `peer2`, `peer3`, and so on.
+
+You can then copy-paste the config in your Wireguard client:
+```
+[Interface]
+Address = 10.13.13.2
+PrivateKey = 0NUF5UY4NnqkrXIiybLuf+eWQSMMfzsSnDiEMtD/K1Q=
+ListenPort = 51820
+DNS = 8.8.8.8
+
+[Peer]
+PublicKey = 2sv1gKlpXDn8Fmyhb6QNQlpJcl3PLmMj18qZzUNlnjw=
+Endpoint = 1xx.2xxx.1xx.1xx:51820
+AllowedIPs = 0.0.0.0/0, ::/0
+```
+You can also retrieve the QR Code from your mobile device's Wireguard client. From SSH, issue the command below:
+```
+docker exec wireguard /app/show-peer 1
+```
+
+![wireguard_server_show_qr](https://user-images.githubusercontent.com/9207205/93795143-9170a400-fc6b-11ea-8db0-ebfdda1084ba.png)
+
+***
+
 **Default Port Assignments**
 
 Port assignments are defined in `/opt/underpass/.env`
