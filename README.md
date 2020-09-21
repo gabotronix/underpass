@@ -240,7 +240,7 @@ PublicKey = 2sv1gKlpXDn8Fmyhb6QNQlpJcl3PLmMj18qZzUNlnjw=
 Endpoint = 1xx.2xxx.1xx.1xx:51820
 AllowedIPs = 0.0.0.0/0, ::/0
 ```
-You can also retrieve the QR Code from your mobile device's Wireguard client. From SSH, issue the command below:
+You can also retrieve the Wireguard server's QR Code so that you can easily pair it with your mobile device's Wireguard client. From SSH, issue the command below:
 ```
 docker exec wireguard /app/show-peer 1
 ```
