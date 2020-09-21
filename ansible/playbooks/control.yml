@@ -3,7 +3,7 @@
     - name: Set Nano Environment
       lineinfile:
         path: ~/.nanorc
-        line: "/usr/share/nano/sh.nanorc"
+        line: "include \"/usr/share/nano/sh.nanorc\""
         create: yes
 
     - name: Add Nano to Bash Profile
