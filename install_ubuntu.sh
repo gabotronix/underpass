@@ -80,7 +80,7 @@ elif [ $WhichDockerCompose != 1 ]; then
 elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
-elif [ $DockerPS == 1 ]; then
+elif [ $DockerPS = 1 ]; then
     webpanels
 else
     echo -e "\n\nInitializing Containers..."
