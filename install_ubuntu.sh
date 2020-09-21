@@ -3,26 +3,26 @@
 # The commands in this script are meant to be ran by root.
 
 # Add Ansible Repo
-apt update
-apt upgrade -y
-apt install -y software-properties-common
-apt-add-repository --yes --update ppa:ansible/ansible
-apt install -y ansible git
+sudo apt update
+sudo apt upgrade -y
+sudo apt install -y software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install -y ansible git
 
 # Clone Repo
 git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
 # Install Ansible Roles
-ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
+sudo ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
 
 # Run Ansible Playbook
 cd /opt/underpass
-ansible-playbook install.yml
+sudo ansible-playbook install.yml
 
 # Install Underpass
 cd /opt/underpass
-docker network create underpass --subnet 172.20.0.0/24
-docker-compose up -d
+sudo docker network create underpass --subnet 172.20.0.0/24
+sudo docker-compose up -d
 
 # Enumerate Web UI's and Ports
 PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
