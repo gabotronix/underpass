@@ -47,7 +47,7 @@ elif [ $DockerPS != 1 ]; then
     exit 1
 else
     echo -e "\n\nInitializing Containers..."
-    sleep 20
+    sleep 1m
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
     echo -e "Configure Your Underpass Web Panels:"
