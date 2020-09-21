@@ -22,13 +22,13 @@
 
 ### Companion Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
-  - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
 ***
 
 ### Optional Apps:
+  - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
+  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
   - MongoDB UI: [mongo-express](https://hub.docker.com/_/mongo-express)
   - Desktop UI: rdesktop from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
@@ -112,12 +112,6 @@ docker exec pritunl pritunl default-password
 ```
 
 Once logged in, you will be asked to set a new admin username and password.
-
-***
-
-**Set Heimdall _admin_ Password:** _http://ip_of_server:85/users_
-
-![heimdall_admin](https://user-images.githubusercontent.com/9207205/93722629-d7c1f680-fbca-11ea-90ed-dddcbfd4cc3f.jpg)
 
 ***
 
@@ -273,15 +267,14 @@ docker-compose restart ssh
 ```
 PRITUNL_TCP=1194
 PRITUNL_UDP=1194
-
 WIREGUARD_PORT=51820
-
 SHADOWSOCKS_TCP=8388
 SHADOWSOCKS_UDP=8388
-
 SSH_PORT=2222
 
-NETDATA_PORT=19999
+# Web Panels:
+Pritunl = 4433
+Portainer = 9000
 ```
 
 ***
@@ -308,12 +301,14 @@ The number before the _colon (:)_ represents the port that will be exposed to th
 There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with at least 2GB RAM is recommended.
 
 _List of Additional Services_
-  - mongo-express
   - droppy
+  - heimdall
+  - mongo-express
+  - netdata
   - rdesktop
   - softether
 
-To install these services, go to the `optional_services` folder and issue the docker-compose command with the service name:
+To install these services, go to the `optional_services` folder and issue the docker-compose command with the service name. For example:
 ```
 cd /opt/underpass/optional_services
 docker-compose up -d softether
@@ -327,9 +322,7 @@ docker-compose restart softether
 
 **Default Ports for Optional Services**
 ```
-MONGO_EXPRESS_PORT=8081
 RDESKTOP_PORT=3389
-DROPPY_PORT=8989
 SOFTETHER_PORT1=1443
 SOFTETHER_PORT2=992
 SOFTETHER_PORT3=5555
@@ -338,6 +331,12 @@ SOFTETHER_OPENVPN_TCP=1196
 SOFTETHER_IPSEC_PORT1=500
 SOFTETHER_IPSEC_PORT2=4500
 SOFTETHER_IPSEC_PORT3=1701
+
+# Web Panels:
+Droppy = 8989
+Heimdall = 85
+Mongo-Express: 8081
+Net Data = 19999
 ```
 
 If you wish to install `mongo-express`, please change the username and password in `/opt/underpass/optional_services/.env` beforehand.
