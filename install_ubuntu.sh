@@ -22,8 +22,13 @@ sudo ansible-playbook install.yml
 # Install Underpass
 echo -e "Installing Underpass\n"
 cd /opt/underpass
-sudo docker network create underpass --subnet 172.20.0.0/24
+DockerNetwork=`docker network ls | grep underpass`
+if [ $DockerNetwork != underpass ]
+    then
+    sudo docker network create underpass --subnet 172.20.0.0/24
+else
 sudo docker-compose up -d
+fi
 
 # Enumerate Web UI's and Ports
 PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
