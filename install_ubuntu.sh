@@ -24,7 +24,7 @@ echo -e "===================================================="
 echo -e "Installing Underpass Docker Apps"
 echo -e "===================================================="
 cd /opt/underpass
-DockerNetwork=`docker network ls | grep -c underpass`
+DockerNetwork=`sudo docker network ls | grep -c underpass`
 if [ $DockerNetwork != 1 ]; then
     sudo docker network create underpass --subnet 172.20.0.0/24
     sudo docker-compose up -d
@@ -35,7 +35,7 @@ fi
 # Enumerate Web UI's and Ports
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
-DockerPS=`docker ps | grep -c dante`
+DockerPS=`sudo docker ps | grep -c dante`
 if [ $UnderpassDir != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
