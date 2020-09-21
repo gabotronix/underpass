@@ -1,6 +1,6 @@
 ---
 - name: Install Underpass
-  hosts: control
+- hosts: control
   gather_facts: no
   become: true
 
