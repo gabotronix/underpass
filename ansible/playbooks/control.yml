@@ -45,5 +45,5 @@
       service:
         name: docker
         state: restarted
-      tags: [ 'restart-docker' ]
+      tags: [ 'restart-firewall' ]
 
