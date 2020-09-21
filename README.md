@@ -44,7 +44,7 @@
 
 3. Ansible (tested on version 2.9.10)
 
-4. VPS with at least 1GB RAM, fresh install
+4. VPS with at least 2GB RAM, fresh install
 
 ***
 
