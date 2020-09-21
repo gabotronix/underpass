@@ -18,10 +18,15 @@ ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
 cd /opt/underpass
 ansible-playbook install.yml
 
+# Install Underpass
+cd /opt/underpass
+docker network create underpass --subnet 172.20.0.0/24
+docker-compose up -d
+
 # Enumerate Web UI's and Ports
 PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
 echo -e "===================================================="
-echo -e "The Underpass tunnel has been built!"
+echo -e "Configure Your Underpass Web Panels:"
 echo -e "===================================================="
 echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
 echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"

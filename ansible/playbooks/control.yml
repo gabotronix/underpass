@@ -41,10 +41,3 @@
         name: docker
         state: restarted
 
-    - name: Install Underpass
-      command: "{{ item }}"
-      with_items:
-        - "cd /opt/underpass"
-        - "docker network create underpass --subnet 172.20.0.0/24"
-        - "docker-compose up -d"
-      tags: [ 'underpass' ]
