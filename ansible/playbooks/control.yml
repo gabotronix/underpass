@@ -26,7 +26,7 @@
 
     - name: Sleep For a While
       wait_for:
-        delay: 10
+        timeout: 10
 
     - name: Add Squid and Dante SOCKS Default Ports to Firewall
       command: "{{ item }}"
