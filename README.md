@@ -317,8 +317,8 @@ cd /opt/underpass/optional_services
 docker-compose restart softether
 ```
 
-**Optional Services Default Ports**
-
+**Default Ports for Optional Services**
+```
 MONGO_EXPRESS_PORT=8081
 RDESKTOP_PORT=3389
 DROPPY_PORT=8989
@@ -330,6 +330,7 @@ SOFTETHER_OPENVPN_TCP=1196
 SOFTETHER_IPSEC_PORT1=500
 SOFTETHER_IPSEC_PORT2=4500
 SOFTETHER_IPSEC_PORT3=1701
+```
 
 If you wish to install `mongo-express`, please change the username and password in `/opt/underpass/optional_services/.env` beforehand.
 ```
