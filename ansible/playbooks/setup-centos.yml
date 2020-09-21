@@ -12,18 +12,21 @@
         name: elrepo-release
         state: present
         update_cache: yes
+      tags: [ 'el-repo' ]
 
     - name: Install Wireguard Kernel Modules
       yum:
         name: ['kmod-wireguard', 'wireguard-tools', 'yum-plugin-elrepo']
         state: present
         update_cache: yes
+      tags: [ 'wireguard-modules' ]
 
     - name: Install System Tools
       yum:
         name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'screen', 'wget', 'yum-utils']
         state: present
         update_cache: yes
+      tags: [ 'yum-sys-tools' ]
 
     - name: Install Fail2Ban
       yum:

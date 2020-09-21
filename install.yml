@@ -13,8 +13,11 @@
   tasks:
     - include_tasks: ./ansible/playbooks/setup-centos.yml
       when: ansible_distribution == 'CentOS'
+      tags: [ 'playbook-centos' ]
     
     - include_tasks: ./ansible/playbooks/setup-ubuntu.yml
       when: ansible_distribution == 'Ubuntu'
+      tags: [ 'playbook-ubuntu' ]
 
     - include: ./ansible/playbooks/control.yml
+      tags: [ 'playbook-control' ]

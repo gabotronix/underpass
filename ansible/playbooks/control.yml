@@ -5,18 +5,21 @@
         path: ~/.nanorc
         line: "include \"/usr/share/nano/sh.nanorc\""
         create: yes
+      tags: [ 'config-nano']
 
     - name: Add Nano to Bash Profile
       lineinfile:
         path: ~/.bashrc
         insertafter: 'EOF'
         line: "export VISUAL=nano"
+      tags: [ 'config-nano']
 
     - name: Insert Public IP to Squid Config
       lineinfile:
         path: /opt/underpass/config/squid/squid.conf
         regexp: '^acl SSH dst'
         line: "acl SSH dst {{ ansible_eth0.ipv4.address }}-{{ ansible_eth0.ipv4.address }}/32"
+      tags: [ 'squid-ip' ]
 
     - name: Ensure Firewalld is Restarted
       service:
@@ -27,6 +30,7 @@
     - name: Sleep For a While
       wait_for:
         timeout: 10
+      tags: [ 'sleep' ]
 
     - name: Add Squid and Dante SOCKS Default Ports to Firewall
       command: "{{ item }}"
