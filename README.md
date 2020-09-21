@@ -23,13 +23,13 @@
 
 ### Companion Apps:
   - Container UI: [Portainer-CE](https://hub.docker.com/r/portainer/portainer)
+  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - Pritunl Data Store: [MongoDB](https://hub.docker.com/_/mongo)
 
 ***
 
 ### Optional Apps:
   - App Dashboard: Heimdall from [linuxserver](https://hub.docker.com/r/linuxserver/heimdall)
-  - System Monitoring: [Netdata](https://hub.docker.com/r/netdata/netdata)
   - File Hosting: Droppy from [silverwind](https://github.com/silverwind/droppy)
   - MongoDB UI: [mongo-express](https://hub.docker.com/_/mongo-express)
   - Desktop UI: rdesktop from [linuxserver](https://hub.docker.com/r/linuxserver/rdesktop)
