@@ -131,7 +131,7 @@ docker-compose restart shadowsocks
 
 The **Squid configuration** files are located at `/opt/underpass/config/squid/`
 
-In the _squid_ folder, edit the `users` file using with your preferred text editor and use a [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) to create your own user-password combination. Refer to the `users` file for more info.
+In the _squid_ folder, edit the `users` file using your preferred text editor and use a [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) to create your own user-password combination. Refer to the `users` file for more info.
 
 Any changes to the squid configuration will require you to recreate the container. Issue the commands below from SSH in order to do that:
 ```
