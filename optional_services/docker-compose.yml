@@ -7,6 +7,7 @@ networks:
 volumes:
     droppy_config: {}
     droppy_files: {}
+    heimdall_config: {}
     softether_config: {}
     softether_packetlog: {}
     softether_securitylog: {}
@@ -49,6 +50,35 @@ services:
         ports:
             - "$RDESKTOP_PORT:3389"
         shm_size: "1gb"
+
+    heimdall:
+        image: linuxserver/heimdall:latest
+        container_name: heimdall
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - "$HEIMDALL_PORT:80"
+            - "$HEIMDALL_PORT_HTTPS:443"
+        volumes:
+            - heimdall_config:/config
+    
+    netdata:
+        image: netdata/netdata:latest
+        container_name: netdata
+        restart: unless-stopped
+        cap_add:
+            - SYS_PTRACE
+        security_opt:
+            - apparmor:unconfined
+        networks:
+            - underpass
+        ports:
+            - "$NETDATA_PORT:19999"
+        volumes:
+            - /proc:/host/proc:ro
+            - /sys:/host/sys:ro
+            - /var/run/docker.sock:/var/run/docker.sock:ro
 
     softether:
         image: cenk1cenk2/softether-vpnsrv

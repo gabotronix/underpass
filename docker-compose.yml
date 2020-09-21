@@ -10,7 +10,6 @@ volumes:
     ssh_config: {}
     dante_config: {}
     portainer_data: {}
-    heimdall_config: {}
 
 services:
     mongodb:
@@ -129,33 +128,5 @@ services:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - portainer_data:/data
         
-    heimdall:
-        image: linuxserver/heimdall:latest
-        container_name: heimdall
-        restart: unless-stopped
-        networks:
-            - underpass
-        ports:
-            - "$HEIMDALL_PORT:80"
-            - "$HEIMDALL_PORT_HTTPS:443"
-        volumes:
-            - heimdall_config:/config
-
-    netdata:
-        image: netdata/netdata:latest
-        container_name: netdata
-        restart: unless-stopped
-        cap_add:
-            - SYS_PTRACE
-        security_opt:
-            - apparmor:unconfined
-        networks:
-            - underpass
-        ports:
-            - "$NETDATA_PORT:19999"
-        volumes:
-            - /proc:/host/proc:ro
-            - /sys:/host/sys:ro
-            - /var/run/docker.sock:/var/run/docker.sock:ro
 
         
