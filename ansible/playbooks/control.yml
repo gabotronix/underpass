@@ -48,10 +48,3 @@
         - "docker network create underpass --subnet 172.20.0.0/24"
         - "docker-compose up -d"
       tags: [ 'underpass' ]
-
-    - name: Display Access URLs
-      command: "{{ item }}"
-      with_items:
-        - "echo -e \"====================================================\""
-        - "echo -e \"The Underpass tunnel has been built!\""
-        - "echo -e \"====================================================\""
