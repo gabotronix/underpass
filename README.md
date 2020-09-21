@@ -157,7 +157,7 @@ docker-compose restart shadowsocks
 
 The **Squid configuration** files are located at `/opt/underpass/config/squid/`
 
-In the _squid_ folder, edit the `users` file using your preferred text editor and use a [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) to create your own user-password combination. Refer to the `users` file for more info.
+In the _squid_ folder, edit the `users` file using your preferred text editor and use a [_passwd-generator_](https://hostingcanada.org/htpasswd-generator/) to create your own user-password combination. Refer to the `users` file in `/opt/underpass/squid/` for more info.
 
 Any changes to the squid configuration will require you to recreate the container. Issue the commands below from SSH in order to do that:
 ```
@@ -194,7 +194,7 @@ The **Dante SOCKS configuration** is located at `/opt/underpass/config/dante/soc
 
 By default, it requires authentication to be able to successfully connect.
 
-If you want to risk opening your server to the public, comment out the line in `sockd.conf` that's inside the `socks pass {}` directive: 
+If you want to risk opening your SOCKS5 service to the public, comment out the line in `sockd.conf` that's inside the `socks pass {}` directive: 
 ```
 #socksmethod: username
 ```
@@ -221,7 +221,7 @@ cd /opt/underpass
 docker-compose up -d --force-recreate dante
 ```
 
-You will then have to open the new port from the Docker host. For example, if you changed the SOCKS5 port from 1080 to 1090, issue these commands as root from SSH:
+You will then have to open the new port from the Docker host. For example, if you changed the SOCKS5 port from 1080 to 1090, issue these commands from SSH as root:
 ```
 firewall-cmd --remove-port=1080/tcp --permanent
 firewall-cmd --zone=public --add-port=1090/tcp --permanent
