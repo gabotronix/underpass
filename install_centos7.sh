@@ -69,7 +69,7 @@ elif [ $DockerPS != 1 ]; then
     exit 1
 else
     echo -e "Initializing containers..."
-    countdown "00:01:00
+    countdown "00:01:00"
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
     echo -e "Configure Your Underpass Web Panels:"
