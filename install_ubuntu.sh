@@ -20,7 +20,9 @@ cd /opt/underpass
 sudo ansible-playbook install.yml
 
 # Install Underpass
+echo -e "===================================================="
 echo -e "Installing Underpass\n"
+echo -e "===================================================="
 cd /opt/underpass
 DockerNetwork=`docker network ls | grep -c underpass`
 if [ $DockerNetwork != 1 ]; then
@@ -40,6 +42,8 @@ elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
 else
+    echo -e "Initializing Containers..."
+    sleep 20
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
     echo -e "Configure Your Underpass Web Panels:"
