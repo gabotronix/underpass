@@ -16,7 +16,8 @@
   - Dante SOCKS from [wernight](https://hub.docker.com/r/wernight/dante)
   - Squid from [b4tman](https://hub.docker.com/r/b4tman/squid)
 
-- **Secure Shell** - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
+- **Secure Shell**
+  - OpenSSH-Server from [yuriyvlasov](https://hub.docker.com/r/yuriyvlasov/openssh-server)
 
 ***
 
