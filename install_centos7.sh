@@ -21,16 +21,31 @@ sudo ansible-playbook install.yml
 # Install Underpass
 echo -e "Installing Underpass\n"
 cd /opt/underpass
-sudo docker network create underpass --subnet 172.20.0.0/24
-sudo docker-compose up -d
+DockerNetwork=`docker network ls | grep -c underpass`
+if [ $DockerNetwork != 1 ]; then
+    sudo docker network create underpass --subnet 172.20.0.0/24
+    sudo docker-compose up -d
+else
+    sudo docker-compose up -d
+fi
 
 # Enumerate Web UI's and Ports
-PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
-echo -e "===================================================="
-echo -e "Configure Your Underpass Web Panels:"
-echo -e "===================================================="
-echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
-echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
-echo -e "Configure Heimdall @ http://$PublicIP:85/users\n"
-echo -e "View Server Load @ http://$PublicIP:19999\n"
-echo -e "----------------------------------------------------"
+WhichDockerCompose=`which docker-compose | grep -c /usr`
+DockerPS=`docker ps | grep -c dante`
+if [ $WhichDockerCompose != 1 ]; then
+    echo -e "Installation failed. Please run the installer again."
+    exit 1
+elif [ $DockerPS != 1 ]; then
+    echo -e "Installation failed. Please run the installer again."
+    exit 1
+else
+    PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
+    echo -e "\n\n===================================================="
+    echo -e "Configure Your Underpass Web Panels:"
+    echo -e "===================================================="
+    echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
+    echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
+    echo -e "Configure Heimdall @ http://$PublicIP:85/users\n"
+    echo -e "View Server Load @ http://$PublicIP:19999\n"
+    echo -e "----------------------------------------------------"
+fi
