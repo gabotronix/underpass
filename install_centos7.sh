@@ -32,9 +32,13 @@ else
 fi
 
 # Enumerate Web UI's and Ports
+UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
 DockerPS=`docker ps | grep -c dante`
-if [ $WhichDockerCompose != 1 ]; then
+if [ $UnderpassDir != 1 ]; then
+    echo -e "Installation failed. Please run the installer again."
+    exit 1
+elif [ $WhichDockerCompose != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
 elif [ $DockerPS != 1 ]; then
