@@ -26,9 +26,9 @@ cd /opt/underpass
 DockerNetwork=`sudo docker network ls | grep -c underpass`
 if [ $DockerNetwork != 1 ]; then
     sudo docker network create underpass --subnet 172.20.0.0/16
-    sudo docker-compose up -d
+    docker-compose up -d
 else
-    sudo docker-compose up -d
+    docker-compose up -d
 fi
 
 # Enumerate Web UI's and Ports
@@ -36,13 +36,13 @@ UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
 DockerPS=`sudo docker ps | grep -c dante`
 if [ $UnderpassDir != 1 ]; then
-    echo -e "Installation failed. Please run the installer again."
+    echo -e "Installation failed. Please run the installer again as root."
     exit 1
 elif [ $WhichDockerCompose != 1 ]; then
-    echo -e "Installation failed. Please run the installer again."
+    echo -e "Installation failed. Please run the installer again as root."
     exit 1
 elif [ $DockerPS != 1 ]; then
-    echo -e "Installation failed. Please run the installer again."
+    echo -e "Installation failed. Please run the installer again as root."
     exit 1
 else
     echo -e "\n\nInitializing Containers..."
