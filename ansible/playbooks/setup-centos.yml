@@ -1,6 +1,6 @@
 ---
 #  tasks: (continuation)
-    - name: Update System
+    - name: Update All Packages
       yum:
         name: '*'
         state: latest
