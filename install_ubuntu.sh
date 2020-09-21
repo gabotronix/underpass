@@ -2,7 +2,7 @@
 
 # The commands in this script are meant to be ran by root.
 
-# Add Ansible Repo
+# Add Ansible Repo and Install Ansible
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y software-properties-common
