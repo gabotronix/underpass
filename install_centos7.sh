@@ -58,6 +58,17 @@ function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-tim
         echo "        "
 }
 
+function webpanels() {
+    echo -e "\n\n===================================================="
+    echo -e "Configure Your Underpass Web Panels:"
+    echo -e "===================================================="
+    echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
+    echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
+    echo -e "Configure Heimdall @ http://$PublicIP:85/users\n"
+    echo -e "View Server Load @ http://$PublicIP:19999\n"
+    echo -e "----------------------------------------------------"
+}
+
 if [ $UnderpassDir != 1 ]; then
     echo -e "Installation failed. Please run the installer again as root."
     exit 1
@@ -67,6 +78,8 @@ elif [ $WhichDockerCompose != 1 ]; then
 elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again as root."
     exit 1
+elif [ $DockerPS = 1 ]; then
+    webpanels
 else
     echo -e "\n\nInitializing Containers..."
     countdown "00:01:00"
