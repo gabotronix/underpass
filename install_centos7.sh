@@ -35,7 +35,7 @@ fi
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
 DockerPS=`sudo docker ps | grep -c dante`
-function countdown {
+function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-timer-in-bash-shell-script-running-on-linuxunix/
         local OLD_IFS="${IFS}"
         IFS=":"
         local ARR=( $1 )
