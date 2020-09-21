@@ -59,6 +59,7 @@ function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-tim
 }
 
 function webpanels() {
+    PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
     echo -e "Configure Your Underpass Web Panels:"
     echo -e "===================================================="

@@ -36,7 +36,6 @@ fi
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
 DockerPS=`sudo docker ps | grep -c mongodb`
-PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
 function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-timer-in-bash-shell-script-running-on-linuxunix/
     local OLD_IFS="${IFS}"
     IFS=":"
@@ -61,6 +60,7 @@ function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-tim
 }
 
 function webpanels() {
+    PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
     echo -e "Configure Your Underpass Web Panels:"
     echo -e "===================================================="
