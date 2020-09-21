@@ -143,7 +143,7 @@ _Please also note that `Enable WireGuard` is not supported by Underpass_
 
 The Shadowsocks password is defined in `/opt/underpass/.env`
 
-Please change the Shadowsocks password immediately in order to avoid unauthorized access. You can do so by editing `.env` using your preferred text editor and changing the value of `SHADOWSOCKS_PASSWORD=_your_password_`
+Please change the Shadowsocks password immediately in order to avoid unauthorized access. You can do so by editing `.env` using your preferred text editor and changing the value of `SHADOWSOCKS_PASSWORD=`
 
 Once done, restart the container:
 ```
