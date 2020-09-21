@@ -325,3 +325,4 @@ _References:_
 
 - [daybreakersx](https://github.com/daybreakersx)
 - [HTTP Proxy Injector](https://github.com/a-dev1412/a-dev1412.github.io)
+- [angristan](https://raw.githubusercontent.com/angristan/wireguard-install/master/wireguard-install.sh)
