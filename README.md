@@ -117,7 +117,7 @@ docker exec pritunl pritunl default-password
 
 Once logged in to Pritunl, you will be asked to set a new admin username and password.
 
-The very first thing to do in the Pritunl web panel is to add an `Organization` in `Users > Add Organization`. An `Organization` is simply a name that you want for your group.
+The first thing to do after setting the admin user is to add an `Organization` in `Users > Add Organization`. An `Organization` is simply a name that you want for your group.
 
 _Group_ refers to the VPN servers that you will be creating later on. Pritunl allows you to create multiple TCP or UDP OpenVPN servers. You are only limited by your server resources.
 
@@ -137,7 +137,6 @@ _Note:_
 
 _Please also note that `Enable WireGuard` is not supported by Underpass_
   
-
 ***
 
 **Change Shadowsocks Password**
