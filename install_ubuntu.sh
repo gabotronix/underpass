@@ -66,8 +66,6 @@ function webpanels() {
     echo -e "===================================================="
     echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
     echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
-    echo -e "Configure Heimdall @ http://$PublicIP:85/users\n"
-    echo -e "View Server Load @ http://$PublicIP:19999\n"
     echo -e "----------------------------------------------------"
 }
 
@@ -82,6 +80,6 @@ elif [ $DockerPS != 1 ]; then
     exit 1
 else
     echo -e "\n\nInitializing Containers..."
-    countdown "00:01:00"
+    countdown "00:00:30"
     webpanels
 fi
