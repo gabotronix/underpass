@@ -36,27 +36,39 @@ fi
 UnderpassDir=`ls -l /opt | grep -c underpass`
 WhichDockerCompose=`which docker-compose | grep -c /usr`
 DockerPS=`sudo docker ps | grep -c mongodb`
+PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
 function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-timer-in-bash-shell-script-running-on-linuxunix/
-        local OLD_IFS="${IFS}"
-        IFS=":"
-        local ARR=( $1 )
-        local SECONDS=$((  (ARR[0] * 60 * 60) + (ARR[1] * 60) + ARR[2]  ))
-        local START=$(date +%s)
-        local END=$((START + SECONDS))
-        local CUR=$START
+    local OLD_IFS="${IFS}"
+    IFS=":"
+    local ARR=( $1 )
+    local SECONDS=$((  (ARR[0] * 60 * 60) + (ARR[1] * 60) + ARR[2]  ))
+    local START=$(date +%s)
+    local END=$((START + SECONDS))
+    local CUR=$START
 
-        while [[ $CUR -lt $END ]]
-        do
-                CUR=$(date +%s)
-                LEFT=$((END-CUR))
+    while [[ $CUR -lt $END ]]
+    do
+            CUR=$(date +%s)
+            LEFT=$((END-CUR))
 
-                printf "\r%02d:%02d:%02d" \
-                        $((LEFT/3600)) $(( (LEFT/60)%60)) $((LEFT%60))
+            printf "\r%02d:%02d:%02d" \
+                    $((LEFT/3600)) $(( (LEFT/60)%60)) $((LEFT%60))
 
-                sleep 1
-        done
-        IFS="${OLD_IFS}"
-        echo "        "
+            sleep 1
+    done
+    IFS="${OLD_IFS}"
+    echo "        "
+}
+
+function webpanels() {
+    echo -e "\n\n===================================================="
+    echo -e "Configure Your Underpass Web Panels:"
+    echo -e "===================================================="
+    echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
+    echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
+    echo -e "Configure Heimdall @ http://$PublicIP:85/users\n"
+    echo -e "View Server Load @ http://$PublicIP:19999\n"
+    echo -e "----------------------------------------------------"
 }
 
 if [ $UnderpassDir != 1 ]; then
@@ -68,16 +80,10 @@ elif [ $WhichDockerCompose != 1 ]; then
 elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
+elif [ $DockerPS == 1 ]; then
+    webpanels
 else
     echo -e "\n\nInitializing Containers..."
     countdown "00:01:00"
-    PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
-    echo -e "\n\n===================================================="
-    echo -e "Configure Your Underpass Web Panels:"
-    echo -e "===================================================="
-    echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
-    echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
-    echo -e "Configure Heimdall @ http://$PublicIP:85/users\n"
-    echo -e "View Server Load @ http://$PublicIP:19999\n"
-    echo -e "----------------------------------------------------"
+    webpanels
 fi
