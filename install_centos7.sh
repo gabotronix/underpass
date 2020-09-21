@@ -9,7 +9,7 @@ sudo yum -y install epel-release
 sudo yum -y install ansible git
 
 # Clone Repo
-git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
+sudo git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
 # Install Ansible Roles
 sudo ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
