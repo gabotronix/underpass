@@ -66,7 +66,7 @@ That's it! Next, proceed to the Initial Configuration section.
 
 _Installation Error_:
 
-_If the installation fails, or if you see red texts, simply re-run the command above._
+If the installation fails, or if you see red texts, simply re-run the command above.
 
 _Sample Error:_
 ```
