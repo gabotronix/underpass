@@ -18,7 +18,7 @@
         regexp: '^acl SSH dst'
         line: "acl SSH dst {{ ansible_eth0.ipv4.address }}-{{ ansible_eth0.ipv4.address }}/32"
 
-    - name: Restart Firewalld
+    - name: Ensure Firewalld is Restarted
       service:
         name: firewalld
         state: restarted
