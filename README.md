@@ -64,7 +64,7 @@ That's it! Next, proceed to the Initial Configuration section.
 
 ***
 
-**Installation Issues**
+_Installation Issues_
 
 _Digital Ocean - Ubuntu 18.04:_
 _If you get a pop-up message about a new version of /boot/grub/menu.lst, simply accept the default selection and continue with the installation._
