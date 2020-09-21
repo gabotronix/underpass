@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# The commands in this script are meant to be ran by root.
+# The commands in this script are meant to be ran by root. Docker-Compose cannot run as a sudo user.
 
 # Install EPEL Repo
 sudo yum -y install epel-release
