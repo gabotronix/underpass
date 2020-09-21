@@ -359,7 +359,7 @@ SOFTETHER_IPSEC_PORT3=1701
 # Web Panels:
 Droppy = 8989
 Heimdall = 85
-Mongo-Express: 8081
+Mongo-Express = 8081
 Net Data = 19999
 ```
 
