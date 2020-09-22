@@ -143,15 +143,16 @@ SSH_PORT=2222
 # Web Panels:
 Pritunl = 4433
 Portainer = 9000
+Netdata = 19999
 ```
 
 ***
 
 ### Installing Optional Services
 
-There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with 3-4GB RAM is recommended. A VPS with 2GB RAM already consumes around 70% of the total capacity.
+There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with 3-4GB RAM is recommended. A VPS with 2GB RAM already consumes around 70% of the total capacity when all the apps are installed.
 
-_List of Additional Services_
+#### Container Names List for Additional Services
   - droppy
   - heimdall
   - mongo-express
@@ -188,9 +189,12 @@ SOFTETHER_IPSEC_PORT3=1701
 Droppy = 8989
 Heimdall = 85
 Mongo-Express = 8081
-Net Data = 19999
 Nginx Proxy Manager = 8181
 ```
+
+***
+
+#### Mongo-Express
 
 If you wish to install `mongo-express`, please change the username and password in `/opt/underpass/optional_services/.env` beforehand.
 ```
