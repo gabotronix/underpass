@@ -52,12 +52,12 @@
 ### Installation
 Log in to SSH as root and issue the command below:
 
-**Install on CentOS 7:**
+#### Install on CentOS 7:
 ```
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)
 ```
 
-**Install on Ubuntu 18.04:**
+#### Install on Ubuntu 18.04:**
 ```
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
 ```
@@ -404,7 +404,7 @@ Forward Hostname/IP: the name of your container (pritunl *)
 Forward Port: the port of the container that Docker uses internally (443 *)
 Click on _Save_
 ```
-_* [Refer to Identifying Container Names and Published Ports]. The number to the right of the colon sign is the one to look for._
+_* [Refer to Identifying Container Names and Published Ports](https://github.com/gabotronix/underpass#identifying-container-names-and-published-ports). The number to the right of the colon sign is the one to look for._
 
 ![nginx_portainer_port_list](https://user-images.githubusercontent.com/9207205/93934302-88f49800-fd55-11ea-8e3c-d0daf2eceff8.png)
 
