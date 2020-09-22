@@ -2,7 +2,7 @@
 #  tasks: (continuation)
     - name: Install System Tools
       apt:
-        name: ['firewalld', 'glances', 'htop', 'ncdu', 'ntp', 'telnet']
+        name: ['firewalld', 'glances', 'htop', 'ncdu', 'ntp', 'screen', 'telnet']
         state: present
         update_cache: yes
       tags: [ 'apt-sys-tools' ]
