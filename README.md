@@ -41,11 +41,11 @@
 ### Requirements:
 1. Ubuntu 18.04 or CentOS 7 - 64-bit
 
-2. Docker and Docker Compose (tested on versions v19.03 and v1.26 respectively)
+2. VPS with at least 2GB RAM, fresh install
 
-3. Ansible (tested on version 2.9.10)
+3. Docker and Docker Compose (tested on versions v19.03 and v1.26 respectively)
 
-4. VPS with at least 2GB RAM, fresh install
+4. Ansible (tested on version 2.9.10)
 
 ***
 
