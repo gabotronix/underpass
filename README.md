@@ -322,6 +322,7 @@ _List of Additional Services_
   - heimdall
   - mongo-express
   - netdata
+  - nginx-proxy-manager
   - rdesktop
   - softether
 
