@@ -84,6 +84,12 @@ _Ports to Open from the Docker host:_
 
 ***
 
+### Initial Configuration
+
+Please refer to [underpass-docs](https://github.com/gabotronix/underpass-docs#initial-configuration)
+
+***
+
 #### Default Port Assignments
 
 Port assignments are defined in `/opt/underpass/.env`
@@ -114,7 +120,7 @@ Portainer = 9000
 
 ### Installing Optional Services
 
-There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with at least 2GB RAM is recommended.
+There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with 3-4GB RAM is recommended. A VPS with 2GB RAM already consumes around 70% of the total capacity.
 
 _List of Additional Services_
   - droppy
@@ -154,6 +160,7 @@ Droppy = 8989
 Heimdall = 85
 Mongo-Express = 8081
 Net Data = 19999
+Nginx Proxy Manager = 8181
 ```
 
 If you wish to install `mongo-express`, please change the username and password in `/opt/underpass/optional_services/.env` beforehand.
