@@ -129,6 +129,8 @@ docker-compose restart ssh
 - ssh
 - wireguard
 
+Additional reading: [Identifying Container Names and Published Ports](https://github.com/gabotronix/underpass-docs/blob/draft/containers.md)
+
 #### Default Ports
 ```
 PRITUNL_TCP=1194
