@@ -39,13 +39,13 @@
 ***
 
 ### Requirements:
-1. Ubuntu 18.04 or CentOS 7 - 64-bit
+1. Ubuntu 18.04 or CentOS 7, 64-bit
 
 2. VPS with at least 2GB RAM, fresh install
 
-3. Docker and Docker Compose (tested on versions v19.03 and v1.26 respectively)
+3. Docker and Docker Compose (starting with versions v19.03 and v1.26 respectively)
 
-4. Ansible (tested on version 2.9.10)
+4. Ansible (starting with version 2.9.10)
 
 ***
 
@@ -71,7 +71,7 @@ _Installing on an existing system is not recommended because some containers req
 
 _If you're already familiar with Docker, or you just want to install these apps on your existing system, you may do so at your own risk by installing Docker and Docker Compose. Refer to the [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/) docs for more info._
 
-_Once you have Docker and Docker Compose installed, clone this repository and run docker-compose. For example:_
+_Once you have Docker and Docker Compose installed, clone this repository and run docker-compose:_
 ```
 git clone https://github.com/gabotronix/underpass.git /opt/underpass
 cd /opt/underpass
@@ -87,14 +87,14 @@ _Ports to Open from the Docker host:_
 ### Initial Configuration
 
 **Configure Immediately**
-- [Pritunl](https://github.com/gabotronix/underpass-docs/blob/draft/pritunl.md)
 - [Portainer](https://github.com/gabotronix/underpass-docs/blob/draft/portainer.md)
+- [Pritunl](https://github.com/gabotronix/underpass-docs/blob/draft/pritunl.md)
 - [Shadowsocks](https://github.com/gabotronix/underpass-docs/blob/draft/shadowsocks.md)
 
 **Configure Next**
+- [Dante SOCKS](https://github.com/gabotronix/underpass-docs/blob/draft/dante.md)
 - [Squid](https://github.com/gabotronix/underpass-docs/blob/draft/squid.md)
 - [OpenSSH-Server](https://github.com/gabotronix/underpass-docs/blob/draft/openssh.md)
-- [Dante SOCKS](https://github.com/gabotronix/underpass-docs/blob/draft/dante.md)
 
 **Configure Later**
 - [Wireguard](https://github.com/gabotronix/underpass-docs/blob/draft/wireguard.md)
@@ -110,9 +110,9 @@ _Ports to Open from the Docker host:_
 
 Port assignments are defined in `/opt/underpass/.env`
 
-You can change the ports for each service by editing the `.env` file. Restart the container afterwards.
+You can change the ports for each service by editing the `.env` file.
 
-For example, if you changed `SSH_PORT` in `.env` to 2223 from 2222, you'll have to restart the container:
+Any change in `.env` requires a container restart. For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to restart the container for SSH:
 ```
 cd /opt/underpass
 docker-compose restart ssh
