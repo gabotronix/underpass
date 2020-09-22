@@ -100,7 +100,7 @@ _Ports to Open from the Docker host:_
 - [Wireguard](https://github.com/gabotronix/underpass-docs/blob/draft/wireguard.md)
 - [Netdata](https://github.com/gabotronix/underpass-docs/blob/draft/netdata.md)
 
-**Optional Services**
+**Optional Services Configuration**
 - [Nginx Proxy Manager](https://github.com/gabotronix/underpass-docs/blob/draft/nginx-proxy.md)
 - [SoftEther](https://github.com/gabotronix/underpass-docs/blob/draft/softether.md)
 
@@ -112,11 +112,22 @@ Port assignments are defined in `/opt/underpass/.env`
 
 You can change the ports for each service by editing the `.env` file.
 
-Any change in `.env` requires a container restart. For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to restart the container for SSH:
+Except for Squid and Dante, any change in the `.env` file requires a container restart. For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to restart the container for SSH:
 ```
 cd /opt/underpass
 docker-compose restart ssh
 ```
+
+#### Container Names List
+- dante
+- mongodb
+- netdata
+- portainer
+- pritunl
+- shadowsocks
+- squid
+- ssh
+- wireguard
 
 #### Default Ports
 ```
