@@ -86,7 +86,23 @@ _Ports to Open from the Docker host:_
 
 ### Initial Configuration
 
-Please refer to [underpass-docs](https://github.com/gabotronix/underpass-docs#initial-configuration)
+**Configure Immediately**
+- [Pritunl](https://github.com/gabotronix/underpass-docs/blob/draft/pritunl.md)
+- [Portainer](https://github.com/gabotronix/underpass-docs/blob/draft/portainer.md)
+- [Shadowsocks](https://github.com/gabotronix/underpass-docs/blob/draft/shadowsocks.md)
+
+**Configure Next**
+- [Squid](https://github.com/gabotronix/underpass-docs/blob/draft/squid.md)
+- [OpenSSH-Server](https://github.com/gabotronix/underpass-docs/blob/draft/openssh.md)
+- [Dante SOCKS](https://github.com/gabotronix/underpass-docs/blob/draft/dante.md)
+
+**Configure Later**
+- [Wireguard](https://github.com/gabotronix/underpass-docs/blob/draft/wireguard.md)
+- [Netdata](https://github.com/gabotronix/underpass-docs/blob/draft/netdata.md)
+
+**Optional Services**
+- [Nginx Proxy Manager](https://github.com/gabotronix/underpass-docs/blob/draft/nginx-proxy.md)
+- [SoftEther](https://github.com/gabotronix/underpass-docs/blob/draft/softether.md)
 
 ***
 
