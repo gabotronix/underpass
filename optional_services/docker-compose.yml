@@ -8,6 +8,7 @@ volumes:
     droppy_config: {}
     droppy_files: {}
     heimdall_config: {}
+    nginx-proxy-manager: {}
     softether_config: {}
     softether_packetlog: {}
     softether_securitylog: {}
@@ -62,6 +63,19 @@ services:
             - "$HEIMDALL_PORT_HTTPS:443"
         volumes:
             - heimdall_config:/config
+
+    nginx-proxy-manager:
+        image: jlesage/nginx-proxy-manager:latest
+        container_name: nginx-proxy-manager
+        restart: unless-stopped
+        networks:
+            - underpass
+        ports:
+            - "8181:8181"
+            - "80:8080"
+            - "443:4443"
+        volumes:
+            - nginx-proxy-manager:/config
     
     softether:
         image: cenk1cenk2/softether-vpnsrv
