@@ -394,6 +394,8 @@ For example, you want `pritunl.underpass.cf` to point to your _Pritunl_ access U
 
 From the web panel, go to `Hosts > Proxy Hosts > Add Proxy Host`
 
+![nginx_proxy_add](https://user-images.githubusercontent.com/9207205/93934268-7b3f1280-fd55-11ea-89c7-2e2dec8f8545.png)
+
 You will then be asked the following:
 ```
 Domain Names: we'll use pritunl.underpass.cf
@@ -404,9 +406,13 @@ Click on _Save_
 ```
 _* [Refer to Identifying Container Names and Published Ports]. The number to the right of the colon sign is the one to look for._
 
+![nginx_portainer_port_list](https://user-images.githubusercontent.com/9207205/93934302-88f49800-fd55-11ea-8e3c-d0daf2eceff8.png)
+
 Once the entry is added, you'll be able to access Pritunl using the subdomain, `https://pritunl.underpass.cf` instead of `https://ip_of_your_server:4433`.
 
 If you want to remove the _Your connection is not private_ warning from your web browser, you can do so by going to `SSL Certificates > Add SSL Certificate`. It may take a couple of minutes to register your SSL certificate.
+
+
 
 Once you have the SSL Certificate listed, go back to `Hosts > Proxy Hosts`, edit your domain/subdomain by clicking on the three dots on the right. From the `Edit Proxy Host` window, go to the `SSL` tab and select the SSL certificate that was registered earlier.
 
