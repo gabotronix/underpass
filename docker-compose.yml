@@ -57,7 +57,7 @@ services:
         networks:
             - underpass
         ports:
-            - "$WIREGUARD_PORT:51820/udp"
+            - "$WIREGUARD_PORT_UDP:51820/udp"
         environment:
             - TZ=$TZ
             - SERVERURL=auto

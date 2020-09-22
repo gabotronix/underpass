@@ -85,8 +85,8 @@ services:
         networks:
             - underpass
         ports:
-            - "$SOFTETHER_IPSEC_PORT1:500/udp"
-            - "$SOFTETHER_IPSEC_PORT2:4500/udp"
+            - "$SOFTETHER_IPSEC_PORT1_UDP:500/udp"
+            - "$SOFTETHER_IPSEC_PORT2_UDP:4500/udp"
             - "$SOFTETHER_IPSEC_PORT3:1701"
             - "$SOFTETHER_OPENVPN_UDP:1194/udp"
             - "$SOFTETHER_OPENVPN_TCP:1194"
