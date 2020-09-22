@@ -112,7 +112,7 @@ Once logged in to Pritunl, you will be asked to set a new admin username and pas
 
 The first thing to do after setting the admin user is to add an `Organization` in `Users > Add Organization`. An `Organization` is simply a name that you want for your group.
 
-_Group_ refers to the VPN servers that you will be creating later on. Pritunl allows you to create multiple TCP or UDP OpenVPN servers. You are only limited by your server resources.
+_Group_ refers to the VPN servers that you will be creating later on. Pritunl allows you to create multiple TCP or UDP OpenVPN servers. You are only limited by your server resources. However, only 2 ports have been set for Underpass - 1 for TCP and another for UDP.
 
 Before you can start a VPN server, you'll be required to attach an `Organization` to it.
 
