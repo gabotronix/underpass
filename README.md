@@ -43,10 +43,6 @@
 
 2. VPS with at least 2GB RAM, fresh install
 
-3. Docker and Docker Compose (starting with versions v19.03 and v1.26 respectively)
-
-4. Ansible (starting with version 2.9.10)
-
 ***
 
 ### Installation
