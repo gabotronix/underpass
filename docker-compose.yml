@@ -61,7 +61,7 @@ services:
         environment:
             - TZ=$TZ
             - SERVERURL=auto
-            - SERVERPORT=$WIREGUARD_PORT
+            - SERVERPORT=$WIREGUARD_PORT_UDP
             - PEERS=$WIREGUARD_PEERS
             - PEERDNS=$WIREGUARD_DNS
             - INTERNAL_SUBNET=$WIREGUARD_INTERNAL_IP
