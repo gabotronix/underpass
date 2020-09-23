@@ -53,7 +53,7 @@ Log in to SSH as root and issue the command below:
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_centos7.sh)
 ```
 
-#### Install on Ubuntu 18.04:**
+#### Install on Ubuntu 18.04:
 ```
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_ubuntu.sh)
 ```
