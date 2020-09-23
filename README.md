@@ -50,12 +50,12 @@ Log in to SSH as root and issue the command below:
 
 #### Install on CentOS 7:
 ```
-bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_centos7.sh)
+bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_centos7.sh)
 ```
 
 #### Install on Ubuntu 18.04:**
 ```
-bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/install_ubuntu.sh)`
+bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_ubuntu.sh)
 ```
 
 That's it! Next, proceed to the Initial Configuration section.
