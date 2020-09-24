@@ -11,19 +11,6 @@
       command: "modprobe wireguard"
       tags: [ 'wireguard-modules' ]
 
-    - name: Allow SSH Password Authentication
-      replace:
-        path: /etc/ssh/sshd_config
-        regexp: 'PasswordAuthentication no'
-        replace: "PasswordAuthentication yes"
-      tags: [ 'ssh-config' ]
-
-    - name: Reload SSH Config
-      service:
-        name: sshd
-        state: reloaded
-      tags: [ 'ssh-config' ]
-
     - name: Install Fail2Ban
       apt:
         name: fail2ban
