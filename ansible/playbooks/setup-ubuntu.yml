@@ -22,7 +22,7 @@
     - name: Restart SSHD
       service:
         name: sshd
-        starte: restarted
+        state: restarted
       tags: [ 'ssh-config' ]
 
     - name: Install Fail2Ban
