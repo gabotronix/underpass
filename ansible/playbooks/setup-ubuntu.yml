@@ -13,10 +13,10 @@
 
     - name: Allow SSH Password Authentication
       lineinfile:
-      path: /etc/ssh/sshd_config
-      regexp: '^PasswordAuthentication'
-      line: "PasswordAuthentication yes"
-      firstmatch: yes
+        path: /etc/ssh/sshd_config
+        regexp: '^PasswordAuthentication'
+        line: "PasswordAuthentication yes"
+        firstmatch: yes
       tags: [ 'ssh-config' ]
 
     - name: Restart SSHD
