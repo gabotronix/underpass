@@ -28,6 +28,20 @@
         update_cache: yes
       tags: [ 'yum-sys-tools' ]
 
+    - name: Allow SSH Password Authentication
+      lineinfile:
+        path: /etc/ssh/sshd_config
+        insertafter: '^PasswordAuthentication'
+        line: "PasswordAuthentication yes"
+        firstmatch: yes
+      tags: [ 'ssh-config' ]
+
+    - name: Reload SSH Config
+      service:
+        name: sshd
+        state: reloaded
+      tags: [ 'ssh-config' ]
+
     - name: Install Fail2Ban
       yum:
         name: fail2ban

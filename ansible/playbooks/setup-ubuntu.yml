@@ -19,10 +19,10 @@
         firstmatch: yes
       tags: [ 'ssh-config' ]
 
-    - name: Restart SSHD
+    - name: Reload SSH Config
       service:
         name: sshd
-        state: restarted
+        state: reloaded
       tags: [ 'ssh-config' ]
 
     - name: Install Fail2Ban
