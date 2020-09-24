@@ -12,11 +12,10 @@
       tags: [ 'wireguard-modules' ]
 
     - name: Allow SSH Password Authentication
-      lineinfile:
+      replace:
         path: /etc/ssh/sshd_config
-        insertafter: '^PasswordAuthentication'
-        line: "PasswordAuthentication yes"
-        firstmatch: yes
+        regexp: 'PasswordAuthentication no'
+        replace: "PasswordAuthentication yes"
       tags: [ 'ssh-config' ]
 
     - name: Reload SSH Config
