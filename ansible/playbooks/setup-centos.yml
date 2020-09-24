@@ -31,9 +31,8 @@
     - name: Allow SSH Password Authentication
       replace:
         path: /etc/ssh/sshd_config
-        regexp: '^PasswordAuthentication no'
+        regexp: 'PasswordAuthentication no'
         replace: "PasswordAuthentication yes"
-        firstmatch: yes
       tags: [ 'ssh-config' ]
 
     - name: Reload SSH Config
