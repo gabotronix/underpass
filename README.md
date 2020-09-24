@@ -108,10 +108,10 @@ Port assignments are defined in `/opt/underpass/.env`
 
 You can change the ports for each service by editing the `.env` file.
 
-Except for Squid and Dante, any change in the `.env` file requires a container restart. For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to restart the container for SSH:
+Except for Squid and Dante, any change in the `.env` file requires a container restart. For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to recreate the container for SSH:
 ```
 cd /opt/underpass
-docker-compose restart ssh
+docker-compose up -d --force-recreate ssh
 ```
 
 #### Container Names List
@@ -163,10 +163,10 @@ cd /opt/underpass/optional_services
 docker-compose up -d softether
 ```
 
-The `optional_services` folder also comes with its own `.env` file. You can change ports as desired, but make sure to restart the container afterwards:
+The `optional_services` folder also comes with its own `.env` file. You can change ports as desired, but make sure to recreate the container afterwards:
 ```
 cd /opt/underpass/optional_services
-docker-compose restart softether
+docker-compose up -d --force-recreate softether
 ```
 
 #### Default Ports for Optional Services
