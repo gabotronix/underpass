@@ -29,10 +29,10 @@
       tags: [ 'yum-sys-tools' ]
 
     - name: Allow SSH Password Authentication
-      lineinfile:
+      replace:
         path: /etc/ssh/sshd_config
-        insertafter: '^PasswordAuthentication'
-        line: "PasswordAuthentication yes"
+        regexp: '^PasswordAuthentication no'
+        replace: "PasswordAuthentication yes"
         firstmatch: yes
       tags: [ 'ssh-config' ]
 
