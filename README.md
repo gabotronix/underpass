@@ -208,7 +208,7 @@ docker-compose up -d mongo-express
 
 #### Post-Installation: sudo User For Your Docker Host
 
-It's highly advised to log in to your server (aka Docker host) via a non-privileged user. You'll then only need to escalate root privileges by prepending your commands with `sudo`.
+It's highly advised to log in to your server (aka Docker host) as a non-privileged user. You'll then only need to escalate to root privileges by prepending your commands with `sudo`.
 
 For example, we'll create a user named `userpass` and give it sudo permissions.
 
@@ -222,24 +222,19 @@ On CentOS, as root:
 useradd userpass
 ```
 
-Input your desired password if you're prompted for one. Otherwise:
+Input your desired password if you're prompted to. Otherwise:
 ```
 passwd userpass
 ```
 
 Input your desired password.
 
-You'll then have to add `userpass` to the `wheel` group:
-```
-usermod -aG wheel userpass
-```
-
 Next, add `userpass` to the `sudoers` file:
 ```
 sed -i -e '$auserpass ALL=(ALL) NOPASSWD\: ALL' /etc/sudoers
 ```
 
-_Note that `'$a` will add `userpass` to the last line of `/etc/sudoers`. Additionally, `NOPASSWD` will never ask you for your password when you invoke the `sudo` command._
+_Note that `'$a` will add `userpass` to the last line of `/etc/sudoers`. Additionally, `NOPASSWD` will never ask you for your password when invoking the `sudo` command._
 
 Log out or disconnect from your SSH session in order to reload the new permissions.
 
