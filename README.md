@@ -210,10 +210,47 @@ docker-compose up -d mongo-express
 
 It's highly advised to log in to your server (aka Docker host) via a non-privileged user. You'll then only need to invoke root permissions by prepending your commands with `sudo`.
 
-Refer to the Docker documentation for the steps on how to add a non-root user to manager Docker
+For example, we'll create a user named `userpass` and give it sudo permissions. On Ubuntu:
 ```
-https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+adduser userpass
 ```
+
+On CentOS:
+```
+useradd userpass
+```
+
+Input your desired password if you're prompted for one. Otherwise:
+```
+passwd userpass
+```
+
+Input your desired password.
+
+You'll then have to add `userpass` to the Docker group:
+```
+usermod -a -G wheel userpass
+```
+
+Next, add `userpass` to the `sudoers` file:
+```
+sed -i -e '$auserpass ALL=(ALL) NOPASSWD\: ALL' /etc/sudoers
+```
+
+_Note that `'$a` will add `userpass` to the last line of `/etc/sudoers`_
+
+Log out or disconnect from your SSH session in order to reload the new permissions.
+
+The next time you log in to your Docker host, use `userpass` as the login.
+
+**Add Your User to the Docker Group**
+
+As in our example, login as `userpass` and add `userpass` to the `docker` group:
+```
+sudo usermod -aG docker $USER
+```
+
+Finally, logout of SSH and log in again. You should now be able to issue `docker` and `docker-compose` commands as `userpass`.
 
 ***
 
