@@ -206,6 +206,17 @@ docker-compose up -d mongo-express
 
 ***
 
+#### Post-Installation: sudo User For Your Docker Host
+
+It's highly advised to log in to your server (aka Docker host) via a non-privileged user. You'll then only need to invoke root permissions by prepending your commands with `sudo`.
+
+Refer to the Docker documentation for the steps on how to add a non-root user to manager Docker
+```
+https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
+```
+
+***
+
 _References:_
 
 - [daybreakersx](https://github.com/daybreakersx)
