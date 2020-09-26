@@ -150,7 +150,7 @@ Netdata = 19999
 
 ### Installing Optional Services
 
-There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with 3-4GB RAM is recommended. A VPS with 2GB RAM already consumes around 70% of the total capacity when all the apps are installed.
+There are additional apps that come with Underpass. Please note that installing these apps will increase RAM and disk usage. A server with 3-4GB RAM is recommended because a 2GB VPS already consumes around 70% of the total capacity when all the apps are installed.
 
 #### Container Names List for Additional Services
   - droppy
