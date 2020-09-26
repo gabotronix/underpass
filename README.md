@@ -226,7 +226,7 @@ On CentOS, as root:
 useradd userpass
 ```
 
-Input your desired password if you're prompted to. Otherwise:
+Input your desired password if you're asked for one. Otherwise:
 ```
 passwd userpass
 ```
