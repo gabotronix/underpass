@@ -108,13 +108,15 @@ Port assignments are defined in `/opt/underpass/.env`
 
 You can change the ports for each service by editing the `.env` file.
 
-Except for Squid and Dante, any change in the `.env` file requires a container restart. For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to recreate the container for SSH:
+Except for [Squid](https://github.com/gabotronix/underpass-docs/blob/draft/squid.md) and [Dante](https://github.com/gabotronix/underpass-docs/blob/draft/dante.md), any change in the `.env` file requires a container refresh.
+
+For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to recreate the container for SSH:
 ```
 cd /opt/underpass
 docker-compose up -d --force-recreate ssh
 ```
 
-#### Container Names List
+#### List of Container Names
 - dante
 - mongodb
 - netdata
@@ -126,6 +128,8 @@ docker-compose up -d --force-recreate ssh
 - wireguard
 
 Additional reading: [Identifying Container Names and Published Ports](https://github.com/gabotronix/underpass-docs/blob/draft/containers.md)
+
+***
 
 #### Default Ports
 ```
