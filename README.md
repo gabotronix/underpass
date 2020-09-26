@@ -108,7 +108,7 @@ Port assignments are defined in `/opt/underpass/.env`
 
 You can change the ports for each service by editing the `.env` file.
 
-Except for [Squid](https://github.com/gabotronix/underpass-docs/blob/draft/squid.md) and [Dante](https://github.com/gabotronix/underpass-docs/blob/draft/dante.md), any change in the `.env` file requires a container refresh.
+Any change in the `.env` file, or in the configuration files in `/opt/underpass/config` requires a container refresh.
 
 For instance, if you changed `SSH_PORT` in `.env` from 2222 to 2233, you'll have to recreate the container for SSH:
 ```
