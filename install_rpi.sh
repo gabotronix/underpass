@@ -3,6 +3,7 @@
 # The commands in this script are meant to be ran by root.
 
 # Add Ansible Repo and Install Ansible
+apt install sudo -y
 sudo apt update
 sudo apt install -y software-properties-common
 sudo apt-add-repository --yes --update ppa:ansible/ansible
@@ -12,8 +13,9 @@ sudo apt install -y ansible git
 #sudo git clone https://github.com/gabotronix/underpass.git /opt/underpass
 sudo git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
-# Enable Wireguard Kernel Module
-sudo modprobe wireguard
+# Install Docker via Convenience Script - https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
 
 # Install Ansible Roles
 sudo ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
