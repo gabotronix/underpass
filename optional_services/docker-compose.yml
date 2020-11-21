@@ -16,7 +16,7 @@ volumes:
 
 services:
     mongo-express:
-        image: mongo-express:latest
+        image: mongo-express:0.54.0
         container_name: mongo-express
         restart: unless-stopped
         networks:
@@ -30,7 +30,7 @@ services:
             - ME_CONFIG_BASICAUTH_PASSWORD=$MONGO_EXPRESS_PASSWORD
 
     droppy:
-        image: silverwind/droppy:latest
+        image: silverwind/droppy:12.2.0
         container_name: droppy
         restart: unless-stopped
         networks: 
@@ -78,7 +78,7 @@ services:
             - nginx-proxy-manager:/config
     
     softether:
-        image: cenk1cenk2/softether-vpnsrv
+        image: cenk1cenk2/softether-vpnsrv:v5.01.9674-5
         container_name: softether
         restart: unless-stopped
         privileged: true
