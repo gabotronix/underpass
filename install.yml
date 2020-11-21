@@ -19,5 +19,10 @@
       when: ansible_distribution == 'Ubuntu'
       tags: [ 'playbook-ubuntu' ]
 
+    - include: ./ansible/playbooks/setup-rpi.yml
+      when: ansible_distribution == 'Raspbian'
+      tags: [ 'playbook-rpi' ]
+
     - include: ./ansible/playbooks/control.yml
       tags: [ 'playbook-control' ]
+

@@ -1,0 +1,15 @@
+---
+#  tasks: (continuation)
+    - name: Update All Packages
+      apt:
+        name: '*'
+        state: latest
+        update_cache: yes
+      tags: [ 'rpi-upgrade' ]
+
+    - name: Install System Tools
+      apt:
+        name: ['firewalld', 'glances', 'htop', 'ncdu', 'ntp', 'screen', 'telnet']
+        state: present
+        update_cache: yes
+      tags: [ 'rpi-sys-tools' ]
