@@ -15,8 +15,8 @@
       when: ansible_distribution == 'CentOS'
       tags: [ 'playbook-centos' ]
     
-    - include_tasks: ./ansible/playbooks/setup-ubuntu.yml
-      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian' or ansible_distribution == 'Raspbian'
+    - include_tasks: ./ansible/playbooks/setup-debian.yml
+      when: ansible_os_family == 'Debian'
       tags: [ 'playbook-ubuntu' ]
 
     - include: ./ansible/playbooks/control.yml
