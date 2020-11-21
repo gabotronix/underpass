@@ -44,7 +44,6 @@
       command: "{{ item }}"
       with_items:
         - "iptables -F"
-        - "firewall-cmd --set-default-zone=public"
         - "firewall-cmd --zone=public --add-service=squid --permanent"
         - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
         - "firewall-cmd --reload"
