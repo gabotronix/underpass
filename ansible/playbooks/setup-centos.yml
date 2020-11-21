@@ -51,3 +51,29 @@
         enabled: yes
       tags: [ 'fail2ban' ]
 
+    - name: Ensure Firewalld is Restarted
+      service:
+        name: firewalld
+        state: restarted
+      tags: [ 'restart-firewall' ]
+
+    - name: Sleep For a While
+      wait_for:
+        timeout: 10
+      tags: [ 'sleep' ]
+
+    - name: Add Squid and Dante SOCKS Default Ports to Firewall
+      command: "{{ item }}"
+      with_items:
+        - "iptables -F"
+        - "firewall-cmd --set-default-zone=public"
+        - "firewall-cmd --zone=public --add-service=squid --permanent"
+        - "firewall-cmd --zone=public --add-port=1080/tcp --permanent"
+        - "firewall-cmd --reload"
+      tags: [ 'restart-firewall' ]
+
+    - name: Ensure Docker Daemon is Restarted
+      service:
+        name: docker
+        state: restarted
+      tags: [ 'restart-firewall' ]
