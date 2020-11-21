@@ -1,4 +1,4 @@
 ---
 # Get the Latest version number of Docker Compose here:
 # https://github.com/docker/compose/releases
-docker_compose_version: "1.27.3"
+docker_compose_version: "1.27.4"
