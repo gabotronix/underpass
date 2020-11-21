@@ -45,7 +45,7 @@ services:
             - /etc/localtime:/etc/localtime:ro
 
     wireguard:
-        image: linuxserver/wireguard:version-v1.0.20200827
+        image: linuxserver/wireguard:latest
         container_name: wireguard
         restart: unless-stopped
         cap_add:
