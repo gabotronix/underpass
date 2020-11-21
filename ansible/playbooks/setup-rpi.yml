@@ -1,15 +1,30 @@
 ---
 #  tasks: (continuation)
-    - name: Update All Packages
-      apt:
-        name: '*'
-        state: latest
-        update_cache: yes
-      tags: [ 'rpi-upgrade' ]
-
     - name: Install System Tools
       apt:
         name: ['firewalld', 'glances', 'htop', 'ncdu', 'ntp', 'screen', 'telnet']
         state: present
         update_cache: yes
       tags: [ 'rpi-sys-tools' ]
+
+    - name: Install Fail2Ban
+      apt:
+        name: fail2ban
+        state: present
+        update_cache: yes
+      tags: [ 'fail2ban' ]
+
+    - name: Configure Fail2Ban
+      copy:
+        src: /opt/underpass/config/fail2ban/jail-debian.local
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        group: root
+        mode: '644'
+      tags: [ 'fail2ban' ]
+
+    - name: Restart Fail2Ban
+      service:
+        name: fail2ban
+        state: restarted
+      tags: [ 'fail2ban' ]
