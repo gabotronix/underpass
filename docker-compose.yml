@@ -13,7 +13,7 @@ volumes:
 
 services:
     mongodb:
-        image: mongo:latest
+        image: mongo:4.4.2
         container_name: mongodb
         restart: unless-stopped
         networks: 
@@ -22,7 +22,7 @@ services:
             - mongodb:/data/db
 
     pritunl:
-        image: goofball222/pritunl:latest
+        image: goofball222/pritunl:1.29.2591.94
         container_name: pritunl
         depends_on: 
             - mongodb
@@ -45,7 +45,7 @@ services:
             - /etc/localtime:/etc/localtime:ro
 
     wireguard:
-        image: linuxserver/wireguard:latest
+        image: linuxserver/wireguard:version-v1.0.20200827
         container_name: wireguard
         restart: unless-stopped
         cap_add:
@@ -70,7 +70,7 @@ services:
             - /lib/modules:/lib/modules
 
     shadowsocks:
-        image: gists/shadowsocks-libev:latest
+        image: gists/shadowsocks-libev:3.3.5
         container_name: shadowsocks
         restart: unless-stopped
         networks: 
@@ -103,7 +103,7 @@ services:
             - ./config/dante/sockd.conf:/etc/sockd.conf
         
     ssh:
-        image: yuriyvlasov/openssh-server
+        image: yuriyvlasov/openssh-server:3.12.1-openssh-8.3_p1-r0
         container_name: ssh
         restart: unless-stopped
         networks:
@@ -115,7 +115,7 @@ services:
             - ./config/openssh/config.yml:/config.yml
 
     portainer:
-        image: portainer/portainer-ce:latest
+        image: portainer/portainer-ce:alpine
         container_name: portainer
         restart: unless-stopped
         command: -H unix:///var/run/docker.sock
