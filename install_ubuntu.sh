@@ -9,7 +9,8 @@ sudo apt-add-repository --yes --update ppa:ansible/ansible
 sudo apt install -y ansible git
 
 # Clone Repo
-sudo git clone https://github.com/gabotronix/underpass.git /opt/underpass
+#sudo git clone https://github.com/gabotronix/underpass.git /opt/underpass
+sudo git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
 # Install Ansible Roles
 sudo ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
