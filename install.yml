@@ -20,7 +20,7 @@
       tags: [ 'playbook-ubuntu' ]
 
     - include: ./ansible/playbooks/setup-rpi.yml
-      when: ansible_distribution == 'Raspbian'
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Raspbian'
       tags: [ 'playbook-rpi' ]
 
     - include: ./ansible/playbooks/control.yml

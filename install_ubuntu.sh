@@ -67,7 +67,9 @@ function webpanels() {
     echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
     echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
     echo -e "View Server Load @ http://$PublicIP:19999\n"
-    echo -e "----------------------------------------------------"
+    echo -e "----------------------------------------------------\n"
+    echo -e "Note: Please also update your system manually by issuing the command:\n"
+    echo -e "apt upgrade -y\n"
 }
 
 if [ $UnderpassDir != 1 ]; then
