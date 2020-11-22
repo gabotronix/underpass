@@ -7,9 +7,6 @@ sudo apt update
 sudo apt install -y software-properties-common
 sudo apt install -y ansible git
 
-# Upgrade iptables
-apt-get -t buster-backports upgrade -y "iptables"
-
 # Clone Repo
 #sudo git clone https://github.com/gabotronix/underpass.git /opt/underpass
 sudo git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
