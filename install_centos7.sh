@@ -67,7 +67,10 @@ function webpanels() {
     echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
     echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
     echo -e "View Server Load @ http://$PublicIP:19999\n"
-    echo -e "----------------------------------------------------"
+    echo -e "----------------------------------------------------\n"
+    echo -e "NOTE: Wireguard cannot be used unless the server is rebooted.\n"
+    echo -e "Issue the command below to reboot your server:\n"
+    echo -e "reboot\n"
 }
 
 if [ $UnderpassDir != 1 ]; then
