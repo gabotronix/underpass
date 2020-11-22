@@ -36,13 +36,13 @@
 
     - name: Add Debian Buster Signing Keys
       apt_key:
-        keyserver: keys.gnupg.net
-        id: 04EE7237B7D453EC
+        keyserver: "{{ keyserver_url }}"
+        id: "{{ id_1 }}"
 
     - name: Add Debian Buster Signing Keys
       apt_key:
-        keyserver: keys.gnupg.net
-        id: 648ACFD622F3D138
+        keyserver: "{{ keyserver_url }}"
+        id: "{{ id_2 }}"
 
     - name: Upgrade iptables
       apt:
