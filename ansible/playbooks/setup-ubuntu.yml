@@ -31,7 +31,7 @@
     - name: Add MOTD
       copy:
         src: /opt/underpass/config/00-webpanel
-        dest: /etc/update-motd.d
+        dest: /etc/update-motd.d/01-webpanel
         owner: root
         group: root
         mode: '755'
