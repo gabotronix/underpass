@@ -20,7 +20,7 @@
       tags: [ 'playbook-debian' ]
 
     - include_tasks: ./ansible/playbooks/setup-rpi.yml
-      when: ansible_distribution == 'Raspian'
+      when: ansible_distribution == 'Raspbian'
       tags: [ 'playbook-raspbian' ]
 
     - include: ./ansible/playbooks/control.yml
