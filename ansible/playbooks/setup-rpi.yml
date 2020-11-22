@@ -29,11 +29,21 @@
         state: restarted
       tags: [ 'fail2ban' ]
 
+    - name: Add Debian Backports Repository
+      copy:
+        src: /opt/underpass/config/buster-backports.list
+        dest: /etc/apt/sources.list.d
+        owner: root
+        group: root
+        mode: '644'
+      tags: [ 'iptables' ]
+
     - name: Fall Back to iptables from nftables
       alternatives:
         name: iptables
         path: /usr/sbin/iptables-legacy
         priority: 10
+      tags: [ 'iptables' ]
 
     - name: Ensure Firewalld is Restarted
       service:
