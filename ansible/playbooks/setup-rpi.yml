@@ -29,6 +29,12 @@
         state: restarted
       tags: [ 'fail2ban' ]
 
+    - name: Fall Back to iptables from nftables
+      alternatives:
+        name: iptables
+        path: /usr/sbin/iptables-legacy
+        priority: 10
+
     - name: Ensure Firewalld is Restarted
       service:
         name: firewalld
