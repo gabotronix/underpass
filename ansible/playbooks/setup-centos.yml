@@ -43,13 +43,7 @@
         group: root
         mode: '644'
       tags: [ 'fail2ban' ]
-
-    - name: Start Fail2Ban
-      service:
-        name: fail2ban
-        state: started
-        enabled: yes
-      tags: [ 'fail2ban' ]
+      notify: Start fail2ban
 
     - name: Ensure Firewalld is Restarted
       service:

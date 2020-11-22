@@ -25,3 +25,15 @@
 
     - include: ./ansible/playbooks/control.yml
       tags: [ 'playbook-control' ]
+
+  handlers:
+    - name: Restart fail2ban
+      service:
+        name: fail2ban
+        state: restarted
+    
+    - name: Start fail2ban
+      service:
+        name: fail2ban
+        state: started
+        enabled: yes
