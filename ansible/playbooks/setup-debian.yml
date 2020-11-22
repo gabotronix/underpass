@@ -41,12 +41,6 @@
         state: restarted
       tags: [ 'restart-firewall' ]
 
-    - name: Ensure Docker Daemon is Restarted
-      service:
-        name: docker
-        state: restarted
-      tags: [ 'restart-firewall' ]
-
     - name: Sleep For a While
       wait_for:
         timeout: 10
