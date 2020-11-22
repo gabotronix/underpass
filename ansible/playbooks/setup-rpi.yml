@@ -34,6 +34,11 @@
         repo: deb http://deb.debian.org/debian buster-backports main
       tags: [ 'backports' ]
 
+    - name: Add Debian Buster Signing Keys
+      apt_key:
+        keyserver: keys2.kfwebs.net
+        id: 04EE7237B7D453EC
+
     - name: Upgrade iptables
       apt:
         name: iptables
