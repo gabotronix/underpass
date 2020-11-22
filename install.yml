@@ -14,14 +14,14 @@
     - include_tasks: ./ansible/playbooks/setup-centos.yml
       when: ansible_distribution == 'CentOS'
       tags: [ 'playbook-centos' ]
-    
-    - include_tasks: ./ansible/playbooks/setup-debian.yml
-      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
-      tags: [ 'playbook-debian' ]
 
     - include_tasks: ./ansible/playbooks/setup-rpi.yml
       when: ansible_distribution == 'Raspbian'
       tags: [ 'playbook-raspbian' ]
+
+    - include_tasks: ./ansible/playbooks/setup-debian.yml
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution == 'Debian'
+      tags: [ 'playbook-debian' ]
 
     - include: ./ansible/playbooks/control.yml
       tags: [ 'playbook-control' ]
