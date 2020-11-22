@@ -36,12 +36,12 @@
 
     - name: Add Debian Buster Signing Keys
       apt_key:
-        keyserver: keyring.debian.org
+        keyserver: keys.gnupg.net
         id: 04EE7237B7D453EC
 
     - name: Add Debian Buster Signing Keys
       apt_key:
-        keyserver: keyring.debian.org
+        keyserver: keys.gnupg.net
         id: 648ACFD622F3D138
 
     - name: Upgrade iptables
