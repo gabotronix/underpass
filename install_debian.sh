@@ -81,7 +81,7 @@ elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
 else
-    echo -e "\n\nInitializing Containers..."
-    countdown "00:00:30"
-    webpanels
+    echo -e "\n\nThis server will now reboot in order to complete the installation.\n"
+    echo -e "Please log in again after a minute or so."
+    countdown "00:00:10"
 fi
