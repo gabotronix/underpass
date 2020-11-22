@@ -20,7 +20,7 @@
       tags: [ 'playbook-debian' ]
 
     - include_tasks: ./ansible/playbooks/setup-ubuntu.yml
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version = '18.04'
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '18.04'
       tags: [ 'playbook-ubuntu' ]
 
     - include: ./ansible/playbooks/control.yml
