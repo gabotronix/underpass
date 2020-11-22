@@ -39,6 +39,11 @@
         keyserver: keys2.kfwebs.net
         id: 04EE7237B7D453EC
 
+    - name: Add Debian Buster Signing Keys
+      apt_key:
+        keyserver: keys2.kfwebs.net
+        id: 648ACFD622F3D138
+
     - name: Upgrade iptables
       apt:
         name: iptables
