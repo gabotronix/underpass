@@ -30,12 +30,16 @@
       tags: [ 'fail2ban' ]
 
     - name: Add Debian Backports Repository
-      copy:
-        src: /opt/underpass/config/buster-backports.list
-        dest: /etc/apt/sources.list.d
-        owner: root
-        group: root
-        mode: '644'
+      apt_repository:
+        repo: deb http://deb.debian.org/debian buster-backports main
+      tags: [ 'backports' ]
+
+    - name: Upgrade iptables
+      apt:
+        name: iptables
+        state: latest
+        default_release: buster-backports
+        update_cache: yes
       tags: [ 'iptables' ]
 
     - name: Fall Back to iptables from nftables
