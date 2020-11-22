@@ -19,6 +19,13 @@
         name: ['kmod-wireguard', 'wireguard-tools', 'yum-plugin-elrepo']
         state: present
         update_cache: yes
+      ignore_errors: yes
+      tags: [ 'wireguard-modules' ]
+
+    - name: Enable Wireguard Kernel Module
+      modprobe:
+        name: wireguard
+        state: present
       tags: [ 'wireguard-modules' ]
 
     - name: Install System Tools
