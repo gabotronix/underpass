@@ -14,8 +14,6 @@ sudo apt install -y ansible git nftables python
 sudo git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
 # Install Docker via Convenience Script - https://docs.docker.com/engine/install/debian/#install-using-the-convenience-script
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
 curl -fsSL https://get.docker.com | sh
 
 # Install Ansible Roles
