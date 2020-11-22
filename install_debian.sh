@@ -82,6 +82,6 @@ elif [ $DockerPS != 1 ]; then
     exit 1
 else
     echo -e "\n\nThis server will now reboot in order to complete the installation.\n"
-    echo -e "Please log in again after a minute or so."
+    echo -e "Please log in again after a minute or so.\n"
     countdown "00:00:10"
 fi
