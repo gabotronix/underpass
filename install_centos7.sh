@@ -68,7 +68,7 @@ function webpanels() {
     echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
     echo -e "View Server Load @ http://$PublicIP:19999\n"
     echo -e "----------------------------------------------------\n"
-    echo -e "NOTE: Wireguard cannot be used unless the server is rebooted.\n"
+    echo -e "NOTE: Wireguard will not work unless the server is rebooted.\n"
     echo -e "Issue the command below to reboot your server:\n"
     echo -e "reboot\n"
 }
