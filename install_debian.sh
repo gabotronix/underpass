@@ -12,9 +12,6 @@ sudo apt install -y ansible git
 #sudo git clone https://github.com/gabotronix/underpass.git /opt/underpass
 sudo git clone -b stage https://github.com/gabotronix/underpass.git /opt/underpass
 
-# Enable Wireguard Kernel Module
-sudo modprobe wireguard
-
 # Install Ansible Roles
 sudo ansible-galaxy install -r /opt/underpass/ansible/requirements.yml
 
