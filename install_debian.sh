@@ -85,4 +85,5 @@ else
     echo -e "\n\nThis server will now reboot in order to complete the installation.\n"
     echo -e "Please log in again after a minute or so.\n"
     countdown "00:00:10"
+    sudo reboot
 fi

@@ -3,7 +3,7 @@
 # https://github.com/docker/compose/releases
 docker_compose_version: "1.27.4"
 
-# Debian Backports Repository
+# Debian Buster Backports Repository
 keyserver_url: "keys.gnupg.net"
 id_1: "04EE7237B7D453EC"
 id_2: "648ACFD622F3D138"
