@@ -59,19 +59,6 @@ function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-tim
     echo "        "
 }
 
-function webpanels() {
-    PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
-    echo -e "\n\n===================================================="
-    echo -e "Your Underpass Web Panels:"
-    echo -e "===================================================="
-    echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
-    echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
-    echo -e "View Server Load @ http://$PublicIP:19999\n"
-    echo -e "----------------------------------------------------\n"
-    echo -e "NOTE: Please also upgrade your system manually by issuing the command below:\n"
-    echo -e "apt upgrade -y\n"
-}
-
 if [ $UnderpassDir != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
@@ -82,7 +69,8 @@ elif [ $DockerPS != 1 ]; then
     echo -e "Installation failed. Please run the installer again."
     exit 1
 else
-    echo -e "\n\nThis server will now reboot in order to complete the installation.\n"
+    echo -e "\n\n----------------------------------------------------------------------\n"
+    echo -e "This server will now reboot in order to complete the installation.\n"
     echo -e "Please log in again after a minute or so.\n"
     countdown "00:00:10"
     sudo reboot
