@@ -62,7 +62,7 @@ function countdown { #https://www.cyberciti.biz/faq/how-to-display-countdown-tim
 function webpanels() {
     PublicIP=$(curl -4 ifconfig.co 2>/dev/null)
     echo -e "\n\n===================================================="
-    echo -e "Configure Your Underpass Web Panels:"
+    echo -e "Your Underpass Web Panels:"
     echo -e "===================================================="
     echo -e "\nConfigure Portainer @ http://$PublicIP:9000\n"
     echo -e "Configure Pritunl VPN @ https://$PublicIP:4433\n"
