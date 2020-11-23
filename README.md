@@ -65,7 +65,7 @@ bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/ins
 #### Install on Debian 10 (Buster):
 ```
 apt update && apt install -y curl
-bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_centos7.sh)
+bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_debian.sh)
 ```
 
 That's it! Next, proceed to the Initial Configuration section.
