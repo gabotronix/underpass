@@ -22,12 +22,6 @@
       ignore_errors: yes
       tags: [ 'wireguard-modules' ]
 
-    - name: Enable Wireguard Kernel Module
-      modprobe:
-        name: wireguard
-        state: present
-      tags: [ 'wireguard-modules' ]
-
     - name: Install System Tools
       yum:
         name: ['glances', 'htop', 'nano', 'ncdu', 'net-tools', 'ntp', 'rsync', 'screen', 'wget', 'yum-utils']
