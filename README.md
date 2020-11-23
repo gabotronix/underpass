@@ -44,6 +44,7 @@
     - Ubuntu 18.04 LTS
     - Ubuntu 20.04 LTS
     - Debian 10 (Buster)
+    - Raspberry Pi OS / Raspbian 10
 
 2. VPS with at least 2GB RAM, fresh install
 
@@ -57,12 +58,12 @@ Log in to SSH as root and issue the command below:
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_centos7.sh)
 ```
 
-#### Install on Ubuntu 18.04/20.04:
+#### Install on Ubuntu 18.04 / 20.04:
 ```
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_ubuntu.sh)
 ```
 
-#### Install on Debian 10 (Buster):
+#### Install on Debian 10 (Buster) / Raspbian:
 ```
 apt update && apt install -y curl
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_debian.sh)
