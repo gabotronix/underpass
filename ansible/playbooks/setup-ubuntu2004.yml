@@ -24,12 +24,6 @@
       tags: [ 'fail2ban' ]
       notify: Restart fail2ban
 
-    - name: Fall Back to iptables from nftables
-      alternatives:
-        name: iptables
-        path: /usr/sbin/iptables-legacy
-        priority: 20
-
     - name: Add MOTD
       copy:
         src: /opt/underpass/config/01-webpanel
