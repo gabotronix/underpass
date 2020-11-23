@@ -45,3 +45,12 @@
         mode: '644'
       tags: [ 'fail2ban' ]
       notify: Start fail2ban
+
+    - name: Add MOTD
+      copy:
+        src: /opt/underpass/config/webpanel.sh
+        dest: /etc/profile.d
+        owner: root
+        group: root
+        mode: '755'
+      tags: [ 'motd' ]
