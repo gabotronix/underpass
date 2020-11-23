@@ -39,7 +39,11 @@
 ***
 
 ### Requirements:
-1. Ubuntu 18.04 or CentOS 7, 64-bit
+1. Linux, 64-bit. Compatible distributions:
+    - CentOS 7
+    - Ubuntu 18.04 LTS
+    - Ubuntu 20.04 LTS
+    - Debian 10 (Buster)
 
 2. VPS with at least 2GB RAM, fresh install
 
@@ -53,9 +57,15 @@ Log in to SSH as root and issue the command below:
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_centos7.sh)
 ```
 
-#### Install on Ubuntu 18.04:
+#### Install on Ubuntu 18.04/20.04:
 ```
 bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_ubuntu.sh)
+```
+
+#### Install on Debian 10 (Buster):
+```
+apt update && apt install -y curl
+bash <(curl -s https://raw.githubusercontent.com/gabotronix/underpass/master/install_centos7.sh)
 ```
 
 That's it! Next, proceed to the Initial Configuration section.
