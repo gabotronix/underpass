@@ -7,13 +7,6 @@
         update_cache: yes
       tags: [ 'apt-sys-tools' ]
 
-    - name: Enable Wireguard Kernel Module
-      modprobe:
-        name: wireguard
-        state: present
-      ignore_errors: true
-      tags: [ 'wireguard-modules' ]
-
     - name: Install Fail2Ban
       apt:
         name: fail2ban
