@@ -39,7 +39,7 @@
 ***
 
 ### Requirements:
-1. Linux, 64-bit. Compatible distributions:
+1. Linux, 64-bit, fresh install. Compatible distributions:
     - CentOS 7
     - Ubuntu 18.04 LTS
     - Ubuntu 20.04 LTS
