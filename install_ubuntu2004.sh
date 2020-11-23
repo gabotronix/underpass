@@ -4,7 +4,7 @@
 
 # Add Ansible Repo and Install Ansible
 sudo apt update
-sudo apt install -y software-properties-common ansible git
+sudo apt install -y software-properties-common git ansible
 
 # Clone Repo
 ##sudo git clone https://github.com/gabotronix/underpass.git /opt/underpass
