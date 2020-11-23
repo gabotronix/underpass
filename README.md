@@ -44,7 +44,7 @@
     - Ubuntu 18.04 LTS
     - Ubuntu 20.04 LTS
     - Debian 10 (Buster)
-    - Raspberry Pi OS / Raspbian 10
+    - Raspberry Pi OS / Raspbian (based on Debian Buster)
 
 2. VPS with at least 2GB RAM, fresh install
 
