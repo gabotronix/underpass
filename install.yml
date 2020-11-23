@@ -19,13 +19,13 @@
       when: ansible_distribution == 'Debian' and ansible_distribution_major_version == '10'
       tags: [ 'playbook-debian' ]
 
-    - include_tasks: ./ansible/playbooks/setup-debian.yml
-      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
-      tags: [ 'playbook-ubuntu-focal' ]
-
     - include_tasks: ./ansible/playbooks/setup-ubuntu.yml
       when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '18.04'
       tags: [ 'playbook-ubuntu' ]
+
+    - include_tasks: ./ansible/playbooks/setup-ubuntu2004.yml
+      when: ansible_distribution == 'Ubuntu' and ansible_distribution_version == '20.04'
+      tags: [ 'playbook-ubuntu-focal' ]
 
     - include: ./ansible/playbooks/control.yml
       tags: [ 'playbook-control' ]

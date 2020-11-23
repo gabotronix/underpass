@@ -1,0 +1,40 @@
+---
+#  tasks: (continuation)
+    - name: Install System Tools
+      apt:
+        name: ['firewalld', 'glances', 'htop', 'ncdu', 'ntp', 'screen', 'telnet']
+        state: present
+        update_cache: yes
+      tags: [ 'apt-sys-tools' ]
+
+    - name: Install Fail2Ban
+      apt:
+        name: fail2ban
+        state: present
+        update_cache: yes
+      tags: [ 'fail2ban' ]
+
+    - name: Configure Fail2Ban
+      copy:
+        src: /opt/underpass/config/fail2ban/jail-debian.local
+        dest: /etc/fail2ban/jail.local
+        owner: root
+        group: root
+        mode: '644'
+      tags: [ 'fail2ban' ]
+      notify: Restart fail2ban
+
+    - name: Fall Back to iptables from nftables
+      alternatives:
+        name: iptables
+        path: /usr/sbin/iptables-legacy
+        priority: 20
+
+    - name: Add MOTD
+      copy:
+        src: /opt/underpass/config/01-webpanel
+        dest: /etc/update-motd.d
+        owner: root
+        group: root
+        mode: '755'
+      tags: [ 'motd' ]
