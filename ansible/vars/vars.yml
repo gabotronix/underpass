@@ -1,7 +1,7 @@
 ---
 # Get the Latest version number of Docker Compose here:
 # https://github.com/docker/compose/releases
-docker_compose_version: "1.27.4"
+docker_compose_version: "1.28.2"
 
 # Debian Buster Backports Repository
 keyserver_url: "keys.gnupg.net"
